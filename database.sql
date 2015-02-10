@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-12-2014 a las 07:39:58
+-- Tiempo de generación: 10-02-2015 a las 09:02:49
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -63,6 +63,38 @@ INSERT INTO `actividad` (`id`, `enunciado`, `fecha`, `evaluacion`, `activo`) VAL
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `alumno`
+--
+
+CREATE TABLE IF NOT EXISTS `alumno` (
+`id` int(12) NOT NULL COMMENT 'ID',
+  `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
+  `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
+  `primer_apellido` varchar(255) DEFAULT NULL COMMENT 'Primer Apellido',
+  `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
+  `email` varchar(255) DEFAULT NULL COMMENT 'Email'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=158 ;
+
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `primer_apellido`, `segundo_apellido`, `email`) VALUES
+(145, 'Betina  ', NULL, 'Guerra', 'Arroyo', NULL),
+(148, 'Guzmán ', NULL, 'Padron', 'Esquivel', NULL),
+(149, 'Haide', NULL, 'Tejada', 'Escalante', NULL),
+(150, 'Martial  ', NULL, 'Ledesma', 'Carvajal', NULL),
+(151, 'Matty  ', NULL, 'Peralta', 'Suárez', NULL),
+(152, 'Adaluz ', NULL, 'Jaime ', 'Valverde', NULL),
+(153, 'Milton', NULL, 'Suárez', ' Montés', NULL),
+(154, 'Mabel ', NULL, 'Alba ', 'Sisneros', NULL),
+(155, 'Lutero  ', NULL, 'Badillo', 'Pacheco', NULL),
+(156, 'Aisha ', NULL, 'Maya ', 'Olivas', NULL),
+(157, 'Millan  ', NULL, 'López', 'Ulloa', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `amistad`
 --
 
@@ -70,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `amistad` (
 `id` int(11) NOT NULL COMMENT 'Identificador',
   `id_usuario_1` int(11) DEFAULT NULL COMMENT 'Usuario',
   `id_usuario_2` int(11) DEFAULT NULL COMMENT 'Amigo'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `amistad`
@@ -81,7 +113,6 @@ INSERT INTO `amistad` (`id`, `id_usuario_1`, `id_usuario_2`) VALUES
 (2, 2, 4),
 (3, 2, 5),
 (4, 3, 8),
-(5, 11, 20),
 (6, 14, 15),
 (7, 2, 15),
 (8, 3, 17),
@@ -96,7 +127,8 @@ INSERT INTO `amistad` (`id`, `id_usuario_1`, `id_usuario_2`) VALUES
 (17, 5, 20),
 (18, 7, 13),
 (19, 15, 6),
-(20, 15, 7);
+(20, 15, 7),
+(21, 11, 1);
 
 -- --------------------------------------------------------
 
@@ -719,7 +751,7 @@ CREATE TABLE IF NOT EXISTS `documento` (
   `portada` tinyint(1) DEFAULT NULL COMMENT 'Portada',
   `destacado` tinyint(1) DEFAULT NULL COMMENT 'Destacado',
   `id_tipodocumento` int(6) DEFAULT NULL COMMENT 'Tipo'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=50 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=49 ;
 
 --
 -- Volcado de datos para la tabla `documento`
@@ -2579,7 +2611,7 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `contenido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Contenido',
   `id_usuario` int(11) DEFAULT NULL COMMENT 'Usuario',
   `fechacreacion` datetime DEFAULT NULL COMMENT 'Fecha de creación'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `publicacion`
@@ -2605,7 +2637,8 @@ INSERT INTO `publicacion` (`id`, `contenido`, `id_usuario`, `fechacreacion`) VAL
 (17, 'Menuda party hard que me acabo de pegar tete', 1, '2014-11-14 17:14:22'),
 (18, 'Rusty cole se considera un realista pero filosoficamente hablando un pesimista', 13, '2014-11-07 06:59:10'),
 (19, 'Skyler debe morir es tediosa no hay quien aguante eso', 13, '2014-11-10 10:08:06'),
-(20, 'El Pablo Motos cada dia lo veo mas alto o sera que los invitados ...', 13, '2014-11-22 15:40:22');
+(20, 'El Pablo Motos cada dia lo veo mas alto o sera que los invitados ...', 13, '2014-11-22 15:40:22'),
+(21, 'gsfr', 11, '2015-02-02 16:41:59');
 
 -- --------------------------------------------------------
 
@@ -2618,7 +2651,7 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
   `id_usuario` int(11) DEFAULT NULL COMMENT 'Id. Usuario',
   `id_pregunta` int(11) DEFAULT NULL COMMENT 'Id. Pregunta',
   `id_opcion` int(11) DEFAULT NULL COMMENT 'Id. Opción'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='respuesta' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='respuesta' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -2977,6 +3010,12 @@ ALTER TABLE `actividad`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `amistad`
 --
 ALTER TABLE `amistad`
@@ -3208,10 +3247,15 @@ ALTER TABLE `usuario`
 ALTER TABLE `actividad`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Numero',AUTO_INCREMENT=22;
 --
+-- AUTO_INCREMENT de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=158;
+--
 -- AUTO_INCREMENT de la tabla `amistad`
 --
 ALTER TABLE `amistad`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=21;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
@@ -3241,7 +3285,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREME
 -- AUTO_INCREMENT de la tabla `documento`
 --
 ALTER TABLE `documento`
-MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Num.',AUTO_INCREMENT=50;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Num.',AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT de la tabla `entrega`
 --
@@ -3336,12 +3380,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=10;
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=21;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `tema`
 --
