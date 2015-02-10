@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 10-02-2015 a las 09:02:49
+-- Tiempo de generación: 10-02-2015 a las 09:44:33
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -1100,7 +1100,8 @@ INSERT INTO `objeto` (`id`, `descripcion`) VALUES
 (37, 'tipotarea'),
 (38, 'estadotarea'),
 (39, 'proyecto'),
-(40, 'documentobonito');
+(40, 'documentobonito'),
+(41, 'alumno');
 
 -- --------------------------------------------------------
 
@@ -3097,6 +3098,12 @@ ALTER TABLE `metadocumento`
 -- Indices de la tabla `metadocumentos`
 --
 ALTER TABLE `metadocumentos`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `objeto`
+--
+ALTER TABLE `objeto`
  ADD PRIMARY KEY (`id`);
 
 --
