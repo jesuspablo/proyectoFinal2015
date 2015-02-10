@@ -39,6 +39,7 @@ import net.daw.control.operation.generic.specific.implementation.PreguntaControl
 import net.daw.control.operation.generic.specific.implementation.PublicacionControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.EstadoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.EstadotareaControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.ProfesorControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ProyectoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.RespuestaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TrabajoControlOperationGenSpImpl;
@@ -72,6 +73,7 @@ import net.daw.control.route.generic.specific.implementation.PublicacionControlR
 import net.daw.control.route.generic.specific.implementation.EstadoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.EstadotareaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.PedidoControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.ProfesorControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ProyectoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.RespuestaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TrabajoControlRouteGenSpImpl;
@@ -167,6 +169,11 @@ public class JsonControl extends HttpServlet {
                         ProductoControlRouteSpImpl oProductoRoute = new ProductoControlRouteSpImpl();
                         ProductoControlOperationSpImpl oProductoControlOperation = new ProductoControlOperationSpImpl(request);
                         jsonResult = oProductoRoute.execute(request, oProductoControlOperation);
+                        break;
+                    case "profesor":
+                        ProfesorControlRouteGenSpImpl oProfesorRoute = new ProfesorControlRouteGenSpImpl();
+                        ProfesorControlOperationGenSpImpl oProfesorControlOperation = new ProfesorControlOperationGenSpImpl(request);
+                        jsonResult = oProfesorRoute.execute(request, oProfesorControlOperation);
                         break;
                      case "alumno":
                         AlumnoControlRouteGenSpImpl oAlumnoRoute = new AlumnoControlRouteGenSpImpl();

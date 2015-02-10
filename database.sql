@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 10-02-2015 a las 09:44:33
+-- Tiempo de generación: 10-02-2015 a las 10:05:29
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -1101,7 +1101,8 @@ INSERT INTO `objeto` (`id`, `descripcion`) VALUES
 (38, 'estadotarea'),
 (39, 'proyecto'),
 (40, 'documentobonito'),
-(41, 'alumno');
+(41, 'alumno'),
+(42, 'profesor');
 
 -- --------------------------------------------------------
 
@@ -2496,6 +2497,40 @@ INSERT INTO `producto` (`id`, `codigo`, `descripcion`, `precio`, `id_tipoproduct
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `profesor`
+--
+
+CREATE TABLE IF NOT EXISTS `profesor` (
+`id` int(12) NOT NULL COMMENT 'ID',
+  `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
+  `email` varchar(255) DEFAULT NULL COMMENT 'Email',
+  `especialista` varchar(255) DEFAULT NULL COMMENT 'Especialista',
+  `primer_apellido` varchar(255) DEFAULT NULL COMMENT 'Primer Apellido',
+  `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
+  `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
+  `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- Volcado de datos para la tabla `profesor`
+--
+
+INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `primer_apellido`, `segundo_apellido`, `id_nivel`, `id_asignatura`) VALUES
+(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas', 'Coronado', NULL, NULL),
+(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos', 'Olivo', NULL, NULL),
+(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa', 'Zapata', NULL, NULL),
+(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna', 'Oguendo', NULL, NULL),
+(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño', 'Reyna', NULL, NULL),
+(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo', 'Navarro', NULL, NULL),
+(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza', 'herrera', NULL, NULL),
+(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho', 'Curiel', NULL, NULL),
+(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza', 'Fierro', NULL, NULL),
+(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame', 'Bahena', NULL, NULL),
+(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel', 'Agosto', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `propuesta`
 --
 
@@ -3155,6 +3190,12 @@ ALTER TABLE `producto`
  ADD PRIMARY KEY (`id`,`id_tipoproducto`,`id_proveedor`);
 
 --
+-- Indices de la tabla `profesor`
+--
+ALTER TABLE `profesor`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `propuesta`
 --
 ALTER TABLE `propuesta`
@@ -3368,6 +3409,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=69;
 --
 ALTER TABLE `producto`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=406;
+--
+-- AUTO_INCREMENT de la tabla `profesor`
+--
+ALTER TABLE `profesor`
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `propuesta`
 --
