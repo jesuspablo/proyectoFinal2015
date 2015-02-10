@@ -37,7 +37,7 @@
 </div>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Gestión de Usuarios</h3>
+        <h3 class="panel-title">Gestión d0e Usuarios</h3>
     </div>
     <div class="list-group">
         <a  class="list-group-item" id="lnkUsuario" href="jsp#/usuario">Usuario</a>

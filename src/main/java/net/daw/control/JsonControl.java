@@ -27,6 +27,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.daw.control.operation.generic.specific.implementation.AlumnoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.AmistadControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.CuestionarioControlOperationGenSpImpl;
 import net.daw.control.operation.specific.implementation.DetallePedidoControlOperationSpImpl;
@@ -60,6 +61,7 @@ import net.daw.control.operation.specific.implementation.ProveedorControlOperati
 import net.daw.control.operation.specific.implementation.TemaControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.TipoproductoControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.TipopropuestaControlOperationSpImpl;
+import net.daw.control.route.generic.specific.implementation.AlumnoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.AmistadControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.CuestionarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.DocumentoControlRouteGenSpImpl;
@@ -165,6 +167,11 @@ public class JsonControl extends HttpServlet {
                         ProductoControlRouteSpImpl oProductoRoute = new ProductoControlRouteSpImpl();
                         ProductoControlOperationSpImpl oProductoControlOperation = new ProductoControlOperationSpImpl(request);
                         jsonResult = oProductoRoute.execute(request, oProductoControlOperation);
+                        break;
+                     case "alumno":
+                        AlumnoControlRouteGenSpImpl oAlumnoRoute = new AlumnoControlRouteGenSpImpl();
+                        AlumnoControlOperationGenSpImpl oAlumnoControlOperation = new AlumnoControlOperationGenSpImpl(request);
+                        jsonResult = oAlumnoRoute.execute(request, oAlumnoControlOperation);
                         break;
                     case "proveedor":
                         ProveedorControlRouteSpImpl oProveedorRoute = new ProveedorControlRouteSpImpl();
