@@ -26,4 +26,5 @@ public class AlumnoServiceGenSpImpl extends TableServiceGenImpl {
         super(strObject, pojo, con);
     }
 
+ 
 }
