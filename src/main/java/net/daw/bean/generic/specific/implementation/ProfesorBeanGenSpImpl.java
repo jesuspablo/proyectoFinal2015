@@ -33,7 +33,7 @@ public class ProfesorBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
    @Expose
     private String primer_apellido = "";
    @Expose
-    private String segundo_rapellido = "";
+    private String segundo_apellido = "";
    @Expose
     private String especialista = "";
    
@@ -66,12 +66,12 @@ public class ProfesorBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
         this.primer_apellido = primer_apellido;
     }
 
-    public String getSegundo_rapellido() {
-        return segundo_rapellido;
+    public String getSegundo_apellido() {
+        return segundo_apellido;
     }
 
-    public void setSegundo_rapellido(String segundo_rapellido) {
-        this.segundo_rapellido = segundo_rapellido;
+    public void setSegundo_apellido(String segundo_rapellido) {
+        this.segundo_apellido = segundo_rapellido;
     }
 
     public String getEspecialista() {

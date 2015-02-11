@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 11-02-2015 a las 10:15:48
+-- Tiempo de generación: 11-02-2015 a las 10:30:02
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -1091,7 +1091,7 @@ INSERT INTO `objeto` (`id`, `descripcion`) VALUES
 (7, 'nivel'),
 (8, 'nota'),
 (9, 'trimestre'),
-(10, 'estado'),
+(10, 'administrador'),
 (11, 'impuesto'),
 (12, 'mensajeprivado'),
 (13, 'metadocumento'),
@@ -1121,9 +1121,7 @@ INSERT INTO `objeto` (`id`, `descripcion`) VALUES
 (37, 'tipotarea'),
 (38, 'estadotarea'),
 (39, 'proyecto'),
-(40, 'documentobonito'),
-(41, 'alumno'),
-(42, 'profesor');
+(40, 'documentobonito');
 
 -- --------------------------------------------------------
 
