@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 10-02-2015 a las 10:05:29
+-- Tiempo de generación: 11-02-2015 a las 10:15:48
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -59,6 +59,27 @@ INSERT INTO `actividad` (`id`, `enunciado`, `fecha`, `evaluacion`, `activo`) VAL
 (18, 'Actividad 18', '2014-12-21', 3, 1),
 (19, 'Actividad 19', '2014-11-21', 2, 1),
 (21, 'Actividad 20', '2014-11-06', 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `administrador`
+--
+
+CREATE TABLE IF NOT EXISTS `administrador` (
+  `id` int(6) NOT NULL COMMENT 'ID',
+  `email` varchar(255) DEFAULT NULL COMMENT 'Email',
+  `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
+  `apellidos` varchar(255) DEFAULT NULL COMMENT 'Apellidos'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`id`, `email`, `nombre`, `apellidos`) VALUES
+(1, 'AmnerisMerazQuintanilla@superrito.com ', 'Amneris ', 'Meraz Quintanilla'),
+(2, 'JoseSWeldon@superrito.com ', 'Jose ', 'S. Weldon');
 
 -- --------------------------------------------------------
 
@@ -1061,15 +1082,15 @@ CREATE TABLE IF NOT EXISTS `objeto` (
 --
 
 INSERT INTO `objeto` (`id`, `descripcion`) VALUES
-(1, 'actividad'),
-(2, 'amistad'),
-(3, 'cliente'),
-(4, 'comentario'),
-(5, 'compra'),
-(6, 'cuestionario'),
-(7, 'detalle_pedido'),
-(8, 'documento'),
-(9, 'entrega'),
+(1, 'alumno'),
+(2, 'profesor'),
+(3, 'asignatura'),
+(4, 'asistencia'),
+(5, 'colegio'),
+(6, 'horario'),
+(7, 'nivel'),
+(8, 'nota'),
+(9, 'trimestre'),
 (10, 'estado'),
 (11, 'impuesto'),
 (12, 'mensajeprivado'),
@@ -1389,7 +1410,7 @@ CREATE TABLE IF NOT EXISTS `operacion` (
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción',
   `id_objeto` int(6) DEFAULT NULL COMMENT 'ID Objeto',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=460 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=461 ;
 
 --
 -- Volcado de datos para la tabla `operacion`
@@ -1843,7 +1864,8 @@ INSERT INTO `operacion` (`id`, `descripcion`, `id_objeto`, `id_tipooperacion`) V
 (456, 'existeamigo', 2, 1),
 (457, 'duplicate', 26, 2),
 (458, 'getcomentarioamigo', 26, 1),
-(459, 'getpagescomentarioamigo', 26, 1);
+(459, 'getpagescomentarioamigo', 26, 1),
+(460, 'get', 41, 1);
 
 -- --------------------------------------------------------
 
@@ -2925,7 +2947,7 @@ INSERT INTO `tipotema` (`id`, `nombre`) VALUES
 CREATE TABLE IF NOT EXISTS `tipousuario` (
 `id` int(11) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `tipousuario`
@@ -2933,8 +2955,10 @@ CREATE TABLE IF NOT EXISTS `tipousuario` (
 
 INSERT INTO `tipousuario` (`id`, `descripcion`) VALUES
 (1, 'Administrador'),
-(2, 'Usuario'),
-(3, 'Visitante');
+(2, 'profesor'),
+(3, 'alumno'),
+(4, 'padre 0 tutore'),
+(5, 'usuario visitante');
 
 -- --------------------------------------------------------
 
@@ -3378,7 +3402,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=257;
 -- AUTO_INCREMENT de la tabla `operacion`
 --
 ALTER TABLE `operacion`
-MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Operación',AUTO_INCREMENT=460;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Operación',AUTO_INCREMENT=461;
 --
 -- AUTO_INCREMENT de la tabla `ordenador`
 --
@@ -3478,7 +3502,7 @@ MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Categoría',AUTO_INCREMEN
 -- AUTO_INCREMENT de la tabla `tipousuario`
 --
 ALTER TABLE `tipousuario`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `trabajo`
 --
