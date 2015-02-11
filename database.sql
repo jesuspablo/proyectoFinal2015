@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `ausiasyield2014`
+-- Base de datos: `proyectoFinal2015`
 --
 
 -- --------------------------------------------------------
