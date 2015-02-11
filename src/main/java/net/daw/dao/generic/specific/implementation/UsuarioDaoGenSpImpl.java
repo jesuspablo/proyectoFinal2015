@@ -72,7 +72,6 @@ public class UsuarioDaoGenSpImpl extends TableDaoGenImpl<UsuarioBeanGenSpImpl> {
                         oUsuarioBean.setPassword(null);
                         
                         oUsuarioBean.setId_tipousuario(Integer.parseInt(oMysql.getOne(strTableName, "id_tipousuario", oUsuarioBean.getId())));
-                        oUsuarioBean.setId_estado(Integer.parseInt(oMysql.getOne(strTableName, "id_estado", oUsuarioBean.getId())));
 
                         TipousuarioBeanGenSpImpl oTipousuario = new TipousuarioBeanGenSpImpl();
                         oTipousuario.setId(Integer.parseInt(oMysql.getOne(strTableName, "id_tipousuario", oUsuarioBean.getId())));
