@@ -21,26 +21,21 @@ import net.daw.bean.generic.implementation.BeanGenImpl;
 import net.daw.bean.publicinterface.BeanInterface;
 import com.google.gson.annotations.Expose;
 
-public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
+public class NivelBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
-    public AlumnoBeanGenSpImpl() {
+    public NivelBeanGenSpImpl() {
     }
-    
     @Expose
     private String nombre = "";
    @Expose
-    private String primer_apellido = "";
+    private String nivel = "";
    @Expose
-    private String segundo_apellido = "";
+    private String curso = "";
+    @Expose
+    private String aula = "";
   
-   
-   
-     @Expose
-    private String email = "";
-   
-   
 
-    public AlumnoBeanGenSpImpl(Integer id) {
+    public NivelBeanGenSpImpl(Integer id) {
         super(id);
     }
 
@@ -52,31 +47,29 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         this.nombre = nombre;
     }
 
-    public String getPrimer_apellido() {
-        return primer_apellido;
+    public String getNivel() {
+        return nivel;
     }
 
-    public void setPrimer_apellido(String primer_apellido) {
-        this.primer_apellido = primer_apellido;
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
-    public String getSegundo_apellido() {
-        return segundo_apellido;
+    public String getCurso() {
+        return curso;
     }
 
-    public void setSegundo_apellido(String segundo_rapellido) {
-        this.segundo_apellido = segundo_rapellido;
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
-   
-
-    public String getEmail() {
-        return email;
+    public String getAula() {
+        return aula;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAula(String aula) {
+        this.aula = aula;
     }
-
     
+
 }

@@ -27,8 +27,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.daw.control.operation.generic.specific.implementation.AdministradorControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.AlumnoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.AmistadControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.AsignaturaControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.AsistenciaControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.ColegioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.CuestionarioControlOperationGenSpImpl;
 import net.daw.control.operation.specific.implementation.DetallePedidoControlOperationSpImpl;
 import net.daw.control.operation.generic.specific.implementation.DocumentoControlOperationGenSpImpl;
@@ -39,6 +43,9 @@ import net.daw.control.operation.generic.specific.implementation.PreguntaControl
 import net.daw.control.operation.generic.specific.implementation.PublicacionControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.EstadoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.EstadotareaControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.HorarioControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.NivelControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.NotaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ProfesorControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ProyectoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.RespuestaControlOperationGenSpImpl;
@@ -47,6 +54,7 @@ import net.daw.control.operation.generic.specific.implementation.TipodocumentoCo
 import net.daw.control.operation.generic.specific.implementation.TipotareaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipotemaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipousuarioControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.TrimestreControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioProveedorControlOperationGenSpimpl;
 import net.daw.control.operation.specific.implementation.OrdenadorControlOperationSpImpl;
@@ -62,8 +70,12 @@ import net.daw.control.operation.specific.implementation.ProveedorControlOperati
 import net.daw.control.operation.specific.implementation.TemaControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.TipoproductoControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.TipopropuestaControlOperationSpImpl;
+import net.daw.control.route.generic.specific.implementation.AdministradorControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.AlumnoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.AmistadControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.AsignaturaControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.AsistenciaControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.ColegioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.CuestionarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.DocumentoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.DocumentobonitoControlRouteGenSpImpl;
@@ -72,6 +84,9 @@ import net.daw.control.route.generic.specific.implementation.OpcionControlRouteG
 import net.daw.control.route.generic.specific.implementation.PublicacionControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.EstadoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.EstadotareaControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.HorarioControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.NivelControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.NotaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.PedidoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ProfesorControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ProyectoControlRouteGenSpImpl;
@@ -81,6 +96,7 @@ import net.daw.control.route.generic.specific.implementation.TipodocumentoContro
 import net.daw.control.route.generic.specific.implementation.TipotareaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipotemaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipousuarioControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.TrimestreControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioProveedorControlRouteGenSpImpl;
 import net.daw.control.route.specific.implementation.OrdenadorControlRouteSpImpl;
@@ -324,6 +340,46 @@ public class JsonControl extends HttpServlet {
                         TipotareaControlRouteGenSpImpl oTipotareaRoute = new TipotareaControlRouteGenSpImpl();
                         TipotareaControlOperationGenSpImpl oTipotareaControlOperation = new TipotareaControlOperationGenSpImpl(request);
                         jsonResult = oTipotareaRoute.execute(request, oTipotareaControlOperation);
+                        break;
+                        case "administrador":
+                        AdministradorControlRouteGenSpImpl oAdministradorRoute = new AdministradorControlRouteGenSpImpl();
+                        AdministradorControlOperationGenSpImpl oAdministradorControlOperation = new AdministradorControlOperationGenSpImpl(request);
+                        jsonResult = oAdministradorRoute.execute(request, oAdministradorControlOperation);
+                        break;                   
+                    case "asignatura":
+                        AsignaturaControlRouteGenSpImpl oAsignaturaRoute = new AsignaturaControlRouteGenSpImpl();
+                        AsignaturaControlOperationGenSpImpl oAsignaturaControlOperation = new AsignaturaControlOperationGenSpImpl(request);
+                        jsonResult = oAsignaturaRoute.execute(request, oAsignaturaControlOperation);
+                        break;
+                    case "asistencia":
+                        AsistenciaControlRouteGenSpImpl oAsistenciaRoute = new AsistenciaControlRouteGenSpImpl();
+                        AsistenciaControlOperationGenSpImpl oAsistenciaControlOperation = new AsistenciaControlOperationGenSpImpl(request);
+                        jsonResult = oAsistenciaRoute.execute(request, oAsistenciaControlOperation);
+                        break;
+                    case "colegio":
+                        ColegioControlRouteGenSpImpl oColegioRoute = new ColegioControlRouteGenSpImpl();
+                        ColegioControlOperationGenSpImpl oColegioControlOperation = new ColegioControlOperationGenSpImpl(request);
+                        jsonResult = oColegioRoute.execute(request, oColegioControlOperation);
+                        break;
+                    case "horario":
+                        HorarioControlRouteGenSpImpl oHorarioRoute = new HorarioControlRouteGenSpImpl();
+                        HorarioControlOperationGenSpImpl oHorarioControlOperation = new HorarioControlOperationGenSpImpl(request);
+                        jsonResult = oHorarioRoute.execute(request, oHorarioControlOperation);
+                        break;
+                    case "nivel":
+                        NivelControlRouteGenSpImpl oNivelRoute = new NivelControlRouteGenSpImpl();
+                        NivelControlOperationGenSpImpl oNivelControlOperation = new NivelControlOperationGenSpImpl(request);
+                        jsonResult = oNivelRoute.execute(request, oNivelControlOperation);
+                        break;
+                    case "nota":
+                        NotaControlRouteGenSpImpl oNotaRoute = new NotaControlRouteGenSpImpl();
+                        NotaControlOperationGenSpImpl oNotaControlOperation = new NotaControlOperationGenSpImpl(request);
+                        jsonResult = oNotaRoute.execute(request, oNotaControlOperation);
+                        break;                   
+                    case "trimestre":
+                        TrimestreControlRouteGenSpImpl oTrimestreRoute = new TrimestreControlRouteGenSpImpl();
+                        TrimestreControlOperationGenSpImpl oTrimestreControlOperation = new TrimestreControlOperationGenSpImpl(request);
+                        jsonResult = oTrimestreRoute.execute(request, oTrimestreControlOperation);
                         break;
                         
 

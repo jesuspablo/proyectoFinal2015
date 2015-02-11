@@ -21,27 +21,29 @@ import net.daw.bean.generic.implementation.BeanGenImpl;
 import net.daw.bean.publicinterface.BeanInterface;
 import com.google.gson.annotations.Expose;
 
-public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
+public class AdministradorBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
-    public AlumnoBeanGenSpImpl() {
+    public AdministradorBeanGenSpImpl() {
     }
-    
-    @Expose
+ @Expose
+    private String email = "";
+  @Expose
     private String nombre = "";
    @Expose
-    private String primer_apellido = "";
-   @Expose
-    private String segundo_apellido = "";
-  
-   
-   
-     @Expose
-    private String email = "";
-   
-   
+    private String apellidos = "";
 
-    public AlumnoBeanGenSpImpl(Integer id) {
+
+
+    public AdministradorBeanGenSpImpl(Integer id) {
         super(id);
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNombre() {
@@ -52,31 +54,13 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         this.nombre = nombre;
     }
 
-    public String getPrimer_apellido() {
-        return primer_apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setPrimer_apellido(String primer_apellido) {
-        this.primer_apellido = primer_apellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
-
-    public String getSegundo_apellido() {
-        return segundo_apellido;
-    }
-
-    public void setSegundo_apellido(String segundo_rapellido) {
-        this.segundo_apellido = segundo_rapellido;
-    }
-
-   
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     
+
 }
