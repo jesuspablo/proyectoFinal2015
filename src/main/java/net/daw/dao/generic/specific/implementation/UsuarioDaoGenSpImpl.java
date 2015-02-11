@@ -102,7 +102,6 @@ public class UsuarioDaoGenSpImpl extends TableDaoGenImpl<UsuarioBeanGenSpImpl> {
             }
             oMysql.updateOne(oUsuarioBean.getId(), strTableName, "login", oUsuarioBean.getLogin());
             oMysql.updateOne(oUsuarioBean.getId(), strTableName, "id_tipousuario", oUsuarioBean.getId_tipousuario().toString());
-            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "id_estado", oUsuarioBean.getId_estado().toString());
             oMysql.updateOne(oUsuarioBean.getId(), strTableName, "ciudad", oUsuarioBean.getCiudad());
             oMysql.updateOne(oUsuarioBean.getId(), strTableName, "firma", oUsuarioBean.getFirma());
             oMysql.updateOne(oUsuarioBean.getId(), strTableName, "skin", oUsuarioBean.getSkin());
