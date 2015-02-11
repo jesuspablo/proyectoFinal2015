@@ -31,8 +31,7 @@ public class OpcionBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     private String valor = "";
     @Expose(serialize = false)
     private Integer id_pregunta = 0; //importante inicializar a 0 las claves ajenas
-    @Expose(deserialize = false)
-    private PreguntaBeanGenSpImpl obj_pregunta = null; // CAMBIAR POR PREGUNTA
+    
     
     public OpcionBeanGenSpImpl() {
     }
@@ -64,13 +63,5 @@ public class OpcionBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     /**
      * @return the obj_pregunta
      */
-    public PreguntaBeanGenSpImpl getObj_pregunta() {
-        return obj_pregunta;
-    }
-    /**
-     * @param obj_pregunta the obj_producto to set
-     */
-    public void setObj_pregunta(PreguntaBeanGenSpImpl obj_pregunta) {
-        this.obj_pregunta = obj_pregunta;
-    }
+  
 }

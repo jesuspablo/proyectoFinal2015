@@ -19,7 +19,6 @@ package net.daw.dao.generic.specific.implementation;
 
 import net.daw.dao.generic.implementation.TableDaoGenImpl;
 import java.sql.Connection;
-import net.daw.bean.generic.specific.implementation.EstadoBeanGenSpImpl;
 import net.daw.bean.generic.specific.implementation.TipousuarioBeanGenSpImpl;
 import net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl;
 import net.daw.data.specific.implementation.MysqlDataSpImpl;
@@ -71,9 +70,6 @@ public class UsuarioDaoGenSpImpl extends TableDaoGenImpl<UsuarioBeanGenSpImpl> {
                     if (expand > 0) {
                         oUsuarioBean.setLogin(oMysql.getOne(strTableName, "login", oUsuarioBean.getId()));
                         oUsuarioBean.setPassword(null);
-                        oUsuarioBean.setCiudad(oMysql.getOne(strTableName, "ciudad", oUsuarioBean.getId()));
-                        oUsuarioBean.setFirma(oMysql.getOne(strTableName, "firma", oUsuarioBean.getId()));
-                        oUsuarioBean.setSkin(oMysql.getOne(strTableName, "skin", oUsuarioBean.getId()));
                         
                         oUsuarioBean.setId_tipousuario(Integer.parseInt(oMysql.getOne(strTableName, "id_tipousuario", oUsuarioBean.getId())));
                         oUsuarioBean.setId_estado(Integer.parseInt(oMysql.getOne(strTableName, "id_estado", oUsuarioBean.getId())));
@@ -84,11 +80,7 @@ public class UsuarioDaoGenSpImpl extends TableDaoGenImpl<UsuarioBeanGenSpImpl> {
                         oTipousuario = oTipousuarioDAO.get(oTipousuario, AppConfigurationHelper.getJsonDepth());                        
                         oUsuarioBean.setObj_tipousuario(oTipousuario);
                         
-                        EstadoBeanGenSpImpl oEstado = new EstadoBeanGenSpImpl();
-                        oEstado.setId(Integer.parseInt(oMysql.getOne(strTableName, "id_estado", oUsuarioBean.getId())));
-                        EstadoDaoGenSpImpl oEstadoDAO = new EstadoDaoGenSpImpl("estado", oConnection);
-                        oEstado = oEstadoDAO.get(oEstado, AppConfigurationHelper.getJsonDepth());                        
-                        oUsuarioBean.setObj_estado(oEstado);
+                        
                     }
                 }
             } catch (Exception ex) {
