@@ -14,9 +14,56 @@ body {
     padding-top: 80px;
 }
 
-.jumbotron {
+//clases para el colegio
+.colegio {
+    float: left;
+    
+    
+}
 
-    background-color: #f0a30a ;
+.jumbotron1, .jumbotron2, .jumbotron3 { 
+      
+    color: blue;
+    border: 5px solid blue;
+    border-radius: 5px;
+    //float: left;    
+    margin: 5px;
+}
+
+.jumbotron1 {
+     width: 300px;
+    height: 380px;
+    
+}
+
+.jumbotron3 {
+     width: 300px;
+    height: 150px;
+    
+}
+
+.jumbotron2 {
+     width: 800px;
+    height: 700px;
+    
+}
+
+.jumbotron {  
+    width: 300px;
+    height: 150px; 
+    color: blue;
+    border: 5px solid blue;
+    border-radius: 5px;
+    margin: 5px;
+    
+}
+
+.jumbotron, .jumbotron1, .jumbotron3 {
+    float: left;
+}
+
+.jumbotron2 {
+    float: right;
 }
 
 .panel-default>.panel-heading {
