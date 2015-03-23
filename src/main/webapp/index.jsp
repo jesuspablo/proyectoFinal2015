@@ -36,7 +36,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ajax Yield</title>
+        <title>Proyecto final 2015</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -181,15 +181,7 @@
         <script src="js/specific/opcion/control.js" charset="UTF-8"></script>
         <script src="js/specific/opcion/model.js" charset="UTF-8"></script>
         <script src="js/specific/opcion/view.js" charset="UTF-8"></script>
-        <script src="js/specific/opcion/routes.js" charset="UTF-8"></script>
-
-        <!-- ***********  RED SOCIAL  *********** -->
-       
-        
-       
-        
-          <!-- ***********  FIN RED SOCIAL  *********** -->
-
+        <script src="js/specific/opcion/routes.js" charset="UTF-8"></script>        
        
 
         <script src="js/specific/usuario/control.js" charset="UTF-8"></script>
@@ -204,6 +196,11 @@
         <script src="js/specific/tipousuario/model.js" charset="UTF-8"></script>
         <script src="js/specific/tipousuario/view.js" charset="UTF-8"></script>
         <script src="js/specific/tipousuario/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/model.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/view.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/routes.js" charset="UTF-8"></script>
 
        
        
@@ -231,8 +228,10 @@
 
 
                 fOpcionRoutes();
+                falumnoRoutes();
                 fUsuarioRoutes();
                 fRespuestaRoutes();
+                fTipodocumentoRoutes();
                 
 
 

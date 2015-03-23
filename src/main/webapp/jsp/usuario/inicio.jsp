@@ -38,12 +38,12 @@
 			</div>
 		<nav class="menu">
 			
-			<ul>
-				<li class="li-about-me selected"><a href="#inicio">Inicio</a></li>
-				<li class="li-blog"><a href="#secretaria">Secretaria</a></li>
-				<li class="li-project"><a href="#novedades">Novedades</a></li>				
-				<li class="li-contact"><a href="#contact">Contactanos</a></li>
-
+		<ul>
+			<li class="li-about-me selected"><a href="#inicio">Inicio</a></li>
+			<li class="li-blog"><a href="#secretaria">Secretaria</a></li>
+			<li class="li-project"><a href="#novedades">Novedades</a></li>				
+			<li class="li-contact"><a href="#contact">Contactanos</a></li>
+                </lu>
 		</nav>
         </header>
 	<div class="contenedor">            
@@ -57,25 +57,19 @@
 
     <div class="jumbotron2">
         <h2>ZONA DE CONTENIDO</h2>
+        
     </div>
 
 
     <div class="jumbotron1">
         <h2>MENU</h2> 
-        <table>
-            <thead>
-            <th>MENU PRINCIPAL</th>
-            </thead>
-             </table>
+        
         <ul>
             <li class="li-blog"><a href="#inicio">Inicio</a></li>
         </ul>
          <ul>
            <li class="li-blog"><a href="#secretaria">Secretaria</a></li>
-        </ul>
-         <ul>
-            <li class="li-blog"><a href="#novedades">Aula Virtual</a></li>
-        </ul>
+        </ul>         
         <ul>
             <li class="li-blog"><a href="#contact">Contact</a></li>
             <ul>
@@ -87,17 +81,26 @@
 
     </div>
     
-<div class="jumbotron3">
-    <h2>LOGIN INFORMACION DEL USUARIO</h2>
-</div>
-    
-
+    <div class="jumbotron3">
+        <h2>LOGIN INFORMACION DEL USUARIO</h2>
+    </div>  
 
 
     </div>
 <div>
-	
-    
-    
+    <script type="text/javascript">
+
+            $(document).ready(function () {
+
+             
+             
+             
+             
+             
+
+            });
+
+        </script>
+        
 </body>
 </html>

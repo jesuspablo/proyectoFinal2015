@@ -31,16 +31,15 @@
     <li><a href="jsp">Inicio</a></li>
     <li><a href="jsp#/usuario">Usuarios</a></li>
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimientos <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cursos <b class="caret"></b></a>
         <ul class="dropdown-menu">
-            <li><a href="#">Vacío</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">División</li>
-            <li><a href="#">Vacío</a></li>
-            <li><a href="#">Vacío</a></li>
-            <li class="divider"></li>
-            <li class="divider"></li>
-            <li class="divider"></li>                       
+            <li><a href="jsp#/documento">Documento</a></li>            
+            <li><a href="jsp#/cuestionario">Cuestionario</a></li>
+            <li><a href="jsp#/pregunta">Pregunta</a></li>
+            <li><a href="jsp#/opcion">Opcion</a></li>
+            <li><a href="jsp#/proveedor">Proveedor</a></li>
+            <li><a href="jsp#/impuesto">Impuesto</a></li>
+            <li><a href="jsp#/pedido">Pedido</a></li>                    
         </ul>
     </li>    
 </ul>

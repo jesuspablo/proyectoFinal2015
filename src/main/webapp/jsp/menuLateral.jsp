@@ -25,7 +25,7 @@
         id_usuario = user.getId();
     }
 %>
-
+<br /><br /><br /><br />
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Sesión</h3>
@@ -37,7 +37,7 @@
 </div>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Gestión d0e Usuarios</h3>
+        <h3 class="panel-title">Gestión de Usuarios</h3>
     </div>
     <div class="list-group">
         <a  class="list-group-item" id="lnkUsuario" href="jsp#/usuario">Usuario</a>
@@ -48,11 +48,15 @@
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Mantenimientos</h3>
+        <h3 class="panel-title">Cursos</h3>
     </div>
     <div class="list-group">
+        <a  class="list-group-item" id="lnkDocumento" href="jsp#/documento">Documento</a> 
+        <a  class="list-group-item" id="lnkDocumento" href="jsp#/tipodocumento">TipoDocumento</a> 
         <a  class="list-group-item" id="lnkOrdenador" href="jsp#/usuario">Usuario</a> 
-    </div>
+        <a class="list-group-item" id="lnkProveedor" href="jsp#/proveedor">Proveedor</a>
+        <a class="list-group-item" id="lnkPedido" href="jsp#/pedido">Pedido</a>
+        </div>
 </div>
 
 <div class="panel panel-primary">
@@ -61,6 +65,8 @@
     </div>
     <div class="list-group">
         <a  class="list-group-item" id="lnkOrdenador" href="jsp?op=cambia">Cambia el campo</a>
+        <a class="list-group-item" id="lnkalumno" href="jsp#/alumno">alumno</a>
+
     </div>
 </div>
 
