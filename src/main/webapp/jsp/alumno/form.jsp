@@ -16,7 +16,7 @@
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
 
-<form class="form-horizontal" role="form" action="#" id="temaForm" name="formulario">
+<form class="form-horizontal" role="form" action="#" id="alumnoForm" name="formulario">
     <div class="form-group">
         <label class="col-sm-2 control-label" for="id">Id:</label>
         <div class="col-sm-2">
@@ -24,21 +24,43 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="nombre">Titulo del tema:</label>
+        <label class="col-sm-2 control-label"  for="nombre">Nobre:</label>
         <div class="col-sm-6">
-            <input type="text" id="nombre" class="form-control"  name="nombre" size="15" placeholder="Título del tema" />
+            <input type="text" id="nombre" class="form-control"  name="nombre" size="15" placeholder="Título del alumno" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-sm-2 control-label"  for="primer_apellido">Primer apellido:</label>
+        <div class="col-sm-6">
+            <input type="text" id="primer_apellido" class="form-control"  name="primer_apellido" size="15" placeholder="Título del alumno" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-sm-2 control-label"  for="segundo_apellido">Segundo apellido:</label>
+        <div class="col-sm-6">
+            <input type="text" id="segundo_apellido" class="form-control"  name="segundo_apellido" size="15" placeholder="Título del alumno" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-sm-2 control-label"  for="Email">Email:</label>
+        <div class="col-sm-6">
+            <input type="text" id="Email" class="form-control"  name="Email" size="15" placeholder="Título del alumno" />
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label" for="obj_tipotema_id">Categoría: </label> 
+        <label class="col-sm-2 control-label" for="obj_nivel_id">nivel: </label> 
         <div class="col-sm-2">              
-            <input readonly="true"  class="form-control"  id="obj_tipotema_id" class="input-mini" name="id_tipotema" type="text" size="5" maxlength="5" />  
+            <input readonly="true"  class="form-control"  id="obj_nivel_id" class="input-mini" name="id_nivel" type="text" size="5" maxlength="5" />  
         </div>
+        
         <div class="col-sm-1">              
-            <a class="btn btn-primary btn-sm" id="obj_tipotema_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
+            <a class="btn btn-primary btn-sm" id="obj_nivel_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
         </div>        
-        <label class="col-sm-7" for="obj_tipotema_desc" id="obj_tipotema_desc"></label>                     
+        <label class="col-sm-7" for="obj_nivel_desc" id="obj_nivel_desc"></label>                     
     </div>
     
     <div class="form-group">
@@ -71,7 +93,7 @@
 
     $(document).ready(function() {
         //http://jqueryvalidation.org/documentation/
-        $('#temaForm')
+        $('#alumnoForm')
                 .bootstrapValidator({
                     container: '#messages',
                     feedbackIcons: {
@@ -83,11 +105,11 @@
                         nombre: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir un título de tema'
+                                    message: 'Debe introducir un título de alumno'
                                 },
                                 stringLength: {
                                     max: 255,
-                                    message: 'El título del tema debe tener como máximo 255 caracteres'
+                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
                                 }
                             }
                         },
@@ -101,7 +123,7 @@
                                 }
                             }
                         },
-                        id_tipotema: {
+                        id_nivel: {
                             validators: {
                                 notEmpty: {
                                     message: 'Debe elegir un tipo de documento'
@@ -114,11 +136,11 @@
                     }
                 })
                 .on('change', '[name="id_usuario"]', function() {
-                    $('#temaForm').bootstrapValidator('revalidateField', 'id_usuario');
+                    $('#alumnoForm').bootstrapValidator('revalidateField', 'id_usuario');
                 })
 
-                .on('change', '[name="id_tipotema"]', function() {
-                    $('#temaForm').bootstrapValidator('revalidateField', 'id_tipotema');
+                .on('change', '[name="id_nivel"]', function() {
+                    $('#alumnoForm').bootstrapValidator('revalidateField', 'id_nivel');
                 })
                 ;
     });       

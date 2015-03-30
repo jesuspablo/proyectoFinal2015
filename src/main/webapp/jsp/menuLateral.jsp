@@ -41,6 +41,7 @@
     </div>
     <div class="list-group">
         <a  class="list-group-item" id="lnkUsuario" href="jsp#/usuario">Usuario</a>
+        
     </div>
 </div>
 
@@ -91,7 +92,7 @@
     </div>
     <div class="list-group">
         <a  class="list-group-item" id="lnkTipotema" href="jsp#/tipotema">Categoría</a> 
-        <a  class="list-group-item" id="lnkTema" href="jsp#/tema">Tema</a> 
+        <a  class="list-group-item" id="lnkAlumno" href="jsp#/alumno">Alumno</a> 
         <a  class="list-group-item" id="lnkPost" href="jsp#/post">Post</a> 
         <a  class="list-group-item" id="lnkMensajeprivado" href="jsp#/mensajeprivado">Mensaje privado</a> 
 

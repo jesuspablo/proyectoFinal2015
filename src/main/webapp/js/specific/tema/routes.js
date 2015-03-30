@@ -17,61 +17,61 @@
  */
 
 
-function fTemaRoutes() {
+function fAlumnoRoutes() {
 
-//    Path.map("#/tema").to(function () {
+//    Path.map("#/alumno").to(function () {
 //        $('#indexContenidoJsp').spinner();
-//        control('tema').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
-//        //temaControl.modalListEventsLoading(temaObject, temaView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+//        control('alumno').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
+//        //alumnoControl.modalListEventsLoading(alumnoObject, alumnoView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
 //        $('#indexContenidoJsp').empty();
 //        return false;
 //    });
 
-    Path.map("#/tema").to(function () {
+    Path.map("#/alumno").to(function () {
         $('#indexContenidoJsp').spinner();
-        oTemaControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oTemaModel, oTemaView);
-        //temaControl.modalListEventsLoading(temaObject, temaView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+        oAlumnoControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oAlumnoModel, oAlumnoView);
+        //alumnoControl.modalListEventsLoading(alumnoObject, alumnoView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
         $('#indexContenidoJsp').empty();
-        //$('#indexContenidoJsp').append(oTemaControl.getClassNameTema());
+        //$('#indexContenidoJsp').append(oAlumnoControl.getClassNameAlumno());
         return false;
     });
 
-    Path.map("#/tema/list/:url").to(function () {
+    Path.map("#/alumno/list/:url").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oTemaControl.list($('#indexContenido'), paramsObject, null, oTemaModel, oTemaView);
-        $('#indexContenidoJsp').empty();
-        return false;
-    });
-
-    Path.map("#/tema/view/:id").to(function () {
-        $('#indexContenidoJsp').spinner();
-        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oTemaControl.view($('#indexContenido'), paramsObject['id'], oTemaModel, oTemaView);
-        $('#indexContenidoJsp').empty();
-
-        return false;
-    });
-
-    Path.map("#/tema/edit/:id").to(function () {
-        $('#indexContenidoJsp').spinner();
-        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oTemaControl.edit($('#indexContenido'), paramsObject['id'], oTemaModel, oTemaView);
-        $('#indexContenidoJsp').empty();
-    });
-
-    Path.map("#/tema/new").to(function () {
-        $('#indexContenidoJsp').spinner();
-        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oTemaControl.new($('#indexContenido'), null, oTemaModel, oTemaView);
+        oAlumnoControl.list($('#indexContenido'), paramsObject, null, oAlumnoModel, oAlumnoView);
         $('#indexContenidoJsp').empty();
         return false;
     });
 
-    Path.map("#/tema/remove/:id").to(function () {
+    Path.map("#/alumno/view/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oTemaControl.remove($('#indexContenido'), paramsObject['id'], oTemaModel, oTemaView);
+        oAlumnoControl.view($('#indexContenido'), paramsObject['id'], oAlumnoModel, oAlumnoView);
+        $('#indexContenidoJsp').empty();
+
+        return false;
+    });
+
+    Path.map("#/alumno/edit/:id").to(function () {
+        $('#indexContenidoJsp').spinner();
+        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        oAlumnoControl.edit($('#indexContenido'), paramsObject['id'], oAlumnoModel, oAlumnoView);
+        $('#indexContenidoJsp').empty();
+    });
+
+    Path.map("#/alumno/new").to(function () {
+        $('#indexContenidoJsp').spinner();
+        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        oAlumnoControl.new($('#indexContenido'), null, oAlumnoModel, oAlumnoView);
+        $('#indexContenidoJsp').empty();
+        return false;
+    });
+
+    Path.map("#/alumno/remove/:id").to(function () {
+        $('#indexContenidoJsp').spinner();
+        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        oAlumnoControl.remove($('#indexContenido'), paramsObject['id'], oAlumnoModel, oAlumnoView);
         $('#indexContenidoJsp').empty();
         return false;
     });

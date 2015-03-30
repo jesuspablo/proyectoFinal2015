@@ -36,7 +36,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ajax Yield</title>
+        <title>Proyecto Final</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -257,10 +257,10 @@
         <script src="js/specific/tipotema/view.js" charset="UTF-8"></script>
         <script src="js/specific/tipotema/routes.js" charset="UTF-8"></script>
 
-        <script src="js/specific/tema/control.js" charset="UTF-8"></script>
-        <script src="js/specific/tema/model.js" charset="UTF-8"></script>
-        <script src="js/specific/tema/view.js" charset="UTF-8"></script>
-        <script src="js/specific/tema/routes.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/model.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/view.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/routes.js" charset="UTF-8"></script>
 
         <script src="js/specific/post/control.js" charset="UTF-8"></script>
         <script src="js/specific/post/model.js" charset="UTF-8"></script>
@@ -359,6 +359,7 @@
         <script src="js/specific/producto/view.js" charset="UTF-8"></script>
         <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
 
+        
 
         <script src="js/specific/tipodocumento/model.js" charset="UTF-8"></script>
 
@@ -373,7 +374,7 @@
                 inicializacion();
 
 
-                fDocumentoRoutes();
+                fDocumentoRoutes();                
                 fTipotareaRoutes();
                 fTrabajoRoutes();
                 fEstadotareaRoutes();
@@ -388,7 +389,7 @@
                 fInicioRedSocialRoutes();
                 fPostRoutes();
                 fMensajeprivadoRoutes();
-                fTemaRoutes();
+                fAlumnoRoutes();
                 fTipotemaRoutes();
                 fEstadoRoutes();
                 fProveedorRoutes();

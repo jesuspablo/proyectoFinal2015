@@ -16,16 +16,16 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-var temaControl = function (strClase) {
+var alumnoControl = function (strClase) {
     this.clase = strClase;
 };
-temaControl.prototype = new control('tema');
-temaControl.prototype.getClassNameTema = function () {
+alumnoControl.prototype = new control('alumno');
+alumnoControl.prototype.getClassNameAlumno = function () {
     return this.getClassName() + "Control";
 };
-var oTemaControl = new temaControl('tema');
+var oAlumnoControl = new alumnoControl('alumno');
 
-temaControl.prototype.list = function (place, objParams, callback, oModel, oView) {
+alumnoControl.prototype.list = function (place, objParams, callback, oModel, oView) {
     var thisObject = this;
     objParams = param().validateUrlObjectParameters(objParams);
     //get all data from server in one http call and store it in cache
@@ -109,7 +109,7 @@ temaControl.prototype.list = function (place, objParams, callback, oModel, oView
 
 };
 
-temaControl.prototype.edit = function (place, id, oModel, oView) {
+alumnoControl.prototype.edit = function (place, id, oModel, oView) {
     var thisObject = this;
     $(place).empty();
     $(place).append(oView.getPanel("Edición de " + this.clase, oView.getEmptyForm()));
@@ -118,7 +118,7 @@ temaControl.prototype.edit = function (place, id, oModel, oView) {
     oView.loadFormValues(oDocumentoModel.getCachedOne(), oDocumentoModel.getCachedFieldNames());
     $('#id').attr("disabled", true);
     nombre = $('#nombre').val();
-    nombre = nombre.replace("<a href=\"jsp#/post/list/systemfilter=id_tema&systemfilteroperator=equals&systemfiltervalue=" + $('#id').val() + "\">","").replace("</a>","");
+    nombre = nombre.replace("<a href=\"jsp#/post/list/systemfilter=id_alumno&systemfilteroperator=equals&systemfiltervalue=" + $('#id').val() + "\">","").replace("</a>","");
     $('#nombre').val(nombre);
     oView.doEventsLoading();
     $('#submitForm').unbind('click');
@@ -132,7 +132,7 @@ temaControl.prototype.edit = function (place, id, oModel, oView) {
     });
 };
 
-temaControl.prototype.new = function (place, objParams, oModel, oView) {
+alumnoControl.prototype.new = function (place, objParams, oModel, oView) {
     var thisObject = this;
     $(place).empty();
     $(place).append(oView.getPanel("Alta de " + this.clase, oView.getEmptyForm()));

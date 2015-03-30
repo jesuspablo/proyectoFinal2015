@@ -17,16 +17,16 @@
  */
 
 
-var temaView = function (strClase) {
+var alumnoView = function (strClase) {
     this.clase = strClase;
 };
-temaView.prototype = new view('tema');
-temaView.prototype.getClassNameTema = function () {
+alumnoView.prototype = new view('alumno');
+alumnoView.prototype.getClassNameAlumno = function () {
     return this.getClassName() + "Vista";
 };
-var oTemaView = new temaView('tema');
+var oAlumnoView = new alumnoView('alumno');
 
-temaView.prototype.printValue = function (value, valor, recortar) {
+alumnoView.prototype.printValue = function (value, valor, recortar) {
     var thisObject = this;
     var strResult = "";
     if (/obj_usuario/.test(valor)) {
@@ -35,7 +35,7 @@ temaView.prototype.printValue = function (value, valor, recortar) {
         } else {
             strResult = '???';
         }
-    } else if (/obj_tipotema/.test(valor)) {
+    } else if (/obj_tipoalumno/.test(valor)) {
         if (value[valor].id > 0) {
             strResult = '<a href="jsp#/' + valor.substring(4) + '/view/' + value[valor].id + '">' + value[valor].id + ":" + value[valor].nombre + '</a>';
         } else {
@@ -63,24 +63,24 @@ temaView.prototype.printValue = function (value, valor, recortar) {
                         strResult = strResult.substr(0, 20) + " ...";
                 
                 if (/nombre/.test(valor)) {
-                    strResult = '<a href="jsp#/post/list/' + 'systemfilter=id_tema&systemfilteroperator=equals&systemfiltervalue=' + value.id + '">' + decodeURIComponent(value[valor]) + '</a>';
+                    strResult = '<a href="jsp#/post/list/' + 'systemfilter=id_alumno&systemfilteroperator=equals&systemfiltervalue=' + value.id + '">' + decodeURIComponent(value[valor]) + '</a>';
                 }
             };
     };
     return strResult;
 };
 
-temaView.prototype.doEventsLoading = function () {
+alumnoView.prototype.doEventsLoading = function () {
     var thisObject = this;
-    $('#temaForm #obj_usuario_button').unbind('click');
-    $("#temaForm #obj_usuario_button").click(function () {
+    $('#alumnoForm #obj_usuario_button').unbind('click');
+    $("#alumnoForm #obj_usuario_button").click(function () {
         var oControl = oUsuarioControl;  //para probar dejar documento
         //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "documento");
 
-        $("#temaForm").append(thisObject.getEmptyModal());
+        $("#alumnoForm").append(thisObject.getEmptyModal());
         util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
 
-        $('#temaForm').append(thisObject.getEmptyModal());
+        $('#alumnoForm').append(thisObject.getEmptyModal());
 
         oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oUsuarioModel, oUsuarioView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
@@ -91,22 +91,22 @@ temaView.prototype.doEventsLoading = function () {
         },oUsuarioModel, oUsuarioView);
         return false;
     });
-    $('#temaForm #obj_tipotema_button').unbind('click');
-    $("#temaForm #obj_tipotema_button").click(function () {
-        var oControl = oTemaControl;
+    $('#alumnoForm #obj_tipoalumno_button').unbind('click');
+    $("#alumnoForm #obj_tipoalumno_button").click(function () {
+        var oControl = oAlumnoControl;
 
-        $("#temaForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tema'), "", thisObject.getFormFooter(), true);
+        $("#alumnoForm").append(thisObject.getEmptyModal());
+        util().loadForm('#modal01', thisObject.getFormHeader('Elección de alumno'), "", thisObject.getFormFooter(), true);
 
-        $('#temaForm').append(thisObject.getEmptyModal());
+        $('#alumnoForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTipotemaModel, oTipotemaView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTipoalumnoModel, oTipoalumnoView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_tipotema_id').val(id).change();
-            $('#obj_tipotema_desc').text(decodeURIComponent(oTipotemaModel.getMeAsAForeignKey(id)));
+            $('#obj_tipoalumno_id').val(id).change();
+            $('#obj_tipoalumno_desc').text(decodeURIComponent(oTipoalumnoModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oTipotemaModel, oTipotemaView);
+        },oTipoalumnoModel, oTipoalumnoView);
         return false;
     });
 };
