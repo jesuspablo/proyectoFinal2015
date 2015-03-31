@@ -26,56 +26,55 @@ alumnoView.prototype.getClassNameAlumno = function () {
 };
 var oAlumnoView = new alumnoView('alumno');
 
-alumnoView.prototype.printValue = function (value, valor, recortar) {
-    var thisObject = this;
-    var strResult = "";
-    if (/obj_usuario/.test(valor)) {
-        if (value[valor].id > 0) {
-            strResult = '<a href="jsp#/' + valor.substring(4) + '/view/' + value[valor].id + '">' + value[valor].id + ":" + value[valor].login + '</a>';
-        } else {
-            strResult = '???';
-        }
-    } else if (/obj_tipoalumno/.test(valor)) {
-        if (value[valor].id > 0) {
-            strResult = '<a href="jsp#/' + valor.substring(4) + '/view/' + value[valor].id + '">' + value[valor].id + ":" + value[valor].nombre + '</a>';
-        } else {
-            strResult = '???';
-        }        
-    } else if (/obj_/.test(valor)) {
-        if (value[valor].id > 0) {
-            strResult = '<a href="jsp#/' + valor.substring(4) + '/view/' + value[valor].id + '">' + value[valor].id + ":" + util().getForeign(value[valor]) + '</a>';
-        } else {
-            strResult = '???';
-        }      
-    } else {
-        switch (value[valor]) {
-            case true:
-                strResult = '<i class="glyphicon glyphicon-ok"></i>';
-                break;
-            case false:
-                strResult = '<i class="glyphicon glyphicon-remove"></i>';
-                break;
-            default:
-                strResult = decodeURIComponent(value[valor]);
-                
-                if (recortar) 
-                    if (strResult.length > 50) //don't show too long fields
-                        strResult = strResult.substr(0, 20) + " ...";
-                
-                if (/nombre/.test(valor)) {
-                    strResult = '<a href="jsp#/post/list/' + 'systemfilter=id_alumno&systemfilteroperator=equals&systemfiltervalue=' + value.id + '">' + decodeURIComponent(value[valor]) + '</a>';
-                }
-            };
-    };
-    return strResult;
+
+alumnoView.prototype.loadButtons = function (id) {
+
+    var botonera = "";
+    botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
+    botonera += '<a class="btn btn-default view" id="' + id + '"  href="jsp#/' + this.clase + '/view/' + id + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
+    botonera += '<a class="btn btn-default edit" id="' + id + '"  href="jsp#/' + this.clase + '/edit/' + id + '"><i class="glyphicon glyphicon-pencil"></i></a>';
+    botonera += '<a class="btn btn-default remove" id="' + id + '"  href="jsp#/' + this.clase + '/remove/' + id + '"><i class="glyphicon glyphicon-remove"></i></a>';
+    botonera += '</div></div>';
+    return botonera;
+
+}
+alumnoView.prototype.loadFormValues = function (valores, campos) {
+//                    $('#alumno_form #titulo').val(valores['titulo']);
+//                    $('#alumno_form #contenido').val(valores['contenido']);
+//                    $('#alumno_form #alta').val(valores['alta']);
+//                    $('#alumno_form #cambio').val(valores['cambio']);
+//                    $('#alumno_form #hits').val(valores['hits']);
+//                    $('#alumno_form #id_usuario').val(valores['id_usuario']);
+//                    $('#alumno_form #etiquetas').val(valores['etiquetas']);
+//                    $('#alumno_form #publicado').val(valores['publicado']);
+//                    $('#alumno_form #portada').val(valores['portada']);
+    this.doFillForm(valores, campos);
+};
+
+alumnoView.prototype.getFormValues = function () {
+    var valores = [];
+//                    valores['titulo'] = $('#alumno_form #titulo');
+//                    valores['contenido'] = $('#alumno_form #contenido');
+//                    valores['alta'] = $('#alumno_form #alta');
+//                    valores['cambio'] = $('#alumno_form #cambio');
+//                    valores['hits'] = $('#alumno_form #hits');
+//                    valores['id_usuario'] = $('#alumno_form #id_usuario');
+//                    valores['etiquetas'] = $('#alumno_form #etiquetas');
+//                    valores['publicado'] = $('#alumno_form #publicado');
+//                    valores['portada'] = $('#alumno_form #portada');
+
+    var disabled = $('#alumnoForm').find(':input:disabled').removeAttr('disabled');
+    valores = $('#alumnoForm').serializeObject();
+    disabled.attr('disabled', 'disabled');
+    return valores;
 };
 
 alumnoView.prototype.doEventsLoading = function () {
     var thisObject = this;
     $('#alumnoForm #obj_usuario_button').unbind('click');
     $("#alumnoForm #obj_usuario_button").click(function () {
-        var oControl = oUsuarioControl;  //para probar dejar documento
-        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "documento");
+        var oControl = oUsuarioControl;  //para probar dejar alumno
+        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "alumno");
 
         $("#alumnoForm").append(thisObject.getEmptyModal());
         util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
@@ -93,10 +92,10 @@ alumnoView.prototype.doEventsLoading = function () {
     });
     $('#alumnoForm #obj_tipoalumno_button').unbind('click');
     $("#alumnoForm #obj_tipoalumno_button").click(function () {
-        var oControl = oAlumnoControl;
+        var oControl = oTipoalumnoControl;
 
         $("#alumnoForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de alumno'), "", thisObject.getFormFooter(), true);
+        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de alumno'), "", thisObject.getFormFooter(), true);
 
         $('#alumnoForm').append(thisObject.getEmptyModal());
 
@@ -109,4 +108,33 @@ alumnoView.prototype.doEventsLoading = function () {
         },oTipoalumnoModel, oTipoalumnoView);
         return false;
     });
+    $('#contenido_button').unbind('click');
+    $('#contenido_button').click(function () {
+        //cabecera = '<button id="full-width" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' + '<h3 id="myModalLabel">Edición de contenidos</h3>';
+        cabecera = thisObject.getFormHeader('Edición de contenidos');
+        //pie = '<button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>';                        
+        pie = '<a class="btn btn-primary" href="http://creoleparser.googlecode.com/svn/trunk/creoleparser/test_pages/CheatSheetPlus.html">Sintaxis</a>';
+        pie += thisObject.getFormFooter();
+        contenido = '<div class="row"><div class="col-md-6">';
+        contenido += '<textarea type="text" id="contenidomodal" name="contenido" rows="20" cols="70" placeholder="contenido"></textarea>';
+        contenido += '</div><div class="col-md-6"><div id="textoparseado"></div></div>';
+        contenido += '</div>';
+
+        $('#alumnoForm').append(thisObject.getEmptyModal());
+
+        util().loadForm('#modal01', cabecera, contenido, pie, true);
+        var texto = $('#contenido').val();
+        $('#contenidomodal').val(texto);
+        util().creoleParse(texto, $('#textoparseado'));
+        $('#contenido').val($('#contenidomodal').val());
+        $('#contenidomodal').keyup(function () {
+            util().creoleParse($('#contenidomodal').val(), $('#textoparseado'));
+            $('#contenido').val($('#contenidomodal').val());
+        });
+        return false;
+    });
+};
+
+alumnoView.prototype.okValidation = function (f) {
+    $('#alumnoForm').on('success.form.bv', f);
 };

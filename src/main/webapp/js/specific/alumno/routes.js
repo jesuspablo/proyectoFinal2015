@@ -59,11 +59,17 @@ function fAlumnoRoutes() {
         oAlumnoControl.edit($('#indexContenido'), paramsObject['id'], oAlumnoModel, oAlumnoView);
         $('#indexContenidoJsp').empty();
     });
-
     Path.map("#/alumno/new").to(function () {
         $('#indexContenidoJsp').spinner();
-        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        //var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
         oAlumnoControl.new($('#indexContenido'), null, oAlumnoModel, oAlumnoView);
+        $('#indexContenidoJsp').empty();
+        return false;
+    });
+    Path.map("#/alumno/new/:url").to(function () {
+        $('#indexContenidoJsp').spinner();
+        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        oAlumnoControl.new($('#indexContenido'), paramsObject, oAlumnoModel, oAlumnoView);
         $('#indexContenidoJsp').empty();
         return false;
     });
