@@ -45,14 +45,10 @@
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-        <link rel="stylesheet" href="css/producto.css">
+        
 
 
-        <% if (user != null) {%>
-        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css">
-        <% } else {%>
-        <link rel="stylesheet" href="css/skin/main.css">
-        <% }%>
+       
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -323,11 +319,7 @@
         <script src="js/specific/producto/view.js" charset="UTF-8"></script>
         <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
 
-        <script src="js/specific/tipoproducto/control.js" charset="UTF-8"></script>
-        <script src="js/specific/tipoproducto/model.js" charset="UTF-8"></script>
-        <script src="js/specific/tipoproducto/view.js" charset="UTF-8"></script>
-        <script src="js/specific/tipoproducto/routes.js" charset="UTF-8"></script>
-
+       
         <script src="js/specific/documentobonito/control.js" charset="UTF-8"></script>
         <script src="js/specific/documentobonito/model.js" charset="UTF-8"></script>
         <script src="js/specific/documentobonito/view.js" charset="UTF-8"></script>
@@ -354,11 +346,7 @@
         <script src="js/specific/estadotarea/view.js" charset="UTF-8"></script>
         <script src="js/specific/estadotarea/routes.js" charset="UTF-8"></script>
 
-        <script src="js/specific/producto/control.js" charset="UTF-8"></script>
-        <script src="js/specific/producto/model.js" charset="UTF-8"></script>
-        <script src="js/specific/producto/view.js" charset="UTF-8"></script>
-        <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
-
+        
         
 
         <script src="js/specific/tipodocumento/model.js" charset="UTF-8"></script>
@@ -402,8 +390,7 @@
                 fComentarioRoutes();
                 fPropuestaRoutes();
                 fTipopropuestaRoutes();
-                fProductoRoutes();
-                fTipoproductoRoutes();
+                
                 fTipodocumentoRoutes();
 
 
