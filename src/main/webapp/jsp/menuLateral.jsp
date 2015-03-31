@@ -14,9 +14,19 @@
  You should have received a copy of the GNU General Public License
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
---%>           
+--%>  
+<!DOCTYPE html>
+<html>	
+<head>
 <%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
-
+        <meta charset="UTF-8">
+	<title>portfolio</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width,height=device-height initial-scale=1 maximum-scale=1.0, user-scalable=0" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/main.js"></script>
+	
 <%
     int id_tipousuario = 0, id_usuario = 0;
     UsuarioBeanGenSpImpl user = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");
@@ -25,7 +35,8 @@
         id_usuario = user.getId();
     }
 %>
-
+</head>
+<body>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Sesión</h3>
@@ -154,5 +165,6 @@
         <a class="list-group-item" id="lnkRespuesta" href="jsp#/respuesta">Respuesta</a>
     </div>
 </div>
-
+</body>
+</html>
 

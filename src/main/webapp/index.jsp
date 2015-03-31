@@ -40,6 +40,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        
+        <% if (user != null) {%>
+        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css">
+        <% } else {%>
+        <link rel="stylesheet" href="css/skin/main.css">
+        <% }%>
 
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
         <link rel="stylesheet" href="css/animate.css">
@@ -314,11 +321,7 @@
         <script src="js/specific/respuesta/view.js" charset="UTF-8"></script>
         <script src="js/specific/respuesta/routes.js" charset="UTF-8"></script>
 
-        <script src="js/specific/producto/control.js" charset="UTF-8"></script>
-        <script src="js/specific/producto/model.js" charset="UTF-8"></script>
-        <script src="js/specific/producto/view.js" charset="UTF-8"></script>
-        <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
-
+       
        
         <script src="js/specific/documentobonito/control.js" charset="UTF-8"></script>
         <script src="js/specific/documentobonito/model.js" charset="UTF-8"></script>
