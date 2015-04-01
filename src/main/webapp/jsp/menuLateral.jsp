@@ -25,7 +25,7 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width,height=device-height initial-scale=1 maximum-scale=1.0, user-scalable=0" />
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="js/main.js"></script>
+	
 	
 <%
     int id_tipousuario = 0, id_usuario = 0;
@@ -38,9 +38,7 @@
 </head>
 <body>
 <div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Sesión</h3>
-    </div>
+    
     <div class="panel panel-primary">
     <div class="panel-heading">
         
@@ -65,30 +63,17 @@
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Mantenimientos</h3>
+        <h3 class="panel-title">Sistema Virtual</h3>
     </div>
     <div class="list-group">
         <a  class="list-group-item" id="lnkAlumno" href="jsp#/alumno">Alumno</a> 
         <a  class="list-group-item" id="lnkProfesor" href="jsp#/profesor">Profesores</a> 
         <a  class="list-group-item" id="lnkAsignatura" href="jsp#/asignatura">Asignaturas</a> 
         <a  class="list-group-item" id="lnkNivel" href="jsp#/nivel">Nivel del Alumno</a> 
+        <a  class="list-group-item" id="lnkMensajeprivado" href="jsp#/mensajeprivado">Mensaje privado</a> 
 
 
-        <a  class="list-group-item" id="lnkDocumento" href="jsp#/documento">Documento</a> 
-        <a  class="list-group-item" id="lnkDocumento" href="jsp#/tipodocumento">TipoDocumento</a> 
-        <a  class="list-group-item" id="lnkOrdenador" href="jsp#/usuario">Usuario</a> 
-        <a class="list-group-item" id="lnkProveedor" href="jsp#/proveedor">Proveedor</a>
-        <a class="list-group-item" id="lnkPedido" href="jsp#/pedido">Pedido</a>
-        <a  class="list-group-item" id="lnkCuestionario" href="jsp#/cuestionario">Cuestionario</a> 
-        <a  class="list-group-item" id="lnkPregunta" href="jsp#/pregunta">Pregunta</a>
-        <a  class="list-group-item" id="lnkRespuesta" href="jsp#/respuesta">Respuesta</a>
-        <a  class="list-group-item" id="lnkOpcion" href="jsp#/opcion">Opcion</a>
-        <a class="list-group-item" id="lnkImpuesto" href="jsp#/impuesto">Impuesto</a>
-        <a  class="list-group-item" id="lnkActividad" href="jsp#/actividad">Actividad</a>
-        <a  class="list-group-item" id="lnkActividad" href="jsp#/entrega">Entrega</a> 
-        <a  class="list-group-item" id="lnkActividad" href="jsp#/detalle_pedido">DetallePedido</a>
-        <a  class="list-group-item" id="lnkTipoproducto" href="jsp#/tipoproducto">Tipo Producto</a> 
-    </div>
+        </div>
 </div>
 </body>
 </html>

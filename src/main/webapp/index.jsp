@@ -42,11 +42,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         
         
-        <% if (user != null) {%>
-        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css">
-        <% } else {%>
-        <link rel="stylesheet" href="css/skin/main.css">
-        <% }%>
+       
 
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
         <link rel="stylesheet" href="css/animate.css">
@@ -216,6 +212,12 @@
         <script src="js/specific/inicioRedSocial/view.js" charset="UTF-8"></script>
         <script src="js/specific/inicioRedSocial/routes.js" charset="UTF-8"></script>
         <!-- ***********  FIN RED SOCIAL  *********** -->
+        
+         <script src="js/specific/post/control.js" charset="UTF-8"></script>
+        <script src="js/specific/post/model.js" charset="UTF-8"></script>
+        <script src="js/specific/post/view.js" charset="UTF-8"></script>
+        <script src="js/specific/post/routes.js" charset="UTF-8"></script>
+
 
         <script src="js/specific/cuestionario/control.js" charset="UTF-8"></script>
         <script src="js/specific/cuestionario/model.js" charset="UTF-8"></script>
@@ -348,8 +350,17 @@
         <script src="js/specific/estadotarea/model.js" charset="UTF-8"></script>
         <script src="js/specific/estadotarea/view.js" charset="UTF-8"></script>
         <script src="js/specific/estadotarea/routes.js" charset="UTF-8"></script>
-
         
+        <script src="js/specific/tipotema/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotema/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotema/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotema/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/propuesta/control.js" charset="UTF-8"></script>
+        <script src="js/specific/propuesta/model.js" charset="UTF-8"></script>
+        <script src="js/specific/propuesta/view.js" charset="UTF-8"></script>
+        <script src="js/specific/propuesta/routes.js" charset="UTF-8"></script>
+
         
 
         <script src="js/specific/tipodocumento/model.js" charset="UTF-8"></script>
@@ -382,7 +393,7 @@
                 fMensajeprivadoRoutes();
                 
                 fAlumnoRoutes();
-                fPreofesorRoutes();
+                fProfesorRoutes();
                 fAsignaturaRoutes();
                 fNivelRoutes();
                 

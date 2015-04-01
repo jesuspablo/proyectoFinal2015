@@ -18,20 +18,18 @@
 package net.daw.control.operation.generic.specific.implementation;
 
 import java.lang.reflect.InvocationTargetException;
-import java.sql.Connection;
-import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl;
-import net.daw.connection.implementation.BoneConnectionPoolImpl;
-import net.daw.connection.publicinterface.ConnectionInterface;
+
 import net.daw.control.operation.generic.implementation.ControlOperationGenImpl;
 import net.daw.helper.ExceptionBooster;
 import net.daw.helper.FilterBeanHelper;
 import net.daw.helper.ParameterCooker;
 import net.daw.service.generic.specific.implementation.PublicacionServiceGenSpImpl;
-import net.daw.service.specific.implementation.ProductoServiceSpImpl;
+
 
 /**
  *
