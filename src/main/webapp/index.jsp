@@ -255,20 +255,20 @@
         <!-- Fin Modificación Juanma Usuarios -->
 
         <!-- FORO -->        
-        <script src="js/specific/tipotema/control.js" charset="UTF-8"></script>
-        <script src="js/specific/tipotema/model.js" charset="UTF-8"></script>
-        <script src="js/specific/tipotema/view.js" charset="UTF-8"></script>
-        <script src="js/specific/tipotema/routes.js" charset="UTF-8"></script>
+        <script src="js/specific/profesor/control.js" charset="UTF-8"></script>
+        <script src="js/specific/profesor/model.js" charset="UTF-8"></script>
+        <script src="js/specific/profesor/view.js" charset="UTF-8"></script>
+        <script src="js/specific/profesor/routes.js" charset="UTF-8"></script>
 
         <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/model.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/view.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/routes.js" charset="UTF-8"></script>
 
-        <script src="js/specific/post/control.js" charset="UTF-8"></script>
-        <script src="js/specific/post/model.js" charset="UTF-8"></script>
-        <script src="js/specific/post/view.js" charset="UTF-8"></script>
-        <script src="js/specific/post/routes.js" charset="UTF-8"></script>
+        <script src="js/specific/nivel/control.js" charset="UTF-8"></script>
+        <script src="js/specific/nivel/model.js" charset="UTF-8"></script>
+        <script src="js/specific/nivel/view.js" charset="UTF-8"></script>
+        <script src="js/specific/nivel/routes.js" charset="UTF-8"></script>
 
         <script src="js/specific/mensajeprivado/control.js" charset="UTF-8"></script>
         <script src="js/specific/mensajeprivado/model.js" charset="UTF-8"></script>
@@ -278,10 +278,10 @@
 
         <!-- PROPUESTAS Y VOTACIONES -->   
 
-        <script src="js/specific/propuesta/control.js" charset="UTF-8"></script>
-        <script src="js/specific/propuesta/model.js" charset="UTF-8"></script>
-        <script src="js/specific/propuesta/view.js" charset="UTF-8"></script>
-        <script src="js/specific/propuesta/routes.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/control.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/model.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/view.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/routes.js" charset="UTF-8"></script>
 
         <script src="js/specific/tipopropuesta/control.js" charset="UTF-8"></script>
         <script src="js/specific/tipopropuesta/model.js" charset="UTF-8"></script>
@@ -380,7 +380,12 @@
                 fInicioRedSocialRoutes();
                 fPostRoutes();
                 fMensajeprivadoRoutes();
+                
                 fAlumnoRoutes();
+                fPreofesorRoutes();
+                fAsignaturaRoutes();
+                fNivelRoutes();
+                
                 fTipotemaRoutes();
                 fEstadoRoutes();
                 fProveedorRoutes();

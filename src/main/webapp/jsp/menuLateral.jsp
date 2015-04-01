@@ -69,6 +69,11 @@
     </div>
     <div class="list-group">
         <a  class="list-group-item" id="lnkAlumno" href="jsp#/alumno">Alumno</a> 
+        <a  class="list-group-item" id="lnkProfesor" href="jsp#/profesor">Profesores</a> 
+        <a  class="list-group-item" id="lnkAsignatura" href="jsp#/asignatura">Asignaturas</a> 
+        <a  class="list-group-item" id="lnkNivel" href="jsp#/nivel">Nivel del Alumno</a> 
+
+
         <a  class="list-group-item" id="lnkDocumento" href="jsp#/documento">Documento</a> 
         <a  class="list-group-item" id="lnkDocumento" href="jsp#/tipodocumento">TipoDocumento</a> 
         <a  class="list-group-item" id="lnkOrdenador" href="jsp#/usuario">Usuario</a> 
