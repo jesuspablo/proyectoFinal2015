@@ -40,9 +40,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="css/styles.css">
         
         
-       
+       <% if (user != null) {%>
+        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css">
+        <% } else {%>
+        <link rel="stylesheet" href="css/skin/main.css">
+        <% }%>
 
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
         <link rel="stylesheet" href="css/animate.css">
