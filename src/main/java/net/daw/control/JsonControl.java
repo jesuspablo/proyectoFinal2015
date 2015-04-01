@@ -44,6 +44,7 @@ import net.daw.control.operation.generic.specific.implementation.NivelControlOpe
 import net.daw.control.operation.generic.specific.implementation.NotaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ProfesorControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ProyectoControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.PublicacionControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TrabajoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipodocumentoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipotareaControlOperationGenSpImpl;
@@ -52,6 +53,7 @@ import net.daw.control.operation.generic.specific.implementation.TipousuarioCont
 import net.daw.control.operation.generic.specific.implementation.TrimestreControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioProveedorControlOperationGenSpimpl;
+import net.daw.control.operation.specific.implementation.MensajeprivadoControlOperationSpImpl;
 import net.daw.control.route.generic.specific.implementation.AdministradorControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.AlumnoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.AsignaturaControlRouteGenSpImpl;
@@ -69,6 +71,7 @@ import net.daw.control.route.generic.specific.implementation.NotaControlRouteGen
 import net.daw.control.route.generic.specific.implementation.PedidoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ProfesorControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ProyectoControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.PublicacionControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TrabajoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipodocumentoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipotareaControlRouteGenSpImpl;
@@ -77,6 +80,7 @@ import net.daw.control.route.generic.specific.implementation.TipousuarioControlR
 import net.daw.control.route.generic.specific.implementation.TrimestreControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioProveedorControlRouteGenSpImpl;
+import net.daw.control.route.specific.implementation.MensajeprivadoControlRouteSpImpl;
 import net.daw.helper.EstadoHelper;
 import net.daw.helper.EstadoHelper.Tipo_estado;
 import net.daw.helper.ExceptionBooster;
@@ -162,6 +166,18 @@ public class JsonControl extends HttpServlet {
                         EstadoControlRouteGenSpImpl oEstadoRoute = new EstadoControlRouteGenSpImpl();
                         EstadoControlOperationGenSpImpl oEstadoControlOperation = new EstadoControlOperationGenSpImpl(request);
                         jsonResult = oEstadoRoute.execute(request, oEstadoControlOperation);
+                        break;
+                     
+                    case "publicacion":
+                        PublicacionControlRouteGenSpImpl oPublicacionRoute = new PublicacionControlRouteGenSpImpl();
+                        PublicacionControlOperationGenSpImpl oPublicacionControlOperation = new PublicacionControlOperationGenSpImpl(request);
+                        jsonResult = oPublicacionRoute.execute(request, oPublicacionControlOperation);
+                        break;
+                        
+                    case "mensajeprivado":
+                        MensajeprivadoControlRouteSpImpl oMensajeprivadoRoute = new MensajeprivadoControlRouteSpImpl();
+                        MensajeprivadoControlOperationSpImpl oMensajeprivadoControlOperation = new MensajeprivadoControlOperationSpImpl(request);
+                        jsonResult = oMensajeprivadoRoute.execute(request, oMensajeprivadoControlOperation);
                         break;
                    
                    
