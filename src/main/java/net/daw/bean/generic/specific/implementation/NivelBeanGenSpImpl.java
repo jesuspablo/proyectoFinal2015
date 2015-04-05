@@ -25,8 +25,7 @@ public class NivelBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
     public NivelBeanGenSpImpl() {
     }
-    @Expose
-    private String nombre = "";
+    
    @Expose
     private String nivel = "";
    @Expose
@@ -39,14 +38,7 @@ public class NivelBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         super(id);
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+  
     public String getNivel() {
         return nivel;
     }
