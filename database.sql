@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 30-03-2015 a las 05:18:04
+-- Tiempo de generación: 05-04-2015 a las 04:14:17
 -- Versión del servidor: 5.5.40
 -- Versión de PHP: 5.4.34
 
@@ -31,15 +31,14 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `apellidos` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `administrador`
 --
 
 INSERT INTO `administrador` (`id`, `nombre`, `apellidos`, `email`) VALUES
-(1, 'Amneris', 'Meraz Quintanilla', 'AmnerisMerazQuintanilla@superrito.com '),
-(2, 'Jose ', 'S. Weldon', 'JoseSWeldon@superrito.com ');
+(1, 'jesus', 'ndong', 'j1p9n8n6@hotmail.com ');
 
 -- --------------------------------------------------------
 
@@ -53,25 +52,26 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
   `primer_apellido` varchar(255) DEFAULT NULL COMMENT 'Primer Apellido',
   `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
-  `email` varchar(255) DEFAULT NULL COMMENT 'Email'
-) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8;
+  `email` varchar(255) DEFAULT NULL COMMENT 'Email',
+  `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario'
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `primer_apellido`, `segundo_apellido`, `email`) VALUES
-(1, 'Betina  ', NULL, 'Guerra', 'Arroyo', NULL),
-(2, 'Guzmán ', NULL, 'Padron', 'Esquivel', NULL),
-(3, 'Haide', NULL, 'Tejada', 'Escalante', NULL),
-(4, 'Martial  ', NULL, 'Ledesma', 'Carvajal', NULL),
-(5, 'Matty  ', NULL, 'Peralta', 'Suárez', NULL),
-(6, 'Adaluz ', NULL, 'Jaime ', 'Valverde', NULL),
-(7, 'Milton', NULL, 'Suárez', ' Montés', NULL),
-(8, 'Mabel ', NULL, 'Alba ', 'Sisneros', NULL),
-(9, 'Aisha ', NULL, 'Maya ', 'Olivas', NULL),
-(10, 'Lutero  ', NULL, 'Badillo', 'Pacheco', NULL),
-(11, 'Millan  ', NULL, 'López', 'Ulloa', NULL);
+INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `primer_apellido`, `segundo_apellido`, `email`, `id_usuario`) VALUES
+(1, 'Betina  ', 2, 'Guerra', 'Arroyo', 'jivohebog-6520@yopmail.com', 1),
+(2, 'Guzmán ', 1, 'Padron', 'Esquivel', 'wijytiru-6960@yopmail.com', 2),
+(3, 'Haide', 3, 'Tejada', 'Escalante', 'unaffanny-5394@yopmail.com', 3),
+(4, 'Martial  ', 4, 'Ledesma', 'Carvajal', 'ceqixaran-2559@yopmail.com', 4),
+(5, 'Matty  ', 6, 'Peralta', 'Suárez', 'gutezahu-8248@yopmail.com', 5),
+(6, 'Adaluz ', 5, 'Jaime ', 'Valverde', 'illattabett-6442@yopmail.com', 6),
+(7, 'Milton', 7, 'Suárez', ' Montés', 'effynnoppuj-6270@yopmail.com', 7),
+(8, 'Mabel ', 3, 'Alba ', 'Sisneros', 'ennodazod-7760@yopmail.com', 8),
+(9, 'Aisha ', 8, 'Maya ', 'Olivas', 'ifaxagyj-1268@yopmail.com', 9),
+(10, 'Lutero  ', 1, 'Badillo', 'Pacheco', 'uxiddazuffe-1521@yopmail.com', 10),
+(11, 'Millan  ', 2, 'López', 'Ulloa', 'qetynunopp-9072@yopmail.com', 11);
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,74 @@ CREATE TABLE IF NOT EXISTS `asignatura` (
   `id_profesor` int(12) DEFAULT NULL COMMENT 'ID Profesor',
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
   `id_nota` int(12) DEFAULT NULL COMMENT 'Nota'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `asignatura`
+--
+
+INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`, `id_nota`) VALUES
+(1, 'Lengua Castellana y Literatura', 1, 4, NULL),
+(2, 'Lengua y Literatura de las CC.AA.\r\n', 14, 4, NULL),
+(3, 'Lengua Extranjera', 4, 4, NULL),
+(4, 'Música', 2, 4, NULL),
+(5, 'Tecnología', 12, 4, NULL),
+(6, 'Educación para la ciudadanía y los derechos humanos', 8, 4, NULL),
+(7, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 4, NULL),
+(8, 'Ciencias Sociales, Geografía e Historia', 7, 4, NULL),
+(9, 'Educación Física', 1, 4, NULL),
+(10, 'Ciencias de la Naturaleza', 13, 4, NULL),
+(11, 'Lengua Castellana y Literatura', 1, 1, NULL),
+(12, 'Lengua y Literatura de las CC.AA.\r\n', 14, 1, NULL),
+(13, 'Lengua Extranjera', 4, 1, NULL),
+(14, 'Música', 2, 1, NULL),
+(15, 'Tecnología', 12, 1, NULL),
+(16, 'Educación para la ciudadanía y los derechos humanos', 8, 1, NULL),
+(17, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 1, NULL),
+(18, 'Ciencias Sociales, Geografía e Historia', 7, 1, NULL),
+(19, 'Educación Física', 1, 1, NULL),
+(20, 'Ciencias de la Naturaleza', 13, 1, NULL),
+(21, 'Lengua Castellana y Literatura', 1, 5, NULL),
+(22, 'Lengua y Literatura de las CC.AA.\r\n', 14, 5, NULL),
+(23, 'Lengua Extranjera', 4, 5, NULL),
+(24, 'Música', 2, 5, NULL),
+(25, 'Tecnología', 12, 5, NULL),
+(26, 'Educación para la ciudadanía y los derechos humanos', 8, 5, NULL),
+(27, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 5, NULL),
+(28, 'Ciencias Sociales, Geografía e Historia', 7, 5, NULL),
+(29, 'Educación Física', 1, 5, NULL),
+(30, 'Ciencias de la Naturaleza', 13, 5, NULL),
+(31, 'Lengua Castellana y Literatura', 1, 9, NULL),
+(32, 'Lengua y Literatura de las CC.AA.\r\n', 14, 9, NULL),
+(33, 'Lengua Extranjera', 4, 9, NULL),
+(34, 'Música', 2, 9, NULL),
+(35, 'Tecnología', 12, 9, NULL),
+(36, 'Educación para la ciudadanía y los derechos humanos', 8, 9, NULL),
+(37, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 9, NULL),
+(38, 'Ciencias Sociales, Geografía e Historia', 7, 9, NULL),
+(39, 'Educación Física', 1, 9, NULL),
+(40, 'Ciencias de la Naturaleza', 13, 10, NULL),
+(41, 'Ciencias de la Naturaleza', 13, 7, NULL),
+(42, 'Educación Física', 1, 7, NULL),
+(43, 'Ciencias Sociales, Geografía e Historia', 7, 7, NULL),
+(44, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 7, NULL),
+(45, 'Educación para la ciudadanía y los derechos humanos', 8, 7, NULL),
+(46, 'Tecnología', 12, 7, NULL),
+(47, 'Música', 2, 7, NULL),
+(48, 'Lengua Extranjera', 4, 7, NULL),
+(49, 'Lengua y Literatura de las CC.AA.\r\n', 14, 7, NULL),
+(50, 'Lengua Castellana y Literatura', 1, 7, NULL),
+(51, 'Lengua Castellana y Literatura', 1, 8, NULL),
+(52, 'Lengua Extranjera', 4, 8, NULL),
+(53, 'Tecnología', 12, 8, NULL),
+(54, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 8, NULL),
+(55, 'Educación Física', 1, 8, NULL),
+(56, 'Ciencias de la Naturaleza', 13, 8, NULL),
+(57, 'Lengua y Literatura de las CC.AA.\r\n', 14, 2, NULL),
+(58, 'Música', 2, 2, NULL),
+(59, 'Educación para la ciudadanía y los derechos humanos', 8, 2, NULL),
+(60, 'Ciencias Sociales, Geografía e Historia', 7, 2, NULL),
+(61, 'Ciencias de la Naturaleza', 13, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,6 +185,47 @@ CREATE TABLE IF NOT EXISTS `horario` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `mensajeprivado`
+--
+
+CREATE TABLE IF NOT EXISTS `mensajeprivado` (
+`id` int(6) NOT NULL COMMENT 'ID',
+  `fechaenvio` datetime DEFAULT NULL COMMENT 'Fecha de envío',
+  `id_usuario_1` int(6) DEFAULT NULL COMMENT 'ID Usuario envía',
+  `id_usuario_2` int(6) DEFAULT NULL COMMENT 'ID Usuario recibe',
+  `asunto` varchar(255) DEFAULT NULL COMMENT 'Asunto',
+  `mensaje` longtext COMMENT 'Mensaje'
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `mensajeprivado`
+--
+
+INSERT INTO `mensajeprivado` (`id`, `fechaenvio`, `id_usuario_1`, `id_usuario_2`, `asunto`, `mensaje`) VALUES
+(1, '2014-11-11 08:33:19', 1, 29, 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'),
+(2, '2014-11-04 06:45:15', 4, 23, 'Donec quam felis', 'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.'),
+(3, '2014-11-10 07:57:13', 2, 7, 'Nullam dictum felis eu pede mollis pretium', 'Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.'),
+(4, '2014-11-03 12:08:32', 15, 16, 'Phasellus viverra nulla ut metus varius laoreet', 'Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.'),
+(5, '2014-11-14 08:38:25', 8, 9, 'Maecenas tempus, tellus eget condimentum rhoncus', 'Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.'),
+(6, '2014-11-19 05:24:42', 18, 12, 'Donec vitae sapien ut libero venenatis faucibus', 'Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, '),
+(7, '2014-11-16 12:32:12', 11, 6, 'Sed consequat, leo eget bibendum sodales', 'Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla.'),
+(8, '2014-11-12 12:27:30', 30, 29, 'Maecenas nec odio et ante tincidunt tempus', 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.'),
+(9, '2014-11-19 04:24:21', 13, 14, 'Aenean imperdiet. Etiam ultricies nisi vel augue', 'Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'),
+(10, '2014-11-14 08:30:05', 6, 5, 'Vivamus elementum semper nisi', 'Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.'),
+(11, '2014-11-01 06:35:22', 19, 24, 'Nulla consequat massa quis enim', 'Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.'),
+(12, '2014-11-09 05:08:21', 24, 23, 'Vestibulum ante ipsum primis in faucibus', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut '),
+(13, '2014-11-17 17:21:30', 17, 15, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'),
+(14, '2014-11-15 00:22:28', 15, 9, 'Quis autem vel eum iure reprehenderit', 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'),
+(15, '2014-11-12 23:17:59', 3, 27, 'At vero eos et accusamus et iusto odio', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.'),
+(16, '2014-11-02 21:13:40', 25, 29, 'Nam libero tempore, cum soluta nobis est eligendi', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.'),
+(17, '2014-11-13 10:39:10', 6, 1, 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?'),
+(18, '2014-11-14 15:13:34', 17, 11, 'Buenas tardes', 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.'),
+(19, '2014-11-17 08:36:28', 22, 21, 'Sed ut perspiciatis unde omnis iste natus error', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'),
+(20, '2014-11-09 09:43:32', 28, 29, 'Y, viéndole don Quijote de aquella manera', 'Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro.');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `nivel`
 --
 
@@ -126,7 +234,22 @@ CREATE TABLE IF NOT EXISTS `nivel` (
   `nivel` varchar(255) DEFAULT NULL COMMENT 'Nivel',
   `curso` varchar(255) DEFAULT NULL COMMENT 'curso',
   `aula` varchar(255) DEFAULT NULL COMMENT 'Aula'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `nivel`
+--
+
+INSERT INTO `nivel` (`id`, `nivel`, `curso`, `aula`) VALUES
+(1, 'Secundaria', 'segundo', '304'),
+(2, 'Primaria', 'tercero', '309'),
+(3, 'Bachiller', 'Primero bachiller', '315'),
+(4, 'Secundaria', 'tercero', '306'),
+(5, 'Secundaria', 'primero', '308'),
+(6, 'Bachiller', 'segundo bachiller', '316'),
+(7, 'Primaria', 'segundo', '310'),
+(8, 'Primaria', 'primero', '311'),
+(9, 'Secundaria', 'Cuarto', '320');
 
 -- --------------------------------------------------------
 
@@ -176,7 +299,9 @@ INSERT INTO `objeto` (`id`, `descripcion`) VALUES
 (14, 'permiso'),
 (15, 'tipooperacion'),
 (16, 'tipousuario'),
-(17, 'usuario');
+(17, 'usuario'),
+(18, 'publicacion'),
+(19, 'mensajeprivado');
 
 -- --------------------------------------------------------
 
@@ -189,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `operacion` (
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción',
   `id_objeto` int(6) DEFAULT NULL COMMENT 'ID Objeto',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación'
-) ENGINE=InnoDB AUTO_INCREMENT=461 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=460 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `operacion`
@@ -454,7 +579,7 @@ CREATE TABLE IF NOT EXISTS `profesor` (
   `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `profesor`
@@ -471,7 +596,49 @@ INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `primer_apellid
 (8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho', 'Curiel', NULL, NULL),
 (9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza', 'Fierro', NULL, NULL),
 (10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame', 'Bahena', NULL, NULL),
-(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel', 'Agosto', NULL, NULL);
+(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel', 'Agosto', NULL, NULL),
+(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho', 'Nieto', NULL, NULL),
+(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa', 'Santana', NULL, NULL),
+(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento', 'Cansina', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `publicacion`
+--
+
+CREATE TABLE IF NOT EXISTS `publicacion` (
+`id` int(11) NOT NULL COMMENT 'Identificador',
+  `contenido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Contenido',
+  `id_usuario` int(11) DEFAULT NULL COMMENT 'Usuario',
+  `fechacreacion` datetime DEFAULT NULL COMMENT 'Fecha de creación'
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `publicacion`
+--
+
+INSERT INTO `publicacion` (`id`, `contenido`, `id_usuario`, `fechacreacion`) VALUES
+(1, 'Esto no es twitter', 2, '2014-11-13 15:15:27'),
+(2, 'Peliculon que hacen en antena 3', 2, '2014-11-18 05:30:12'),
+(3, 'No tengo amigos :(', 1, '2014-11-12 07:25:26'),
+(4, 'Escribir 20 posts es una faena', 6, '2014-11-11 03:38:17'),
+(5, 'El nuevo cd de u2 tiene muchos temazos', 6, '2014-11-04 10:18:23'),
+(6, 'Mucho nuevo hay por aqui', 17, '2014-11-06 19:12:59'),
+(7, 'Hoy hace un dia de m...\r\na viciarse al lol', 3, '2014-11-16 00:37:20'),
+(8, 'El usuario numero 5 es un cachondo', 6, '2014-11-01 23:59:00'),
+(9, 'No ten go amigos y no se escrivir', 17, '2014-11-21 00:00:59'),
+(10, 'Lo que hay que leer', 20, '2014-11-19 10:46:09'),
+(11, 'Rafa seguro que es el mejor', 5, '2014-11-17 04:07:04'),
+(12, 'Tengo al pajaro molestando todo el dia', 9, '2014-11-12 23:21:18'),
+(13, 'No todos mis amigos me comprenden', 10, '2014-11-11 15:11:52'),
+(14, 'No tengo casi amigos :(', 10, '2014-11-05 17:59:59'),
+(15, 'El halloween mola, buena tarde con los colegas', 2, '2014-11-19 08:13:05'),
+(16, 'Im the first', 1, '2014-11-13 23:40:22'),
+(17, 'Menuda party hard que me acabo de pegar tete', 1, '2014-11-14 17:14:22'),
+(18, 'Rusty cole se considera un realista pero filosoficamente hablando un pesimista', 13, '2014-11-07 06:59:10'),
+(19, 'Skyler debe morir es tediosa no hay quien aguante eso', 13, '2014-11-10 10:08:06'),
+(20, 'El Pablo Motos cada dia lo veo mas alto o sera que los invitados ...', 13, '2014-11-22 15:40:22');
 
 -- --------------------------------------------------------
 
@@ -505,7 +672,7 @@ INSERT INTO `tipooperacion` (`id`, `descripcion`) VALUES
 CREATE TABLE IF NOT EXISTS `tipousuario` (
 `id` int(11) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `tipousuario`
@@ -515,8 +682,7 @@ INSERT INTO `tipousuario` (`id`, `descripcion`) VALUES
 (1, 'Administrador'),
 (2, 'profesor'),
 (3, 'alumno'),
-(4, 'padre 0 tutore'),
-(5, 'usuario visitante');
+(4, 'padre 0 tutore');
 
 -- --------------------------------------------------------
 
@@ -546,48 +712,44 @@ INSERT INTO `trimestre` (`id`, `trimestre`) VALUES
 
 CREATE TABLE IF NOT EXISTS `usuario` (
 `id` int(6) NOT NULL COMMENT 'Identificador',
-  `login` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Nombre de usuario',
-  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Contraseña',
-  `id_tipousuario` int(11) DEFAULT NULL COMMENT 'Tipo de usuario',
-  `ciudad` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Ciudad',
-  `firma` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Firma'
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `login` varchar(255) DEFAULT NULL COMMENT 'Nombre de Usuario',
+  `password` varchar(255) DEFAULT NULL COMMENT 'Contraseña',
+  `id_tipousuario` int(11) DEFAULT NULL COMMENT 'Tipo de Usuario',
+  `ciudad` varchar(255) DEFAULT NULL COMMENT 'Ciudad',
+  `firma` varchar(255) DEFAULT NULL COMMENT 'Firma'
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `login`, `password`, `id_tipousuario`, `ciudad`, `firma`) VALUES
-(1, 'pepe', 'pepe', 2, 'Valencia', 'is my life and do what I want'),
-(2, 'juan', 'juan', 3, 'Madrid', 'http://criticalandia.com críticas de entretenimiento, listas, opiniones...'),
-(3, 'maria', 'maria', 3, 'Barcelona', 'If you love something, set it free. Unless it''''s a tiger.'),
-(4, 'antonia', 'antonia', 3, 'Sevilla', '"El único límite a nuestros logros de mañana está en nuestras dudas de hoy."'),
-(5, 'edu', 'edu', 3, 'Zaragoza', 'Plataforma: ORGULLLO CADISTA no.58'),
-(6, 'jose', 'jose', 3, 'Teruel', 'Ironía: Figura literaria mediante la cual se da a entender lo contrario de lo que se dice.'),
-(7, 'silvia', 'silvia', 3, 'Huesca', 'Paso de firmas'),
-(8, 'pedro', 'pedro', 3, 'Alicante', 'Camisetas y calzado www.pedidoshicks.com'),
-(9, 'raquel', 'raquel', 3, 'Castellón', 'PEÑA COLCHONERA Socio número 629'),
-(10, 'daniel', 'daniel', 3, 'Almería', '"Obsesionado es tan sólo la palabra que usan los perezosos para describir a los dedicados"'),
-(11, 'rafael', 'rafael', 1, 'A Coruña', 'Ista ye a mia tierra, a mia fabla'),
-(12, 'juan', 'juan', 3, 'Barcelona', 'No todos los catalanes somos independentistas'),
-(13, 'elena', 'elena', 3, 'Bilbao', 'Buenas tardes'),
-(14, 'luis', 'luis', 3, 'Lugo', 'Preparado para cualquier combate'),
-(15, 'alba', 'alba', 3, 'Cuenca', 'Si tienes un Ibiza o un Cordoba, este es tu club: www.clubseatcordoba.com'),
-(16, 'amparo', 'amparo', 3, 'Ciudad Real', 'No hay dos sin tres'),
-(17, 'ambrosio', 'ambrosio', 3, 'Guadalajara', 'Tesis+Antítesis=Síntesis. Problema+Acción = Solución.'),
-(18, 'luisa', 'luisa', 3, 'Huelva', 'Y yo me iré. y se quedará mi huerto con su verde árbol, y con su pozo blanco. Y yo me iré.. Y se quedarán los pájaros cantando'),
-(19, 'leon', 'leon', 3, 'Granada', 'La Infanta no sabía nada y punto.'),
-(20, 'rosa', 'rosa', 3, 'Cádiz', 'Viva España'),
-(21, 'capcom', 'capcom', 3, 'Jerez', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.'),
-(22, 'teleco', 'teleco', 3, 'Vallecas', 'Foreros de la Comunidad de Madrid Nº25'),
-(23, 'mercadona', 'mercadona', 3, 'Jaén', 'Y veréis el resurgir poderoso del guerrero, sin miedo a leyes ni a nostalgias.'),
-(24, 'vistaprint', 'vistaprint', 3, 'Valencia', 'Codeados.com Diseño y Desarrollo web, Imagen Corporativa, SEO, Marketing Digital'),
-(25, 'google', 'google', 3, 'California', 'Viva google +'),
-(26, 'konami', 'konami', 3, 'Tokio', 'Viva Castolo, Minanda y Ximelez'),
-(27, 'orange', 'orange', 3, 'París', 'Viva movistar'),
-(28, 'samsung', 'samsung', 3, 'Cuenca', 'Viva el iPhone 6'),
-(29, 'gigabyte', 'gigabyte', 3, 'Oviedo', 'Viva gigabyte'),
-(30, 'microsoft', 'microsoft', 3, 'Albacete', 'La xbox ONE es la MEJOR CONSOLA');
+(1, 'betina', 'betina', 3, 'Valencia', 'is my life and do what I want'),
+(2, 'guzmán', 'guzmán', 3, 'Valencia', 'http://criticalandia.com críticas de entretenimiento, listas, opiniones...'),
+(3, 'haide', 'haide', 3, 'Valencia', 'If you love something, set it free. Unless it''''s a tiger.'),
+(4, 'martial', 'martial', 3, 'Madrid', '"El único límite a nuestros logros de mañana está en nuestras dudas de hoy."'),
+(5, 'matty', 'matty', 3, 'Castellon', 'Plataforma: ORGULLLO CADISTA no.58'),
+(6, 'adaluz', 'adaluz', 3, 'Alicante', 'Ironía: Figura literaria mediante la cual se da a entender lo contrario de lo que se dice.'),
+(7, 'milton', 'milton', 3, 'Alicante', 'Paso de firmas'),
+(8, 'mabel', 'mabel', 3, 'Alcoy', 'Camisetas y calzado www.pedidoshicks.com'),
+(9, 'aisha', 'aisha', 3, 'Valencia', 'PEÑA COLCHONERA Socio número 629'),
+(10, 'lutero', 'lutero', 3, 'Barcelona', 'No todos los catalanes somos independentistas'),
+(11, 'millan', 'millan', 3, 'Zaragoza', '"Obsesionado es tan sólo la palabra que usan los perezosos para describir a los dedicados"'),
+(12, 'jesus', 'jesus', 1, 'Valencia', 'El principio de la sabiduria es el temor a Dios..!!'),
+(13, 'jose', 'jose', 2, 'Valencia', 'Buenas tardes'),
+(14, 'areb', 'areb', 2, 'Valencia', 'Preparado para cualquier combate'),
+(15, 'bartelemy', 'bartelemy', 2, 'Sevilla', 'Si tienes un Ibiza o un Cordoba, este es tu club: www.clubseatcordoba.com'),
+(16, 'agape', 'agape', 2, 'Barcelona', 'No hay dos sin tres'),
+(17, 'aniela', 'aniela', 2, 'Valencia', 'Tesis+Antítesis=Síntesis. Problema+Acción = Solución.'),
+(18, 'pascua', 'pascua', 2, 'Valencia', 'Y yo me iré. y se quedará mi huerto con su verde árbol, y con su pozo blanco. Y yo me iré.. Y se quedarán los pájaros cantando'),
+(19, 'cameron', 'cameron', 2, 'Castellon', 'La Infanta no sabía nada y punto.'),
+(20, 'jules', 'jules', 2, 'Valencia', 'Viva España'),
+(21, 'nantilde', 'nantilde', 2, 'Valencia', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.'),
+(22, 'nereo', 'nereo', 2, 'Valencia', 'Y veréis el resurgir poderoso del guerrero, sin miedo a leyes ni a nostalgias.'),
+(23, 'amal', 'amal', 2, 'Burgos', 'Codeados.com Diseño y Desarrollo web, Imagen Corporativa, SEO, Marketing Digital'),
+(24, 'martin', 'martin', 2, 'Valencia', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.'),
+(25, 'alonso', 'alonso', 2, 'Valencia', 'Todo tiempo pasado fue mejor'),
+(26, 'silvia', 'silvia', 2, 'Valencia', 'Es mejor un pueblo culto');
 
 --
 -- Índices para tablas volcadas
@@ -621,6 +783,12 @@ ALTER TABLE `asistencia`
 -- Indices de la tabla `horario`
 --
 ALTER TABLE `horario`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `mensajeprivado`
+--
+ALTER TABLE `mensajeprivado`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -660,6 +828,12 @@ ALTER TABLE `profesor`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `publicacion`
+--
+ALTER TABLE `publicacion`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tipooperacion`
 --
 ALTER TABLE `tipooperacion`
@@ -691,17 +865,17 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=3;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=158;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT de la tabla `asistencia`
 --
@@ -713,10 +887,15 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
 ALTER TABLE `horario`
 MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
 --
+-- AUTO_INCREMENT de la tabla `mensajeprivado`
+--
+ALTER TABLE `mensajeprivado`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=21;
+--
 -- AUTO_INCREMENT de la tabla `nivel`
 --
 ALTER TABLE `nivel`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `nota`
 --
@@ -726,7 +905,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
 -- AUTO_INCREMENT de la tabla `operacion`
 --
 ALTER TABLE `operacion`
-MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Operación',AUTO_INCREMENT=461;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Operación',AUTO_INCREMENT=460;
 --
 -- AUTO_INCREMENT de la tabla `permiso`
 --
@@ -736,7 +915,12 @@ MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Permiso',AUTO_INCREMENT=7
 -- AUTO_INCREMENT de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=12;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT de la tabla `publicacion`
+--
+ALTER TABLE `publicacion`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `tipooperacion`
 --
@@ -746,7 +930,7 @@ MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMEN
 -- AUTO_INCREMENT de la tabla `tipousuario`
 --
 ALTER TABLE `tipousuario`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `trimestre`
 --
@@ -756,7 +940,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=4;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=31;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=27;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
