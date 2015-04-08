@@ -71,6 +71,10 @@
         <a  class="list-group-item" id="lnkAsignatura" href="jsp#/asignatura">Asignaturas</a> 
         <a  class="list-group-item" id="lnkNivel" href="jsp#/nivel">Nivel del Alumno</a> 
         <a  class="list-group-item" id="lnkMensajeprivado" href="jsp#/mensajeprivado">Mensaje privado</a> 
+        <a  class="list-group-item" id="lnkNota" href="jsp#/nota">Nota del Alumno</a> 
+        <a  class="list-group-item" id="lnkHorario" href="jsp#/horario">Horario</a> 
+
+
 
 
         </div>
