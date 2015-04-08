@@ -30,7 +30,6 @@ import javax.servlet.http.HttpServletResponse;
 import net.daw.control.operation.generic.specific.implementation.AdministradorControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.AlumnoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.AsignaturaControlOperationGenSpImpl;
-import net.daw.control.operation.generic.specific.implementation.AsistenciaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ColegioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.DocumentoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.DocumentobonitoControlOperationGenSpImpl;
@@ -57,7 +56,6 @@ import net.daw.control.operation.specific.implementation.MensajeprivadoControlOp
 import net.daw.control.route.generic.specific.implementation.AdministradorControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.AlumnoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.AsignaturaControlRouteGenSpImpl;
-import net.daw.control.route.generic.specific.implementation.AsistenciaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ColegioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.DocumentoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.DocumentobonitoControlRouteGenSpImpl;
@@ -242,12 +240,7 @@ public class JsonControl extends HttpServlet {
                         AsignaturaControlRouteGenSpImpl oAsignaturaRoute = new AsignaturaControlRouteGenSpImpl();
                         AsignaturaControlOperationGenSpImpl oAsignaturaControlOperation = new AsignaturaControlOperationGenSpImpl(request);
                         jsonResult = oAsignaturaRoute.execute(request, oAsignaturaControlOperation);
-                        break;
-                    case "asistencia":
-                        AsistenciaControlRouteGenSpImpl oAsistenciaRoute = new AsistenciaControlRouteGenSpImpl();
-                        AsistenciaControlOperationGenSpImpl oAsistenciaControlOperation = new AsistenciaControlOperationGenSpImpl(request);
-                        jsonResult = oAsistenciaRoute.execute(request, oAsistenciaControlOperation);
-                        break;
+                        break;                   
                     case "colegio":
                         ColegioControlRouteGenSpImpl oColegioRoute = new ColegioControlRouteGenSpImpl();
                         ColegioControlOperationGenSpImpl oColegioControlOperation = new ColegioControlOperationGenSpImpl(request);
