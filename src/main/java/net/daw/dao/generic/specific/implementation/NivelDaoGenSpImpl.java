@@ -1,5 +1,5 @@
 /*
- * Copyright (C) July 2014 Rafael Aznar
+ * Copyright (C) 2014 al038098
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,10 +17,14 @@
  */
 package net.daw.dao.generic.specific.implementation;
 
-import net.daw.dao.generic.implementation.TableDaoGenImpl;
 import java.sql.Connection;
 import net.daw.bean.generic.specific.implementation.NivelBeanGenSpImpl;
+import net.daw.dao.generic.implementation.TableDaoGenImpl;
 
+/**
+ *
+ * @author al038098
+ */
 public class NivelDaoGenSpImpl extends TableDaoGenImpl<NivelBeanGenSpImpl> {
 
     public NivelDaoGenSpImpl(String strFuente, Connection pooledConnection) throws Exception {
