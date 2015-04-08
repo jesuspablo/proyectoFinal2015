@@ -40,16 +40,28 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Metro Bootstrapt -->
+        <link rel="stylesheet" href="css/metro-bootstrap.min.css">
+        <link rel="stylesheet" href="css/metro-bootstrap-responsive.min.css">
+        <link href="css/iconFont.min.css" rel="stylesheet">
          <link rel="stylesheet" href="css/styles.css">
+
+        <% if (user != null) {%>
+        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css"> 
+        <% } else {%>
+        <link rel="stylesheet" href="css/skin/main.css">
+        <% }%>
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
         
-        
-      
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
-        <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- FAlTA --><link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-        
 
+        
 
        
 

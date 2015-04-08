@@ -1,5 +1,5 @@
 /*
- * Copyright (C) July 2014 Rafael Aznar
+ * Copyright (C) 2014 al037542
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,16 +15,34 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package net.daw.control.operation.generic.specific.implementation;
+package net.daw.bean.generic.specific.implementation;
 
-import java.lang.reflect.InvocationTargetException;
-import javax.servlet.http.HttpServletRequest;
-import net.daw.control.operation.generic.implementation.ControlOperationGenImpl;
+import com.google.gson.annotations.Expose;
+import net.daw.bean.generic.implementation.BeanGenImpl;
+import net.daw.bean.publicinterface.BeanInterface;
 
-public class PostControlOperationGenSpImpl extends ControlOperationGenImpl {
+/**
+ *
+ * @author Victor López
+ */
+public class EstadoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
-    public PostControlOperationGenSpImpl(HttpServletRequest request) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, Exception {
-        super(request);
+    @Expose
+    private String tipo;
+
+    public EstadoBeanGenSpImpl() {
+    }
+
+    public EstadoBeanGenSpImpl(Integer id) {
+        super(id);
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
 }
