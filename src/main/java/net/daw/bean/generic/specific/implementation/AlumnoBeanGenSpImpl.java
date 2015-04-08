@@ -31,11 +31,11 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
    @Expose
     private String primer_apellido = "";
    @Expose
-    private String segundo_apellido = "";  
+    private String segundo_apellido = "";     
    
-   
-     @Expose
+     @Expose     
     private String email = "";
+     
      @Expose(serialize = false)
     private Integer id_nivel = 0; //importante inicializar a 0 las claves ajenas
     @Expose(deserialize = false)
