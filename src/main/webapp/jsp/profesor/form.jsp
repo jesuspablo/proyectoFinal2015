@@ -141,6 +141,16 @@
                                 }
                             }
                         },
+                        id_asignatura: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe elegir un usuario'
+                                },
+                                integer: {
+                                    message: 'El identificador de usuario debe ser un entero'
+                                }
+                            }
+                        },
                         id_nivel: {
                             validators: {
                                 notEmpty: {
