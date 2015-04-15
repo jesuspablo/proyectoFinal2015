@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 05-04-2015 a las 04:14:17
+-- Tiempo de generación: 15-04-2015 a las 06:11:10
 -- Versión del servidor: 5.5.40
 -- Versión de PHP: 5.4.34
 
@@ -157,20 +157,6 @@ INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`, `id_nota`) 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `asistencia`
---
-
-CREATE TABLE IF NOT EXISTS `asistencia` (
-`id` int(12) NOT NULL COMMENT 'ID',
-  `fecha` varchar(255) DEFAULT NULL COMMENT 'Fecha',
-  `justificada` varchar(255) DEFAULT NULL COMMENT 'Justificada',
-  `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno',
-  `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `horario`
 --
 
@@ -180,7 +166,15 @@ CREATE TABLE IF NOT EXISTS `horario` (
   `hora_inicio` varchar(255) DEFAULT NULL COMMENT 'Hora Inicio',
   `hora_fin` varchar(255) DEFAULT NULL COMMENT 'Hora Fin',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `horario`
+--
+
+INSERT INTO `horario` (`id`, `dia`, `hora_inicio`, `hora_fin`, `id_asignatura`) VALUES
+(1, 'Lunes', '15:00', '20:30', 2),
+(2, 'Martes', '15:45', '20:30', 4);
 
 -- --------------------------------------------------------
 
@@ -259,13 +253,21 @@ INSERT INTO `nivel` (`id`, `nivel`, `curso`, `aula`) VALUES
 
 CREATE TABLE IF NOT EXISTS `nota` (
 `id` int(12) NOT NULL COMMENT 'ID',
-  `id_trimestre` int(12) DEFAULT NULL COMMENT 'ID Trimestre',
-  `nota` varchar(255) DEFAULT NULL COMMENT 'Nota',
+  `nota` int(12) DEFAULT NULL COMMENT 'Nota',
   `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura',
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
-  `id_profesor` int(12) DEFAULT NULL COMMENT 'ID Profesor'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_profesor` int(12) DEFAULT NULL COMMENT 'ID Profesor',
+  `id_trimestre` int(6) DEFAULT NULL COMMENT 'ID_Trimestre'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `nota`
+--
+
+INSERT INTO `nota` (`id`, `nota`, `id_alumno`, `id_asignatura`, `id_nivel`, `id_profesor`, `id_trimestre`) VALUES
+(1, 6, 3, 2, 2, 4, 1),
+(2, 4, 6, 3, 5, 8, 3);
 
 -- --------------------------------------------------------
 
@@ -716,40 +718,41 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `password` varchar(255) DEFAULT NULL COMMENT 'Contraseña',
   `id_tipousuario` int(11) DEFAULT NULL COMMENT 'Tipo de Usuario',
   `ciudad` varchar(255) DEFAULT NULL COMMENT 'Ciudad',
-  `firma` varchar(255) DEFAULT NULL COMMENT 'Firma'
+  `firma` varchar(255) DEFAULT NULL COMMENT 'Firma',
+  `skin` varchar(255) DEFAULT NULL COMMENT 'skin'
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `login`, `password`, `id_tipousuario`, `ciudad`, `firma`) VALUES
-(1, 'betina', 'betina', 3, 'Valencia', 'is my life and do what I want'),
-(2, 'guzmán', 'guzmán', 3, 'Valencia', 'http://criticalandia.com críticas de entretenimiento, listas, opiniones...'),
-(3, 'haide', 'haide', 3, 'Valencia', 'If you love something, set it free. Unless it''''s a tiger.'),
-(4, 'martial', 'martial', 3, 'Madrid', '"El único límite a nuestros logros de mañana está en nuestras dudas de hoy."'),
-(5, 'matty', 'matty', 3, 'Castellon', 'Plataforma: ORGULLLO CADISTA no.58'),
-(6, 'adaluz', 'adaluz', 3, 'Alicante', 'Ironía: Figura literaria mediante la cual se da a entender lo contrario de lo que se dice.'),
-(7, 'milton', 'milton', 3, 'Alicante', 'Paso de firmas'),
-(8, 'mabel', 'mabel', 3, 'Alcoy', 'Camisetas y calzado www.pedidoshicks.com'),
-(9, 'aisha', 'aisha', 3, 'Valencia', 'PEÑA COLCHONERA Socio número 629'),
-(10, 'lutero', 'lutero', 3, 'Barcelona', 'No todos los catalanes somos independentistas'),
-(11, 'millan', 'millan', 3, 'Zaragoza', '"Obsesionado es tan sólo la palabra que usan los perezosos para describir a los dedicados"'),
-(12, 'jesus', 'jesus', 1, 'Valencia', 'El principio de la sabiduria es el temor a Dios..!!'),
-(13, 'jose', 'jose', 2, 'Valencia', 'Buenas tardes'),
-(14, 'areb', 'areb', 2, 'Valencia', 'Preparado para cualquier combate'),
-(15, 'bartelemy', 'bartelemy', 2, 'Sevilla', 'Si tienes un Ibiza o un Cordoba, este es tu club: www.clubseatcordoba.com'),
-(16, 'agape', 'agape', 2, 'Barcelona', 'No hay dos sin tres'),
-(17, 'aniela', 'aniela', 2, 'Valencia', 'Tesis+Antítesis=Síntesis. Problema+Acción = Solución.'),
-(18, 'pascua', 'pascua', 2, 'Valencia', 'Y yo me iré. y se quedará mi huerto con su verde árbol, y con su pozo blanco. Y yo me iré.. Y se quedarán los pájaros cantando'),
-(19, 'cameron', 'cameron', 2, 'Castellon', 'La Infanta no sabía nada y punto.'),
-(20, 'jules', 'jules', 2, 'Valencia', 'Viva España'),
-(21, 'nantilde', 'nantilde', 2, 'Valencia', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.'),
-(22, 'nereo', 'nereo', 2, 'Valencia', 'Y veréis el resurgir poderoso del guerrero, sin miedo a leyes ni a nostalgias.'),
-(23, 'amal', 'amal', 2, 'Burgos', 'Codeados.com Diseño y Desarrollo web, Imagen Corporativa, SEO, Marketing Digital'),
-(24, 'martin', 'martin', 2, 'Valencia', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.'),
-(25, 'alonso', 'alonso', 2, 'Valencia', 'Todo tiempo pasado fue mejor'),
-(26, 'silvia', 'silvia', 2, 'Valencia', 'Es mejor un pueblo culto');
+INSERT INTO `usuario` (`id`, `login`, `password`, `id_tipousuario`, `ciudad`, `firma`, `skin`) VALUES
+(1, 'betina', 'betina', 3, 'Valencia', 'is my life and do what I want', 'main'),
+(2, 'guzmán', 'guzmán', 3, 'Valencia', 'http://criticalandia.com críticas de entretenimiento, listas, opiniones...', 'main'),
+(3, 'haide', 'haide', 3, 'Valencia', 'If you love something, set it free. Unless it''''s a tiger.', 'main'),
+(4, 'martial', 'martial', 3, 'Madrid', '"El único límite a nuestros logros de mañana está en nuestras dudas de hoy."', 'main'),
+(5, 'matty', 'matty', 3, 'Castellon', 'Plataforma: ORGULLLO CADISTA no.58', 'main'),
+(6, 'adaluz', 'adaluz', 3, 'Alicante', 'Ironía: Figura literaria mediante la cual se da a entender lo contrario de lo que se dice.', 'main'),
+(7, 'milton', 'milton', 3, 'Alicante', 'Paso de firmas', 'main'),
+(8, 'mabel', 'mabel', 3, 'Alcoy', 'Camisetas y calzado www.pedidoshicks.com', 'main'),
+(9, 'aisha', 'aisha', 3, 'Valencia', 'PEÑA COLCHONERA Socio número 629', 'main'),
+(10, 'lutero', 'lutero', 3, 'Barcelona', 'No todos los catalanes somos independentistas', 'main'),
+(11, 'millan', 'millan', 3, 'Zaragoza', '"Obsesionado es tan sólo la palabra que usan los perezosos para describir a los dedicados"', 'main'),
+(12, 'jesus', 'jesus', 1, 'Valencia', 'El principio de la sabiduria es el temor a Dios..!!', 'main'),
+(13, 'jose', 'jose', 2, 'Valencia', 'Buenas tardes', 'main'),
+(14, 'areb', 'areb', 2, 'Valencia', 'Preparado para cualquier combate', 'main'),
+(15, 'bartelemy', 'bartelemy', 2, 'Sevilla', 'Si tienes un Ibiza o un Cordoba, este es tu club: www.clubseatcordoba.com', 'main'),
+(16, 'agape', 'agape', 2, 'Barcelona', 'No hay dos sin tres', 'main'),
+(17, 'aniela', 'aniela', 2, 'Valencia', 'Tesis+Antítesis=Síntesis. Problema+Acción = Solución.', 'main'),
+(18, 'pascua', 'pascua', 2, 'Valencia', 'Y yo me iré. y se quedará mi huerto con su verde árbol, y con su pozo blanco. Y yo me iré.. Y se quedarán los pájaros cantando', 'main'),
+(19, 'cameron', 'cameron', 2, 'Castellon', 'La Infanta no sabía nada y punto.', 'main'),
+(20, 'jules', 'jules', 2, 'Valencia', 'Viva España', 'main'),
+(21, 'nantilde', 'nantilde', 2, 'Valencia', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.', 'main'),
+(22, 'nereo', 'nereo', 2, 'Valencia', 'Y veréis el resurgir poderoso del guerrero, sin miedo a leyes ni a nostalgias.', 'main'),
+(23, 'amal', 'amal', 2, 'Burgos', 'Codeados.com Diseño y Desarrollo web, Imagen Corporativa, SEO, Marketing Digital', 'main'),
+(24, 'martin', 'martin', 2, 'Valencia', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.', 'main'),
+(25, 'alonso', 'alonso', 2, 'Valencia', 'Todo tiempo pasado fue mejor', 'main'),
+(26, 'silvia', 'silvia', 2, 'Valencia', 'Es mejor un pueblo culto', 'main');
 
 --
 -- Índices para tablas volcadas
@@ -771,12 +774,6 @@ ALTER TABLE `alumno`
 -- Indices de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
- ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `asistencia`
---
-ALTER TABLE `asistencia`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -877,15 +874,10 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=12;
 ALTER TABLE `asignatura`
 MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=62;
 --
--- AUTO_INCREMENT de la tabla `asistencia`
---
-ALTER TABLE `asistencia`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
---
 -- AUTO_INCREMENT de la tabla `horario`
 --
 ALTER TABLE `horario`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `mensajeprivado`
 --
@@ -900,7 +892,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=10;
 -- AUTO_INCREMENT de la tabla `nota`
 --
 ALTER TABLE `nota`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID';
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `operacion`
 --
