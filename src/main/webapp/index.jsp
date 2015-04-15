@@ -45,7 +45,7 @@
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-        <link rel="stylesheet" href="css/producto.css">
+       
          <link rel="stylesheet" href="css/styles.css">
 
 
@@ -445,8 +445,8 @@
                 fProfesorRoutes();
                 fAsignaturaRoutes();
                 fNivelRoutes();
-                fHorarioRoutes();
-                fNotaRoutes();  
+                
+               
 
                 Path.listen();
 

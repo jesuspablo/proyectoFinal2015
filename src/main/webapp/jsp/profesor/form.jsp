@@ -80,6 +80,17 @@
         </div>        
         <label class="col-sm-7" for="obj_asignatura_desc" id="obj_asignatura_desc"></label>                     
     </div>
+    
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="obj_usuario_id">Usuario: </label> 
+        <div class="col-sm-2">              
+            <input readonly="true"  class="form-control"  id="obj_usuario_id" class="input-mini" name="id_usuario" type="text" size="5" maxlength="5" />  
+        </div>
+        <div class="col-sm-1">              
+            <a class="btn btn-primary btn-sm" id="obj_usuario_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
+        </div>        
+        <label class="col-sm-7" for="obj_usuario_desc" id="obj_usuario_desc"></label>                     
+    </div>
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">

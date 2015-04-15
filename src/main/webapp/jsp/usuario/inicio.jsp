@@ -53,7 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <li><a href="#section-2">Colegio</a></li>
 					 <li><a href="#section-3">Secretaria</a></li>					 					 
 				  <li><a href="#section-5">Contacto</a></li>
-          <li><a href="#section-4">Entrar</a></li>
+          <li><a href="jsp?op=login01&ob=usuario">Entrar</a></li>
 				</ul>
 		    </div>
 			<div class="clearfix"> </div>
