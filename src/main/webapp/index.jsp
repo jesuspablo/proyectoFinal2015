@@ -36,34 +36,24 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Proyecto Final</title>
+        <title>Ajax Yield</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- Metro Bootstrapt -->
-        <link rel="stylesheet" href="css/metro-bootstrap.min.css">
-        <link rel="stylesheet" href="css/metro-bootstrap-responsive.min.css">
-        <link href="css/iconFont.min.css" rel="stylesheet">
+
+        <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
+        <link rel="stylesheet" href="css/producto.css">
          <link rel="stylesheet" href="css/styles.css">
 
+
         <% if (user != null) {%>
-        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css"> 
+        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css">
         <% } else {%>
         <link rel="stylesheet" href="css/skin/main.css">
         <% }%>
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
-        
-        <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
-        
-        <!-- FAlTA --><link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/bootstrapValidator.min.css">
-        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-
-        
-
-       
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -186,9 +176,44 @@
             var path = '<%=request.getContextPath()%>';
             var myuser = <%=id_usuario%>;
             var mylevel = <%=id_tipousuario%>;
-        </script>      
-        
-        
+        </script>
+
+        <script src="js/specific/documento/control.js" charset="UTF-8"></script>
+        <script src="js/specific/documento/model.js" charset="UTF-8"></script>
+        <script src="js/specific/documento/view.js" charset="UTF-8"></script>
+        <script src="js/specific/documento/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/opcion/control.js" charset="UTF-8"></script>
+        <script src="js/specific/opcion/model.js" charset="UTF-8"></script>
+        <script src="js/specific/opcion/view.js" charset="UTF-8"></script>
+        <script src="js/specific/opcion/routes.js" charset="UTF-8"></script>
+
+        <!-- ***********  RED SOCIAL  *********** -->
+        <script src="js/specific/publicacion/control.js" charset="UTF-8"></script>
+        <script src="js/specific/publicacion/model.js" charset="UTF-8"></script>
+        <script src="js/specific/publicacion/view.js" charset="UTF-8"></script>
+        <script src="js/specific/publicacion/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/amistad/control.js" charset="UTF-8"></script>
+        <script src="js/specific/amistad/model.js" charset="UTF-8"></script>
+        <script src="js/specific/amistad/view.js" charset="UTF-8"></script>
+        <script src="js/specific/amistad/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/estado/control.js" charset="UTF-8"></script>
+        <script src="js/specific/estado/model.js" charset="UTF-8"></script>
+        <script src="js/specific/estado/view.js" charset="UTF-8"></script>
+        <script src="js/specific/estado/routes.js" charset="UTF-8"></script>        
+
+        <script src="js/specific/redsocialperfil/control.js" charset="UTF-8"></script>
+        <script src="js/specific/redsocialperfil/model.js" charset="UTF-8"></script>
+        <script src="js/specific/redsocialperfil/view.js" charset="UTF-8"></script>
+        <script src="js/specific/redsocialperfil/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/inicioRedSocial/control.js" charset="UTF-8"></script>
+        <script src="js/specific/inicioRedSocial/model.js" charset="UTF-8"></script>
+        <script src="js/specific/inicioRedSocial/view.js" charset="UTF-8"></script>
+        <script src="js/specific/inicioRedSocial/routes.js" charset="UTF-8"></script>
+        <!-- ***********  FIN RED SOCIAL  *********** -->
 
         <script src="js/specific/cuestionario/control.js" charset="UTF-8"></script>
         <script src="js/specific/cuestionario/model.js" charset="UTF-8"></script>
@@ -203,8 +228,23 @@
         <script src="js/specific/usuario/control.js" charset="UTF-8"></script>
         <script src="js/specific/usuario/model.js" charset="UTF-8"></script>
         <script src="js/specific/usuario/view.js" charset="UTF-8"></script>
-        <script src="js/specific/usuario/routes.js" charset="UTF-8"></script>      
-        
+        <script src="js/specific/usuario/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/tipodocumento/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipodocumento/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tipodocumento/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tipodocumento/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/pregunta/control.js" charset="UTF-8"></script>
+        <script src="js/specific/pregunta/model.js" charset="UTF-8"></script>
+        <script src="js/specific/pregunta/view.js" charset="UTF-8"></script>
+        <script src="js/specific/pregunta/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/entrega/control.js" charset="UTF-8"></script>
+        <script src="js/specific/entrega/model.js" charset="UTF-8"></script>
+        <script src="js/specific/entrega/view.js" charset="UTF-8"></script>
+        <script src="js/specific/entrega/routes.js" charset="UTF-8"></script>
+
 
         <script src="js/specific/tipousuario/control.js" charset="UTF-8"></script>
         <script src="js/specific/tipousuario/model.js" charset="UTF-8"></script>
@@ -213,7 +253,116 @@
         <!-- Fin Modificación Juanma Usuarios -->
 
         <!-- FORO -->        
-        <script src="js/specific/profesor/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotema/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotema/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotema/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotema/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/tema/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tema/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tema/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tema/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/post/control.js" charset="UTF-8"></script>
+        <script src="js/specific/post/model.js" charset="UTF-8"></script>
+        <script src="js/specific/post/view.js" charset="UTF-8"></script>
+        <script src="js/specific/post/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/mensajeprivado/control.js" charset="UTF-8"></script>
+        <script src="js/specific/mensajeprivado/model.js" charset="UTF-8"></script>
+        <script src="js/specific/mensajeprivado/view.js" charset="UTF-8"></script>
+        <script src="js/specific/mensajeprivado/routes.js" charset="UTF-8"></script>
+        <!-- FIN FORO -->
+
+        <!-- PROPUESTAS Y VOTACIONES -->   
+
+        <script src="js/specific/propuesta/control.js" charset="UTF-8"></script>
+        <script src="js/specific/propuesta/model.js" charset="UTF-8"></script>
+        <script src="js/specific/propuesta/view.js" charset="UTF-8"></script>
+        <script src="js/specific/propuesta/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/tipopropuesta/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipopropuesta/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tipopropuesta/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tipopropuesta/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/comentario/control.js" charset="UTF-8"></script>
+        <script src="js/specific/comentario/model.js" charset="UTF-8"></script>
+        <script src="js/specific/comentario/view.js" charset="UTF-8"></script>
+        <script src="js/specific/comentario/routes.js" charset="UTF-8"></script>
+
+        <!--FIN PROPUESTAS Y VOTACIONES-->
+
+        <script src="js/specific/proveedor/control.js" charset="UTF-8"></script>
+        <script src="js/specific/proveedor/model.js" charset="UTF-8"></script>
+        <script src="js/specific/proveedor/view.js" charset="UTF-8"></script>
+        <script src="js/specific/proveedor/routes.js" charset="UTF-8"></script>
+
+
+        <script src="js/specific/impuesto/control.js" charset="UTF-8"></script>
+        <script src="js/specific/impuesto/model.js" charset="UTF-8"></script>
+        <script src="js/specific/impuesto/view.js" charset="UTF-8"></script>
+        <script src="js/specific/impuesto/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/pedido/control.js" charset="UTF-8"></script>
+        <script src="js/specific/pedido/model.js" charset="UTF-8"></script>
+        <script src="js/specific/pedido/view.js" charset="UTF-8"></script>
+        <script src="js/specific/pedido/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/detalle_pedido/control.js" charset="UTF-8"></script>
+        <script src="js/specific/detalle_pedido/model.js" charset="UTF-8"></script>
+        <script src="js/specific/detalle_pedido/view.js" charset="UTF-8"></script>
+        <script src="js/specific/detalle_pedido/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/respuesta/control.js" charset="UTF-8"></script>
+        <script src="js/specific/respuesta/model.js" charset="UTF-8"></script>
+        <script src="js/specific/respuesta/view.js" charset="UTF-8"></script>
+        <script src="js/specific/respuesta/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/producto/control.js" charset="UTF-8"></script>
+        <script src="js/specific/producto/model.js" charset="UTF-8"></script>
+        <script src="js/specific/producto/view.js" charset="UTF-8"></script>
+        <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/tipoproducto/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipoproducto/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tipoproducto/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tipoproducto/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/documentobonito/control.js" charset="UTF-8"></script>
+        <script src="js/specific/documentobonito/model.js" charset="UTF-8"></script>
+        <script src="js/specific/documentobonito/view.js" charset="UTF-8"></script>
+        <script src="js/specific/documentobonito/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/trabajo/control.js" charset="UTF-8"></script>
+        <script src="js/specific/trabajo/model.js" charset="UTF-8"></script>
+        <script src="js/specific/trabajo/view.js" charset="UTF-8"></script>
+        <script src="js/specific/trabajo/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/tipotarea/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotarea/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotarea/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tipotarea/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/proyecto/control.js" charset="UTF-8"></script>
+        <script src="js/specific/proyecto/model.js" charset="UTF-8"></script>
+        <script src="js/specific/proyecto/view.js" charset="UTF-8"></script>
+        <script src="js/specific/proyecto/routes.js" charset="UTF-8"></script>
+
+
+        <script src="js/specific/estadotarea/control.js" charset="UTF-8"></script>
+        <script src="js/specific/estadotarea/model.js" charset="UTF-8"></script>
+        <script src="js/specific/estadotarea/view.js" charset="UTF-8"></script>
+        <script src="js/specific/estadotarea/routes.js" charset="UTF-8"></script>
+
+        <script src="js/specific/producto/control.js" charset="UTF-8"></script>
+        <script src="js/specific/producto/model.js" charset="UTF-8"></script>
+        <script src="js/specific/producto/view.js" charset="UTF-8"></script>
+        <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
+            
+        <!--MANTENIMIENTOS COLEGIO-->
+        
+         <script src="js/specific/profesor/control.js" charset="UTF-8"></script>
         <script src="js/specific/profesor/model.js" charset="UTF-8"></script>
         <script src="js/specific/profesor/view.js" charset="UTF-8"></script>
         <script src="js/specific/profesor/routes.js" charset="UTF-8"></script>
@@ -228,9 +377,12 @@
         <script src="js/specific/horario/view.js" charset="UTF-8"></script>
         <script src="js/specific/horario/routes.js" charset="UTF-8"></script>
         
-        
-
-        <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/control.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/model.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/view.js" charset="UTF-8"></script>
+        <script src="js/specific/asignatura/routes.js" charset="UTF-8"></script>                    
+       
+         <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/model.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/view.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/routes.js" charset="UTF-8"></script>
@@ -240,20 +392,10 @@
         <script src="js/specific/nivel/view.js" charset="UTF-8"></script>
         <script src="js/specific/nivel/routes.js" charset="UTF-8"></script>
 
-        <script src="js/specific/mensajeprivado/control.js" charset="UTF-8"></script>
-        <script src="js/specific/mensajeprivado/model.js" charset="UTF-8"></script>
-        <script src="js/specific/mensajeprivado/view.js" charset="UTF-8"></script>
-        <script src="js/specific/mensajeprivado/routes.js" charset="UTF-8"></script>
-        <!-- FIN FORO -->
+        
+        
+        
 
-        <!-- PROPUESTAS Y VOTACIONES -->   
-
-        <script src="js/specific/asignatura/control.js" charset="UTF-8"></script>
-        <script src="js/specific/asignatura/model.js" charset="UTF-8"></script>
-        <script src="js/specific/asignatura/view.js" charset="UTF-8"></script>
-        <script src="js/specific/asignatura/routes.js" charset="UTF-8"></script>                    
-                                          
-              
         <script src="js/specific/tipodocumento/model.js" charset="UTF-8"></script>
 
         <script type="text/javascript">
@@ -267,23 +409,44 @@
                 inicializacion();
 
 
-               
+                fDocumentoRoutes();
+                fTipotareaRoutes();
+                fTrabajoRoutes();
+                fEstadotareaRoutes();
+                fProyectoRoutes();
+                fOpcionRoutes();
+                fPreguntaRoutes();
                 fCuestionarioRoutes();
-                
+                fAmistadRoutes();
+                fUsuarioRoutes();
+                fPublicacionRoutes();
+                fRedsocialperfilRoutes();
+                fInicioRedSocialRoutes();
+                fPostRoutes();
                 fMensajeprivadoRoutes();
-                
+                fTemaRoutes();
+                fTipotemaRoutes();
+                fEstadoRoutes();
+                fProveedorRoutes();
+                fImpuestoRoutes();
+                fActividadRoutes();
+                fEntregaRoutes();
+                fPedidoRoutes();
+                fDetalle_pedidoRoutes();
+                fRespuestaRoutes();
+                fComentarioRoutes();
+                fPropuestaRoutes();
+                fTipopropuestaRoutes();
+                fProductoRoutes();
+                fTipoproductoRoutes();
+                fTipodocumentoRoutes();
+
                 fAlumnoRoutes();
                 fProfesorRoutes();
                 fAsignaturaRoutes();
                 fNivelRoutes();
                 fHorarioRoutes();
-                fNotaRoutes();               
-               
-               
-                
-                fTipodocumentoRoutes();
-
-
+                fNotaRoutes();  
 
                 Path.listen();
 
