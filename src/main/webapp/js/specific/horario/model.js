@@ -16,11 +16,11 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-var nivelModel = function (strClase) {
+var horarioModel = function (strClase) {
     this.clase = strClase;
 };
-nivelModel.prototype = new model('nivel');
-nivelModel.prototype.getClassNameNivel = function () {
+horarioModel.prototype = new model('horario');
+horarioModel.prototype.getClassNameHorario = function () {
     return this.getClassName() + "Modelo";
 };
-var oNivelModel = new nivelModel('nivel');
+var oHorarioModel = new horarioModel('horario');

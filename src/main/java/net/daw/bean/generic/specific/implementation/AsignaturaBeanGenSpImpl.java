@@ -40,10 +40,6 @@ public class AsignaturaBeanGenSpImpl extends BeanGenImpl implements BeanInterfac
     @Expose(deserialize = false)
     private NivelBeanGenSpImpl obj_nivel = null;   
     
-    @Expose(serialize = false)
-    private Integer id_alumno = 0; //importante inicializar a 0 las claves ajenas
-    @Expose(deserialize = false)
-    private AlumnoBeanGenSpImpl obj_alumno = null;    
    
    
    
@@ -91,21 +87,6 @@ public class AsignaturaBeanGenSpImpl extends BeanGenImpl implements BeanInterfac
         this.obj_nivel = obj_nivel;
     }
 
-    public Integer getId_alumno() {
-        return id_alumno;
-    }
-
-    public void setId_alumno(Integer id_alumno) {
-        this.id_alumno = id_alumno;
-    }
-
-    public AlumnoBeanGenSpImpl getObj_alumno() {
-        return obj_alumno;
-    }
-
-    public void setObj_alumno(AlumnoBeanGenSpImpl obj_alumno) {
-        this.obj_alumno = obj_alumno;
-    }
-
+   
     
 }

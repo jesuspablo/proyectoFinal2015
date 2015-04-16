@@ -17,17 +17,17 @@
  */
 
 
-var nivelView = function (strClase) {
+var notaView = function (strClase) {
     this.clase = strClase;
 };
-nivelView.prototype = new view('nivel');
-nivelView.prototype.getClassNameNivel = function () {
+notaView.prototype = new view('nota');
+notaView.prototype.getClassNameNota = function () {
     return this.getClassName() + "Vista";
 };
-var oNivelView = new nivelView('nivel');
+var oNotaView = new notaView('nota');
 
 
-nivelView.prototype.loadButtons = function (id) {
+notaView.prototype.loadButtons = function (id) {
 
     var botonera = "";
     botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
@@ -38,48 +38,48 @@ nivelView.prototype.loadButtons = function (id) {
     return botonera;
 
 }
-nivelView.prototype.loadFormValues = function (valores, campos) {
-//                    $('#nivel_form #titulo').val(valores['titulo']);
-//                    $('#nivel_form #contenido').val(valores['contenido']);
-//                    $('#nivel_form #alta').val(valores['alta']);
-//                    $('#nivel_form #cambio').val(valores['cambio']);
-//                    $('#nivel_form #hits').val(valores['hits']);
-//                    $('#nivel_form #id_usuario').val(valores['id_usuario']);
-//                    $('#nivel_form #etiquetas').val(valores['etiquetas']);
-//                    $('#nivel_form #publicado').val(valores['publicado']);
-//                    $('#nivel_form #portada').val(valores['portada']);
+notaView.prototype.loadFormValues = function (valores, campos) {
+//                    $('#nota_form #titulo').val(valores['titulo']);
+//                    $('#nota_form #contenido').val(valores['contenido']);
+//                    $('#nota_form #alta').val(valores['alta']);
+//                    $('#nota_form #cambio').val(valores['cambio']);
+//                    $('#nota_form #hits').val(valores['hits']);
+//                    $('#nota_form #id_usuario').val(valores['id_usuario']);
+//                    $('#nota_form #etiquetas').val(valores['etiquetas']);
+//                    $('#nota_form #publicado').val(valores['publicado']);
+//                    $('#nota_form #portada').val(valores['portada']);
     this.doFillForm(valores, campos);
 };
 
-nivelView.prototype.getFormValues = function () {
+notaView.prototype.getFormValues = function () {
     var valores = [];
-//                    valores['titulo'] = $('#nivel_form #titulo');
-//                    valores['contenido'] = $('#nivel_form #contenido');
-//                    valores['alta'] = $('#nivel_form #alta');
-//                    valores['cambio'] = $('#nivel_form #cambio');
-//                    valores['hits'] = $('#nivel_form #hits');
-//                    valores['id_usuario'] = $('#nivel_form #id_usuario');
-//                    valores['etiquetas'] = $('#nivel_form #etiquetas');
-//                    valores['publicado'] = $('#nivel_form #publicado');
-//                    valores['portada'] = $('#nivel_form #portada');
+//                    valores['titulo'] = $('#nota_form #titulo');
+//                    valores['contenido'] = $('#nota_form #contenido');
+//                    valores['alta'] = $('#nota_form #alta');
+//                    valores['cambio'] = $('#nota_form #cambio');
+//                    valores['hits'] = $('#nota_form #hits');
+//                    valores['id_usuario'] = $('#nota_form #id_usuario');
+//                    valores['etiquetas'] = $('#nota_form #etiquetas');
+//                    valores['publicado'] = $('#nota_form #publicado');
+//                    valores['portada'] = $('#nota_form #portada');
 
-    var disabled = $('#nivelForm').find(':input:disabled').removeAttr('disabled');
-    valores = $('#nivelForm').serializeObject();
+    var disabled = $('#notaForm').find(':input:disabled').removeAttr('disabled');
+    valores = $('#notaForm').serializeObject();
     disabled.attr('disabled', 'disabled');
     return valores;
 };
 
-nivelView.prototype.doEventsLoading = function () {
+notaView.prototype.doEventsLoading = function () {
     var thisObject = this;
-    $('#nivelForm #obj_usuario_button').unbind('click');
-    $("#nivelForm #obj_usuario_button").click(function () {
-        var oControl = oUsuarioControl;  //para probar dejar nivel
-        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "nivel");
+    $('#notaForm #obj_usuario_button').unbind('click');
+    $("#notaForm #obj_usuario_button").click(function () {
+        var oControl = oUsuarioControl;  //para probar dejar nota
+        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "nota");
 
-        $("#nivelForm").append(thisObject.getEmptyModal());
+        $("#notaForm").append(thisObject.getEmptyModal());
         util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
 
-        $('#nivelForm').append(thisObject.getEmptyModal());
+        $('#notaForm').append(thisObject.getEmptyModal());
 
         oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oUsuarioModel, oUsuarioView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
@@ -90,22 +90,22 @@ nivelView.prototype.doEventsLoading = function () {
         },oUsuarioModel, oUsuarioView);
         return false;
     });
-    $('#nivelForm #obj_tiponivel_button').unbind('click');
-    $("#nivelForm #obj_tiponivel_button").click(function () {
-        var oControl = oTiponivelControl;
+    $('#notaForm #obj_tiponota_button').unbind('click');
+    $("#notaForm #obj_tiponota_button").click(function () {
+        var oControl = oTiponotaControl;
 
-        $("#nivelForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de nivel'), "", thisObject.getFormFooter(), true);
+        $("#notaForm").append(thisObject.getEmptyModal());
+        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de nota'), "", thisObject.getFormFooter(), true);
 
-        $('#nivelForm').append(thisObject.getEmptyModal());
+        $('#notaForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTiponivelModel, oTiponivelView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTiponotaModel, oTiponotaView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_tiponivel_id').val(id).change();
-            $('#obj_tiponivel_desc').text(decodeURIComponent(oTiponivelModel.getMeAsAForeignKey(id)));
+            $('#obj_tiponota_id').val(id).change();
+            $('#obj_tiponota_desc').text(decodeURIComponent(oTiponotaModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oTiponivelModel, oTiponivelView);
+        },oTiponotaModel, oTiponotaView);
         return false;
     });
     $('#contenido_button').unbind('click');
@@ -120,7 +120,7 @@ nivelView.prototype.doEventsLoading = function () {
         contenido += '</div><div class="col-md-6"><div id="textoparseado"></div></div>';
         contenido += '</div>';
 
-        $('#nivelForm').append(thisObject.getEmptyModal());
+        $('#notaForm').append(thisObject.getEmptyModal());
 
         util().loadForm('#modal01', cabecera, contenido, pie, true);
         var texto = $('#contenido').val();
@@ -135,6 +135,6 @@ nivelView.prototype.doEventsLoading = function () {
     });
 };
 
-nivelView.prototype.okValidation = function (f) {
-    $('#nivelForm').on('success.form.bv', f);
+notaView.prototype.okValidation = function (f) {
+    $('#notaForm').on('success.form.bv', f);
 };

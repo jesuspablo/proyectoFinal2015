@@ -17,67 +17,67 @@
  */
 
 
-function fNivelRoutes() {
+function fHorarioRoutes() {
 
-//    Path.map("#/nivel").to(function () {
+//    Path.map("#/horario").to(function () {
 //        $('#indexContenidoJsp').spinner();
-//        control('nivel').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
-//        //nivelControl.modalListEventsLoading(nivelObject, nivelView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+//        control('horario').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
+//        //horarioControl.modalListEventsLoading(horarioObject, horarioView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
 //        $('#indexContenidoJsp').empty();
 //        return false;
 //    });
 
-    Path.map("#/nivel").to(function () {
+    Path.map("#/horario").to(function () {
         $('#indexContenidoJsp').spinner();
-        oNivelControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oNivelModel, oNivelView);
-        //nivelControl.modalListEventsLoading(nivelObject, nivelView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+        oHorarioControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oHorarioModel, oHorarioView);
+        //horarioControl.modalListEventsLoading(horarioObject, horarioView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
         $('#indexContenidoJsp').empty();
-        //$('#indexContenidoJsp').append(oNivelControl.getClassNameNivel());
+        //$('#indexContenidoJsp').append(oHorarioControl.getClassNameHorario());
         return false;
     });
 
-    Path.map("#/nivel/list/:url").to(function () {
+    Path.map("#/horario/list/:url").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.list($('#indexContenido'), paramsObject, null, oNivelModel, oNivelView);
+        oHorarioControl.list($('#indexContenido'), paramsObject, null, oHorarioModel, oHorarioView);
         $('#indexContenidoJsp').empty();
         return false;
     });
 
-    Path.map("#/nivel/view/:id").to(function () {
+    Path.map("#/horario/view/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.view($('#indexContenido'), paramsObject['id'], oNivelModel, oNivelView);
+        oHorarioControl.view($('#indexContenido'), paramsObject['id'], oHorarioModel, oHorarioView);
         $('#indexContenidoJsp').empty();
 
         return false;
     });
 
-    Path.map("#/nivel/edit/:id").to(function () {
+    Path.map("#/horario/edit/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.edit($('#indexContenido'), paramsObject['id'], oNivelModel, oNivelView);
+        oHorarioControl.edit($('#indexContenido'), paramsObject['id'], oHorarioModel, oHorarioView);
         $('#indexContenidoJsp').empty();
     });
-    Path.map("#/nivel/new").to(function () {
+    Path.map("#/horario/new").to(function () {
         $('#indexContenidoJsp').spinner();
         //var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.new($('#indexContenido'), null, oNivelModel, oNivelView);
+        oHorarioControl.new($('#indexContenido'), null, oHorarioModel, oHorarioView);
         $('#indexContenidoJsp').empty();
         return false;
     });
-    Path.map("#/nivel/new/:url").to(function () {
+    Path.map("#/horario/new/:url").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.new($('#indexContenido'), paramsObject, oNivelModel, oNivelView);
+        oHorarioControl.new($('#indexContenido'), paramsObject, oHorarioModel, oHorarioView);
         $('#indexContenidoJsp').empty();
         return false;
     });
 
-    Path.map("#/nivel/remove/:id").to(function () {
+    Path.map("#/horario/remove/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.remove($('#indexContenido'), paramsObject['id'], oNivelModel, oNivelView);
+        oHorarioControl.remove($('#indexContenido'), paramsObject['id'], oHorarioModel, oHorarioView);
         $('#indexContenidoJsp').empty();
         return false;
     });

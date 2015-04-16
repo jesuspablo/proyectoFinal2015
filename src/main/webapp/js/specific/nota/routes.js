@@ -17,67 +17,67 @@
  */
 
 
-function fNivelRoutes() {
+function fNotaRoutes() {
 
-//    Path.map("#/nivel").to(function () {
+//    Path.map("#/nota").to(function () {
 //        $('#indexContenidoJsp').spinner();
-//        control('nivel').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
-//        //nivelControl.modalListEventsLoading(nivelObject, nivelView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+//        control('nota').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
+//        //notaControl.modalListEventsLoading(notaObject, notaView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
 //        $('#indexContenidoJsp').empty();
 //        return false;
 //    });
 
-    Path.map("#/nivel").to(function () {
+    Path.map("#/nota").to(function () {
         $('#indexContenidoJsp').spinner();
-        oNivelControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oNivelModel, oNivelView);
-        //nivelControl.modalListEventsLoading(nivelObject, nivelView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+        oNotaControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oNotaModel, oNotaView);
+        //notaControl.modalListEventsLoading(notaObject, notaView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
         $('#indexContenidoJsp').empty();
-        //$('#indexContenidoJsp').append(oNivelControl.getClassNameNivel());
+        //$('#indexContenidoJsp').append(oNotaControl.getClassNameNota());
         return false;
     });
 
-    Path.map("#/nivel/list/:url").to(function () {
+    Path.map("#/nota/list/:url").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.list($('#indexContenido'), paramsObject, null, oNivelModel, oNivelView);
+        oNotaControl.list($('#indexContenido'), paramsObject, null, oNotaModel, oNotaView);
         $('#indexContenidoJsp').empty();
         return false;
     });
 
-    Path.map("#/nivel/view/:id").to(function () {
+    Path.map("#/nota/view/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.view($('#indexContenido'), paramsObject['id'], oNivelModel, oNivelView);
+        oNotaControl.view($('#indexContenido'), paramsObject['id'], oNotaModel, oNotaView);
         $('#indexContenidoJsp').empty();
 
         return false;
     });
 
-    Path.map("#/nivel/edit/:id").to(function () {
+    Path.map("#/nota/edit/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.edit($('#indexContenido'), paramsObject['id'], oNivelModel, oNivelView);
+        oNotaControl.edit($('#indexContenido'), paramsObject['id'], oNotaModel, oNotaView);
         $('#indexContenidoJsp').empty();
     });
-    Path.map("#/nivel/new").to(function () {
+    Path.map("#/nota/new").to(function () {
         $('#indexContenidoJsp').spinner();
         //var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.new($('#indexContenido'), null, oNivelModel, oNivelView);
+        oNotaControl.new($('#indexContenido'), null, oNotaModel, oNotaView);
         $('#indexContenidoJsp').empty();
         return false;
     });
-    Path.map("#/nivel/new/:url").to(function () {
+    Path.map("#/nota/new/:url").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.new($('#indexContenido'), paramsObject, oNivelModel, oNivelView);
+        oNotaControl.new($('#indexContenido'), paramsObject, oNotaModel, oNotaView);
         $('#indexContenidoJsp').empty();
         return false;
     });
 
-    Path.map("#/nivel/remove/:id").to(function () {
+    Path.map("#/nota/remove/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oNivelControl.remove($('#indexContenido'), paramsObject['id'], oNivelModel, oNivelView);
+        oNotaControl.remove($('#indexContenido'), paramsObject['id'], oNotaModel, oNotaView);
         $('#indexContenidoJsp').empty();
         return false;
     });

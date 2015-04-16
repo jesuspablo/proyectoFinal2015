@@ -17,17 +17,17 @@
  */
 
 
-var nivelView = function (strClase) {
+var horarioView = function (strClase) {
     this.clase = strClase;
 };
-nivelView.prototype = new view('nivel');
-nivelView.prototype.getClassNameNivel = function () {
+horarioView.prototype = new view('horario');
+horarioView.prototype.getClassNameHorario = function () {
     return this.getClassName() + "Vista";
 };
-var oNivelView = new nivelView('nivel');
+var oHorarioView = new horarioView('horario');
 
 
-nivelView.prototype.loadButtons = function (id) {
+horarioView.prototype.loadButtons = function (id) {
 
     var botonera = "";
     botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
@@ -38,48 +38,48 @@ nivelView.prototype.loadButtons = function (id) {
     return botonera;
 
 }
-nivelView.prototype.loadFormValues = function (valores, campos) {
-//                    $('#nivel_form #titulo').val(valores['titulo']);
-//                    $('#nivel_form #contenido').val(valores['contenido']);
-//                    $('#nivel_form #alta').val(valores['alta']);
-//                    $('#nivel_form #cambio').val(valores['cambio']);
-//                    $('#nivel_form #hits').val(valores['hits']);
-//                    $('#nivel_form #id_usuario').val(valores['id_usuario']);
-//                    $('#nivel_form #etiquetas').val(valores['etiquetas']);
-//                    $('#nivel_form #publicado').val(valores['publicado']);
-//                    $('#nivel_form #portada').val(valores['portada']);
+horarioView.prototype.loadFormValues = function (valores, campos) {
+//                    $('#horario_form #titulo').val(valores['titulo']);
+//                    $('#horario_form #contenido').val(valores['contenido']);
+//                    $('#horario_form #alta').val(valores['alta']);
+//                    $('#horario_form #cambio').val(valores['cambio']);
+//                    $('#horario_form #hits').val(valores['hits']);
+//                    $('#horario_form #id_usuario').val(valores['id_usuario']);
+//                    $('#horario_form #etiquetas').val(valores['etiquetas']);
+//                    $('#horario_form #publicado').val(valores['publicado']);
+//                    $('#horario_form #portada').val(valores['portada']);
     this.doFillForm(valores, campos);
 };
 
-nivelView.prototype.getFormValues = function () {
+horarioView.prototype.getFormValues = function () {
     var valores = [];
-//                    valores['titulo'] = $('#nivel_form #titulo');
-//                    valores['contenido'] = $('#nivel_form #contenido');
-//                    valores['alta'] = $('#nivel_form #alta');
-//                    valores['cambio'] = $('#nivel_form #cambio');
-//                    valores['hits'] = $('#nivel_form #hits');
-//                    valores['id_usuario'] = $('#nivel_form #id_usuario');
-//                    valores['etiquetas'] = $('#nivel_form #etiquetas');
-//                    valores['publicado'] = $('#nivel_form #publicado');
-//                    valores['portada'] = $('#nivel_form #portada');
+//                    valores['titulo'] = $('#horario_form #titulo');
+//                    valores['contenido'] = $('#horario_form #contenido');
+//                    valores['alta'] = $('#horario_form #alta');
+//                    valores['cambio'] = $('#horario_form #cambio');
+//                    valores['hits'] = $('#horario_form #hits');
+//                    valores['id_usuario'] = $('#horario_form #id_usuario');
+//                    valores['etiquetas'] = $('#horario_form #etiquetas');
+//                    valores['publicado'] = $('#horario_form #publicado');
+//                    valores['portada'] = $('#horario_form #portada');
 
-    var disabled = $('#nivelForm').find(':input:disabled').removeAttr('disabled');
-    valores = $('#nivelForm').serializeObject();
+    var disabled = $('#horarioForm').find(':input:disabled').removeAttr('disabled');
+    valores = $('#horarioForm').serializeObject();
     disabled.attr('disabled', 'disabled');
     return valores;
 };
 
-nivelView.prototype.doEventsLoading = function () {
+horarioView.prototype.doEventsLoading = function () {
     var thisObject = this;
-    $('#nivelForm #obj_usuario_button').unbind('click');
-    $("#nivelForm #obj_usuario_button").click(function () {
-        var oControl = oUsuarioControl;  //para probar dejar nivel
-        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "nivel");
+    $('#horarioForm #obj_usuario_button').unbind('click');
+    $("#horarioForm #obj_usuario_button").click(function () {
+        var oControl = oUsuarioControl;  //para probar dejar horario
+        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "horario");
 
-        $("#nivelForm").append(thisObject.getEmptyModal());
+        $("#horarioForm").append(thisObject.getEmptyModal());
         util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
 
-        $('#nivelForm').append(thisObject.getEmptyModal());
+        $('#horarioForm').append(thisObject.getEmptyModal());
 
         oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oUsuarioModel, oUsuarioView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
@@ -90,22 +90,22 @@ nivelView.prototype.doEventsLoading = function () {
         },oUsuarioModel, oUsuarioView);
         return false;
     });
-    $('#nivelForm #obj_tiponivel_button').unbind('click');
-    $("#nivelForm #obj_tiponivel_button").click(function () {
-        var oControl = oTiponivelControl;
+    $('#horarioForm #obj_tipohorario_button').unbind('click');
+    $("#horarioForm #obj_tipohorario_button").click(function () {
+        var oControl = oTipohorarioControl;
 
-        $("#nivelForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de nivel'), "", thisObject.getFormFooter(), true);
+        $("#horarioForm").append(thisObject.getEmptyModal());
+        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de horario'), "", thisObject.getFormFooter(), true);
 
-        $('#nivelForm').append(thisObject.getEmptyModal());
+        $('#horarioForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTiponivelModel, oTiponivelView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTipohorarioModel, oTipohorarioView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_tiponivel_id').val(id).change();
-            $('#obj_tiponivel_desc').text(decodeURIComponent(oTiponivelModel.getMeAsAForeignKey(id)));
+            $('#obj_tipohorario_id').val(id).change();
+            $('#obj_tipohorario_desc').text(decodeURIComponent(oTipohorarioModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oTiponivelModel, oTiponivelView);
+        },oTipohorarioModel, oTipohorarioView);
         return false;
     });
     $('#contenido_button').unbind('click');
@@ -120,7 +120,7 @@ nivelView.prototype.doEventsLoading = function () {
         contenido += '</div><div class="col-md-6"><div id="textoparseado"></div></div>';
         contenido += '</div>';
 
-        $('#nivelForm').append(thisObject.getEmptyModal());
+        $('#horarioForm').append(thisObject.getEmptyModal());
 
         util().loadForm('#modal01', cabecera, contenido, pie, true);
         var texto = $('#contenido').val();
@@ -135,6 +135,6 @@ nivelView.prototype.doEventsLoading = function () {
     });
 };
 
-nivelView.prototype.okValidation = function (f) {
-    $('#nivelForm').on('success.form.bv', f);
+horarioView.prototype.okValidation = function (f) {
+    $('#horarioForm').on('success.form.bv', f);
 };
