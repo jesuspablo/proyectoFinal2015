@@ -45,8 +45,8 @@
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-       
-         <link rel="stylesheet" href="css/styles.css">
+        <link href="css/css/style.css" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="css/styles.css">
 
 
         <% if (user != null) {%>
@@ -66,7 +66,9 @@
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-        <!-- Fixed navbar -->
+
+
+
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container barra">
                 <div class="navbar-header">
@@ -78,28 +80,39 @@
                     <a class="navbar-brand" href="jsp"><%=AppInformationHelper.getAppName()%></a>
                 </div>
                 <div class="collapse navbar-collapse">
-
-                    <ul class="nav navbar-nav">
+           <ul id="nav">
                         <%if (user != null) {%>
                         <jsp:include page="jsp/menuSuperior.jsp" /> 
+                        <% } else {%>
+                        <jsp:include page="jsp/menuSuperior2.jsp" /> 
                         <% }%>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <jsp:include page="jsp/usuario/infologin.jsp" />
-                    </ul>
-
-                </div><!--/.nav-collapse -->
+                </div>
+                <div class="clearfix"> </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <% if (user != null) {%>
 
         <div class="container">
             <div class="row">
-                <div class="col-md-2" id="menuLateral">
-                    <jsp:include page="jsp/menuLateral.jsp" />
-                </div>
+
                 <div class="col-md-10">
                     <div id="indexContenido"></div>
                     <div id="indexContenidoJsp">
@@ -136,6 +149,7 @@
 
 
         <% }%>
+        
 
         <!-- carga de javascript   -->
 
@@ -359,30 +373,30 @@
         <script src="js/specific/producto/model.js" charset="UTF-8"></script>
         <script src="js/specific/producto/view.js" charset="UTF-8"></script>
         <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
-            
+
         <!--MANTENIMIENTOS COLEGIO-->
-        
-         <script src="js/specific/profesor/control.js" charset="UTF-8"></script>
+
+        <script src="js/specific/profesor/control.js" charset="UTF-8"></script>
         <script src="js/specific/profesor/model.js" charset="UTF-8"></script>
         <script src="js/specific/profesor/view.js" charset="UTF-8"></script>
         <script src="js/specific/profesor/routes.js" charset="UTF-8"></script>
-        
+
         <script src="js/specific/nota/control.js" charset="UTF-8"></script>
         <script src="js/specific/nota/model.js" charset="UTF-8"></script>
         <script src="js/specific/nota/view.js" charset="UTF-8"></script>
         <script src="js/specific/nota/routes.js" charset="UTF-8"></script>
-        
+
         <script src="js/specific/horario/control.js" charset="UTF-8"></script>
         <script src="js/specific/horario/model.js" charset="UTF-8"></script>
         <script src="js/specific/horario/view.js" charset="UTF-8"></script>
         <script src="js/specific/horario/routes.js" charset="UTF-8"></script>
-        
+
         <script src="js/specific/asignatura/control.js" charset="UTF-8"></script>
         <script src="js/specific/asignatura/model.js" charset="UTF-8"></script>
         <script src="js/specific/asignatura/view.js" charset="UTF-8"></script>
         <script src="js/specific/asignatura/routes.js" charset="UTF-8"></script>                    
-       
-         <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
+
+        <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/model.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/view.js" charset="UTF-8"></script>
         <script src="js/specific/alumno/routes.js" charset="UTF-8"></script>
@@ -392,9 +406,9 @@
         <script src="js/specific/nivel/view.js" charset="UTF-8"></script>
         <script src="js/specific/nivel/routes.js" charset="UTF-8"></script>
 
-        
-        
-        
+
+
+
 
         <script src="js/specific/tipodocumento/model.js" charset="UTF-8"></script>
 
@@ -443,10 +457,12 @@
 
                 fAlumnoRoutes();
                 fProfesorRoutes();
+                fHorarioRoutes();
                 fAsignaturaRoutes();
                 fNivelRoutes();
-                
-               
+                fNotaRoutes();
+
+
 
                 Path.listen();
 

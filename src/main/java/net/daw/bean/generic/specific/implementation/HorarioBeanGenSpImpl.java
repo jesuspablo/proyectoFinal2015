@@ -30,9 +30,9 @@ public class HorarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     @Expose
     private String dia = "";
      @Expose
-    private Date fecha_inicio = new Date();
+    private String horainicio;
      @Expose
-    private Date fecha_fin = new Date();
+    private String horafin;
      
      @Expose(serialize = false)
     private Integer id_asignatura = 0; //importante inicializar a 0 las claves ajenas
@@ -51,22 +51,23 @@ public class HorarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         this.dia = dia;
     }
 
-    public Date getFecha_inicio() {
-        return fecha_inicio;
+    public String getHorainicio() {
+        return horainicio;
     }
 
-    public void setFecha_inicio(Date fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
+    public void setHorainicio(String horainicio) {
+        this.horainicio = horainicio;
     }
 
-    public Date getFecha_fin() {
-        return fecha_fin;
+    public String getHorafin() {
+        return horafin;
     }
 
-    public void setFecha_fin(Date fecha_fin) {
-        this.fecha_fin = fecha_fin;
+    public void setHorafin(String horafin) {
+        this.horafin = horafin;
     }
 
+   
     public Integer getId_asignatura() {
         return id_asignatura;
     }

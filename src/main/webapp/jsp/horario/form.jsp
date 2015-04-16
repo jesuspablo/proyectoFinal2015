@@ -16,6 +16,8 @@
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
 
+
+
 <form class="form-horizontal" role="form" action="#" id="horarioForm" name="formulario">
     <div class="form-group">
         <label class="col-sm-2 control-label" for="id">Id:</label>
@@ -29,21 +31,21 @@
             <input type="text" id="dia" class="form-control"  name="dia" size="15" placeholder="Título del dia" />
         </div>
     </div>
-    
+
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="Hora Inicio">Hora Inicio:</label>
+        <label class="col-sm-2 control-label"  for="horainicio">Hora Inicio:</label>
         <div class="col-sm-6">
-            <input type="text" id="Hora Inicio" class="form-control"  name="Hora Inicio" size="15" placeholder="Título del dia" />
+            <input type="text" id="horainicio" class="form-control"  name="horainicio" size="15" placeholder="Hora inicio" />
         </div>
     </div>
-    
+
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="Hora Fin">Hora Fin:</label>
+        <label class="col-sm-2 control-label"  for="horafin">Hora Fin:</label>
         <div class="col-sm-6">
-            <input type="text" id="Hora Fin" class="form-control"  name="Hora Fin" size="15" placeholder="Título del dia" />
+            <input type="text" id="horafin" class="form-control"  name="horafin" size="15" placeholder="Hora final" />
         </div>
     </div> 
-    
+
     <div class="form-group">
         <label class="col-sm-2 control-label" for="obj_asignatura_id">Usuario: </label> 
         <div class="col-sm-2">              
@@ -68,34 +70,34 @@
     </div>
 
 </form>
-        
+
 
 <script type="text/javascript">
 
     $(document).ready(function() {
-        //http://jqueryvalidation.org/documentation/
-        $('#horarioForm')
-                .bootstrapValidator({
-                    container: '#messages',
-                    feedbackIcons: {
-                        valid: 'glyphicon glyphicon-ok',
+                                //http://jqueryvalidation.org/documentation/
+                            $('#horarioForm')
+                        .bootstrapValidator({
+                            container: '#messages',
+                                feedbackIcons: {
+                                    valid: 'glyphicon glyphicon-ok',
                         invalid: 'glyphicon glyphicon-remove',
-                        validating: 'glyphicon glyphicon-refresh'
-                    },
+                                validating: 'glyphicon glyphicon-refresh'
+                                    },
                     fields: {
                         dia: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir un título de dia'
+                                validators: {
+                            notEmpty: {
+                message: 'Debe introducir un título de dia'
                                 },
-                                stringLength: {
+                    stringLength: {
                                     max: 255,
-                                    message: 'El título del dia debe tener como máximo 255 caracteres'
-                                }
+                message: 'El título del dia debe tener como máximo 255 caracteres'
+                    }
                             }
-                        },
-                        id_asignatura: {
-                            validators: {
+                },
+    id_asignatura: {
+             validators: {
                                 notEmpty: {
                                     message: 'Debe elegir un asignatura'
                                 },
@@ -129,4 +131,3 @@
     
     
 </script>
-     

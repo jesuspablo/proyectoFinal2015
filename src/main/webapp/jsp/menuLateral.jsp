@@ -15,17 +15,9 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>  
-<!DOCTYPE html>
-<html>	
-<head>
+
 <%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
-        <meta charset="UTF-8">
-	<title>portfolio</title>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic' rel='stylesheet' type='text/css'>
-	<meta name="viewport" content="width=device-width,height=device-height initial-scale=1 maximum-scale=1.0, user-scalable=0" />
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-        <link href="css/css/style.css" rel='stylesheet' type='text/css' />
+
 	
 	
 <%
@@ -36,8 +28,7 @@
         id_usuario = user.getId();
     }
 %>
-</head>
-<body>
+
 <div class="panel panel-primary">
     
     <div class="panel panel-primary">
@@ -80,6 +71,5 @@
 
         </div>
 </div>
-</body>
-</html>
+
 

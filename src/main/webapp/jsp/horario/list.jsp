@@ -26,6 +26,9 @@
     String strNombreMantenimiento = "nivel";
     Connection connection = (Connection) request.getAttribute("connection");    
 %>
+
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="tabbable">

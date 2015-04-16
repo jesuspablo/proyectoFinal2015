@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.9.1
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 16-04-2015 a las 05:20:11
--- Versión del servidor: 5.5.40
--- Versión de PHP: 5.4.34
+-- Tiempo de generación: 16-04-2015 a las 11:03:40
+-- Versión del servidor: 5.5.39
+-- Versión de PHP: 5.4.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `apellidos` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `administrador`
@@ -53,26 +53,25 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `primer_apellido` varchar(255) DEFAULT NULL COMMENT 'Primer Apellido',
   `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
-  `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario',
-  `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+  `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `primer_apellido`, `segundo_apellido`, `email`, `id_usuario`, `id_asignatura`) VALUES
-(1, 'Betina  ', 2, 'Guerra', 'Arroyo', 'jivohebog-6520@yopmail.com', 1, 3),
-(2, 'Guzmán ', 1, 'Padron', 'Esquivel', 'wijytiru-6960@yopmail.com', 2, 4),
-(3, 'Haide', 3, 'Tejada', 'Escalante', 'unaffanny-5394@yopmail.com', 3, NULL),
-(4, 'Martial  ', 4, 'Ledesma', 'Carvajal', 'ceqixaran-2559@yopmail.com', 4, NULL),
-(5, 'Matty  ', 6, 'Peralta', 'Suárez', 'gutezahu-8248@yopmail.com', 5, NULL),
-(6, 'Adaluz ', 5, 'Jaime ', 'Valverde', 'illattabett-6442@yopmail.com', 6, NULL),
-(7, 'Milton', 7, 'Suárez', ' Montés', 'effynnoppuj-6270@yopmail.com', 7, NULL),
-(8, 'Mabel ', 3, 'Alba ', 'Sisneros', 'ennodazod-7760@yopmail.com', 8, NULL),
-(9, 'Aisha ', 8, 'Maya ', 'Olivas', 'ifaxagyj-1268@yopmail.com', 9, NULL),
-(10, 'Lutero  ', 1, 'Badillo', 'Pacheco', 'uxiddazuffe-1521@yopmail.com', 10, NULL),
-(11, 'Millan  ', 2, 'López', 'Ulloa', 'qetynunopp-9072@yopmail.com', 11, NULL);
+INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `primer_apellido`, `segundo_apellido`, `email`, `id_usuario`) VALUES
+(1, 'Betina  ', 2, 'Guerra', 'Arroyo', 'jivohebog-6520@yopmail.com', 1),
+(2, 'Guzmán ', 1, 'Padron', 'Esquivel', 'wijytiru-6960@yopmail.com', 2),
+(3, 'Haide', 3, 'Tejada', 'Escalante', 'unaffanny-5394@yopmail.com', 3),
+(4, 'Martial  ', 4, 'Ledesma', 'Carvajal', 'ceqixaran-2559@yopmail.com', 4),
+(5, 'Matty  ', 6, 'Peralta', 'Suárez', 'gutezahu-8248@yopmail.com', 5),
+(6, 'Adaluz ', 5, 'Jaime ', 'Valverde', 'illattabett-6442@yopmail.com', 6),
+(7, 'Milton', 7, 'Suárez', ' Montés', 'effynnoppuj-6270@yopmail.com', 7),
+(8, 'Mabel ', 3, 'Alba ', 'Sisneros', 'ennodazod-7760@yopmail.com', 8),
+(9, 'Aisha ', 8, 'Maya ', 'Olivas', 'ifaxagyj-1268@yopmail.com', 9),
+(10, 'Lutero  ', 1, 'Badillo', 'Pacheco', 'uxiddazuffe-1521@yopmail.com', 10),
+(11, 'Millan  ', 2, 'López', 'Ulloa', 'qetynunopp-9072@yopmail.com', 11);
 
 -- --------------------------------------------------------
 
@@ -84,76 +83,75 @@ CREATE TABLE IF NOT EXISTS `asignatura` (
 `id` int(12) NOT NULL COMMENT 'ID',
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `id_profesor` int(12) DEFAULT NULL COMMENT 'ID Profesor',
-  `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
-  `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno'
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+  `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
 
 --
 -- Volcado de datos para la tabla `asignatura`
 --
 
-INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`, `id_alumno`) VALUES
-(1, 'Lengua Castellana y Literatura', 1, 4, 1),
-(2, 'Lengua y Literatura de las CC.AA.\r\n', 14, 4, 2),
-(3, 'Lengua Extranjera', 4, 4, 3),
-(4, 'Música', 2, 4, NULL),
-(5, 'Tecnología', 12, 4, NULL),
-(6, 'Educación para la ciudadanía y los derechos humanos', 8, 4, NULL),
-(7, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 4, NULL),
-(8, 'Ciencias Sociales, Geografía e Historia', 7, 4, NULL),
-(9, 'Educación Física', 1, 4, NULL),
-(10, 'Ciencias de la Naturaleza', 13, 4, NULL),
-(11, 'Lengua Castellana y Literatura', 1, 1, NULL),
-(12, 'Lengua y Literatura de las CC.AA.\r\n', 14, 1, NULL),
-(13, 'Lengua Extranjera', 4, 1, NULL),
-(14, 'Música', 2, 1, NULL),
-(15, 'Tecnología', 12, 1, NULL),
-(16, 'Educación para la ciudadanía y los derechos humanos', 8, 1, NULL),
-(17, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 1, NULL),
-(18, 'Ciencias Sociales, Geografía e Historia', 7, 1, NULL),
-(19, 'Educación Física', 1, 1, NULL),
-(20, 'Ciencias de la Naturaleza', 13, 1, NULL),
-(21, 'Lengua Castellana y Literatura', 1, 5, NULL),
-(22, 'Lengua y Literatura de las CC.AA.\r\n', 14, 5, NULL),
-(23, 'Lengua Extranjera', 4, 5, NULL),
-(24, 'Música', 2, 5, NULL),
-(25, 'Tecnología', 12, 5, NULL),
-(26, 'Educación para la ciudadanía y los derechos humanos', 8, 5, NULL),
-(27, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 5, NULL),
-(28, 'Ciencias Sociales, Geografía e Historia', 7, 5, NULL),
-(29, 'Educación Física', 1, 5, NULL),
-(30, 'Ciencias de la Naturaleza', 13, 5, NULL),
-(31, 'Lengua Castellana y Literatura', 1, 9, NULL),
-(32, 'Lengua y Literatura de las CC.AA.\r\n', 14, 9, NULL),
-(33, 'Lengua Extranjera', 4, 9, NULL),
-(34, 'Música', 2, 9, NULL),
-(35, 'Tecnología', 12, 9, NULL),
-(36, 'Educación para la ciudadanía y los derechos humanos', 8, 9, NULL),
-(37, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 9, NULL),
-(38, 'Ciencias Sociales, Geografía e Historia', 7, 9, NULL),
-(39, 'Educación Física', 1, 9, NULL),
-(40, 'Ciencias de la Naturaleza', 13, 10, NULL),
-(41, 'Ciencias de la Naturaleza', 13, 7, NULL),
-(42, 'Educación Física', 1, 7, NULL),
-(43, 'Ciencias Sociales, Geografía e Historia', 7, 7, NULL),
-(44, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 7, NULL),
-(45, 'Educación para la ciudadanía y los derechos humanos', 8, 7, NULL),
-(46, 'Tecnología', 12, 7, NULL),
-(47, 'Música', 2, 7, NULL),
-(48, 'Lengua Extranjera', 4, 7, NULL),
-(49, 'Lengua y Literatura de las CC.AA.\r\n', 14, 7, NULL),
-(50, 'Lengua Castellana y Literatura', 1, 7, NULL),
-(51, 'Lengua Castellana y Literatura', 1, 8, NULL),
-(52, 'Lengua Extranjera', 4, 8, NULL),
-(53, 'Tecnología', 12, 8, NULL),
-(54, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 8, NULL),
-(55, 'Educación Física', 1, 8, NULL),
-(56, 'Ciencias de la Naturaleza', 13, 8, NULL),
-(57, 'Lengua y Literatura de las CC.AA.\r\n', 14, 2, NULL),
-(58, 'Música', 2, 2, NULL),
-(59, 'Educación para la ciudadanía y los derechos humanos', 8, 2, NULL),
-(60, 'Ciencias Sociales, Geografía e Historia', 7, 2, NULL),
-(61, 'Ciencias de la Naturaleza', 13, 2, NULL);
+INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`) VALUES
+(1, 'Lengua Castellana y Literatura', 1, 4),
+(2, 'Lengua y Literatura de las CC.AA.\r\n', 14, 4),
+(3, 'Lengua Extranjera', 4, 4),
+(4, 'Música', 2, 4),
+(5, 'Tecnología', 12, 4),
+(6, 'Educación para la ciudadanía y los derechos humanos', 8, 4),
+(7, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 4),
+(8, 'Ciencias Sociales, Geografía e Historia', 7, 4),
+(9, 'Educación Física', 1, 4),
+(10, 'Ciencias de la Naturaleza', 13, 4),
+(11, 'Lengua Castellana y Literatura', 1, 1),
+(12, 'Lengua y Literatura de las CC.AA.\r\n', 14, 1),
+(13, 'Lengua Extranjera', 4, 1),
+(14, 'Música', 2, 1),
+(15, 'Tecnología', 12, 1),
+(16, 'Educación para la ciudadanía y los derechos humanos', 8, 1),
+(17, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 1),
+(18, 'Ciencias Sociales, Geografía e Historia', 7, 1),
+(19, 'Educación Física', 1, 1),
+(20, 'Ciencias de la Naturaleza', 13, 1),
+(21, 'Lengua Castellana y Literatura', 1, 5),
+(22, 'Lengua y Literatura de las CC.AA.\r\n', 14, 5),
+(23, 'Lengua Extranjera', 4, 5),
+(24, 'Música', 2, 5),
+(25, 'Tecnología', 12, 5),
+(26, 'Educación para la ciudadanía y los derechos humanos', 8, 5),
+(27, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 5),
+(28, 'Ciencias Sociales, Geografía e Historia', 7, 5),
+(29, 'Educación Física', 1, 5),
+(30, 'Ciencias de la Naturaleza', 13, 5),
+(31, 'Lengua Castellana y Literatura', 1, 9),
+(32, 'Lengua y Literatura de las CC.AA.\r\n', 14, 9),
+(33, 'Lengua Extranjera', 4, 9),
+(34, 'Música', 2, 9),
+(35, 'Tecnología', 12, 9),
+(36, 'Educación para la ciudadanía y los derechos humanos', 8, 9),
+(37, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 9),
+(38, 'Ciencias Sociales, Geografía e Historia', 7, 9),
+(39, 'Educación Física', 1, 9),
+(40, 'Ciencias de la Naturaleza', 13, 10),
+(41, 'Ciencias de la Naturaleza', 13, 7),
+(42, 'Educación Física', 1, 7),
+(43, 'Ciencias Sociales, Geografía e Historia', 7, 7),
+(44, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 7),
+(45, 'Educación para la ciudadanía y los derechos humanos', 8, 7),
+(46, 'Tecnología', 12, 7),
+(47, 'Música', 2, 7),
+(48, 'Lengua Extranjera', 4, 7),
+(49, 'Lengua y Literatura de las CC.AA.\r\n', 14, 7),
+(50, 'Lengua Castellana y Literatura', 1, 7),
+(51, 'Lengua Castellana y Literatura', 1, 8),
+(52, 'Lengua Extranjera', 4, 8),
+(53, 'Tecnología', 12, 8),
+(54, 'Enseñanzas de Religión (Religión o Historia y cultura de las religiones)', 11, 8),
+(55, 'Educación Física', 1, 8),
+(56, 'Ciencias de la Naturaleza', 13, 8),
+(57, 'Lengua y Literatura de las CC.AA.\r\n', 14, 2),
+(58, 'Música', 2, 2),
+(59, 'Educación para la ciudadanía y los derechos humanos', 8, 2),
+(60, 'Ciencias Sociales, Geografía e Historia', 7, 2),
+(61, 'Ciencias de la Naturaleza', 13, 2);
 
 -- --------------------------------------------------------
 
@@ -164,18 +162,18 @@ INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`, `id_alumno`
 CREATE TABLE IF NOT EXISTS `horario` (
 `id` int(12) NOT NULL COMMENT 'ID',
   `dia` varchar(255) DEFAULT NULL COMMENT 'Día',
-  `hora_inicio` varchar(255) DEFAULT NULL COMMENT 'Hora Inicio',
-  `hora_fin` varchar(255) DEFAULT NULL COMMENT 'Hora Fin',
+  `horainicio` varchar(255) DEFAULT NULL COMMENT 'Hora Inicio',
+  `horafin` varchar(255) DEFAULT NULL COMMENT 'Hora Fin',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `horario`
 --
 
-INSERT INTO `horario` (`id`, `dia`, `hora_inicio`, `hora_fin`, `id_asignatura`) VALUES
-(1, 'Lunes', '15:00', '20:30', 2),
-(2, 'Martes', '15:45', '20:30', 4);
+INSERT INTO `horario` (`id`, `dia`, `horainicio`, `horafin`, `id_asignatura`) VALUES
+(1, 'Lunes', '09:30', '0000-00-00 00:00:00', 2),
+(2, 'Martes', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4);
 
 -- --------------------------------------------------------
 
@@ -190,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `mensajeprivado` (
   `id_usuario_2` int(6) DEFAULT NULL COMMENT 'ID Usuario recibe',
   `asunto` varchar(255) DEFAULT NULL COMMENT 'Asunto',
   `mensaje` longtext COMMENT 'Mensaje'
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Volcado de datos para la tabla `mensajeprivado`
@@ -229,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `nivel` (
   `nivel` varchar(255) DEFAULT NULL COMMENT 'Nivel',
   `curso` varchar(255) DEFAULT NULL COMMENT 'curso',
   `aula` varchar(255) DEFAULT NULL COMMENT 'Aula'
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `nivel`
@@ -257,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `nota` (
   `nota` int(12) DEFAULT NULL COMMENT 'Nota',
   `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `nota`
@@ -314,7 +312,7 @@ CREATE TABLE IF NOT EXISTS `operacion` (
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción',
   `id_objeto` int(6) DEFAULT NULL COMMENT 'ID Objeto',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación'
-) ENGINE=InnoDB AUTO_INCREMENT=460 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=460 ;
 
 --
 -- Volcado de datos para la tabla `operacion`
@@ -550,7 +548,7 @@ CREATE TABLE IF NOT EXISTS `permiso` (
   `id_tipousuario` int(6) DEFAULT NULL COMMENT 'ID Tipo de usuario',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación',
   `permitido` tinyint(1) DEFAULT NULL COMMENT 'Permitido'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `permiso`
@@ -578,7 +576,7 @@ CREATE TABLE IF NOT EXISTS `profesor` (
   `primer_apellido` varchar(255) DEFAULT NULL COMMENT 'Primer Apellido',
   `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
   `id_usuario` int(6) NOT NULL COMMENT 'ID Usuario'
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Volcado de datos para la tabla `profesor`
@@ -611,7 +609,7 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `contenido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Contenido',
   `id_usuario` int(11) DEFAULT NULL COMMENT 'Usuario',
   `fechacreacion` datetime DEFAULT NULL COMMENT 'Fecha de creación'
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
 -- Volcado de datos para la tabla `publicacion`
@@ -648,7 +646,7 @@ INSERT INTO `publicacion` (`id`, `contenido`, `id_usuario`, `fechacreacion`) VAL
 CREATE TABLE IF NOT EXISTS `tipooperacion` (
 `id` int(6) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `tipooperacion`
@@ -671,7 +669,7 @@ INSERT INTO `tipooperacion` (`id`, `descripcion`) VALUES
 CREATE TABLE IF NOT EXISTS `tipousuario` (
 `id` int(11) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `tipousuario`
@@ -692,7 +690,7 @@ INSERT INTO `tipousuario` (`id`, `descripcion`) VALUES
 CREATE TABLE IF NOT EXISTS `trimestre` (
 `id` int(12) NOT NULL COMMENT 'ID',
   `trimestre` varchar(255) DEFAULT NULL COMMENT 'Trimestre'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `trimestre`
@@ -717,7 +715,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `ciudad` varchar(255) DEFAULT NULL COMMENT 'Ciudad',
   `firma` varchar(255) DEFAULT NULL COMMENT 'Firma',
   `skin` varchar(255) DEFAULT NULL COMMENT 'skin'
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Volcado de datos para la tabla `usuario`

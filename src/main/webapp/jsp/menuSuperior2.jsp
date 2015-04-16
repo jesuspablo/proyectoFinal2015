@@ -29,19 +29,15 @@
 
 
 
-		  <div class="cssmenu">
-                      
-				<ul id="nav">
-                                    
-					 <li class="text-primary"><a href="jsp">Inicio</a></li>
-					 <li class="text-primary"><a href="jsp#/usuario">Usuarios</a></li>
-					 <li class="text-primary"><a href="jsp#/asignatura">Asignatura</a></li>
-                                         <li class="text-primary"><a href="jsp#/nivel">Nivel</a></li>
-                                         <li class="text-primary"><a href="jsp#/horario">Horario</a></li>
-                                         <li class="text-primary"><a href="jsp#/nota">Nota</a></li>				  
-                                    <li class="text-primary"><a href="jsp?ob=usuario&op=logout">Salir</a></li>
-				</ul>		    
+<div class="cssmenu">
+    <ul id="nav">
+        <li class="current"><a href="#section-1">Inicio</a></li>
+        <li><a href="#section-2">Colegio</a></li>
+        <li><a href="#section-3">Secretaria</a></li>					 					 
+        <li><a href="#section-5">Contacto</a></li>
+        <li><a href="jsp?op=login01&amp;ob=usuario">Entrar</a></li>
+    </ul>		    
+</div>
 
- 
 
 

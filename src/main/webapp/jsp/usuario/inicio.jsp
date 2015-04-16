@@ -40,23 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</script>
 </head>
 <body>
-	<div class="header_top">	
-	  <div class="container">
-		  <div class="logo">
-			 <a href="index.html"><img src="css/images/logo.png" alt=""></a>
-		  </div>
-		  <div class="cssmenu">
-				<ul id="nav">
-					 <li class="current"><a href="#section-1">Inicio</a></li>
-					 <li><a href="#section-2">Colegio</a></li>
-					 <li><a href="#section-3">Secretaria</a></li>					 					 
-				  <li><a href="#section-5">Contacto</a></li>
-          <li><a href="jsp?op=login01&ob=usuario">Entrar</a></li>
-				</ul>
-		    </div>
-			<div class="clearfix"> </div>
-	  	 </div>
-	 </div>
+	
 	 <div class="wmuSlider example1 section" id="section-1">
 			   <article style="position: absolute; width: 100%; opacity: 0;"> 
 			   	   <div class="banner-wrap">
