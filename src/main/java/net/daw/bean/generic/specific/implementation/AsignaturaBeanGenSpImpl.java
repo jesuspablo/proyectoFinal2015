@@ -41,9 +41,9 @@ public class AsignaturaBeanGenSpImpl extends BeanGenImpl implements BeanInterfac
     private NivelBeanGenSpImpl obj_nivel = null;   
     
     @Expose(serialize = false)
-    private Integer id_nota = 0; //importante inicializar a 0 las claves ajenas
+    private Integer id_alumno = 0; //importante inicializar a 0 las claves ajenas
     @Expose(deserialize = false)
-    private NotaBeanGenSpImpl obj_nota = null;    
+    private AlumnoBeanGenSpImpl obj_alumno = null;    
    
    
    
@@ -91,20 +91,21 @@ public class AsignaturaBeanGenSpImpl extends BeanGenImpl implements BeanInterfac
         this.obj_nivel = obj_nivel;
     }
 
-    public Integer getId_nota() {
-        return id_nota;
+    public Integer getId_alumno() {
+        return id_alumno;
     }
 
-    public void setId_nota(Integer id_nota) {
-        this.id_nota = id_nota;
+    public void setId_alumno(Integer id_alumno) {
+        this.id_alumno = id_alumno;
     }
 
-    public NotaBeanGenSpImpl getObj_nota() {
-        return obj_nota;
+    public AlumnoBeanGenSpImpl getObj_alumno() {
+        return obj_alumno;
     }
 
-    public void setObj_nota(NotaBeanGenSpImpl obj_nota) {
-        this.obj_nota = obj_nota;
+    public void setObj_alumno(AlumnoBeanGenSpImpl obj_alumno) {
+        this.obj_alumno = obj_alumno;
     }
 
+    
 }

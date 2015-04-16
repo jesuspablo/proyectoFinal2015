@@ -56,31 +56,8 @@
         <div class="col-sm-6">
             <input type="text" id="especialista" class="form-control"  name="especialista" size="15" placeholder="Título del profesor" />
         </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="obj_nivel_id">nivel: </label> 
-        <div class="col-sm-2">              
-            <input readonly="true"  class="form-control"  id="obj_nivel_id" class="input-mini" name="id_nivel" type="text" size="5" maxlength="5" />  
-        </div>
-        
-        <div class="col-sm-1">              
-            <a class="btn btn-primary btn-sm" id="obj_nivel_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
-        </div>        
-        <label class="col-sm-7" for="obj_nivel_desc" id="obj_nivel_desc"></label>                     
-    </div>
-    
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="obj_asignatura_id">Asignaturas: </label> 
-        <div class="col-sm-2">              
-            <input readonly="true"  class="form-control"  id="obj_asignatura_id" class="input-mini" name="id_asignatura" type="text" size="5" maxlength="5" />  
-        </div>
-        <div class="col-sm-1">              
-            <a class="btn btn-primary btn-sm" id="obj_asignatura_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
-        </div>        
-        <label class="col-sm-7" for="obj_asignatura_desc" id="obj_asignatura_desc"></label>                     
-    </div>
-    
+    </div>    
+       
     <div class="form-group">
         <label class="col-sm-2 control-label" for="obj_usuario_id">Usuario: </label> 
         <div class="col-sm-2">              

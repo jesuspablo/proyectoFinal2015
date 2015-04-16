@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.2.9.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 15-04-2015 a las 08:18:27
--- Versión del servidor: 5.5.39
--- Versión de PHP: 5.4.32
+-- Tiempo de generación: 16-04-2015 a las 05:20:11
+-- Versión del servidor: 5.5.40
+-- Versión de PHP: 5.4.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `apellidos` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `administrador`
@@ -53,25 +53,26 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `primer_apellido` varchar(255) DEFAULT NULL COMMENT 'Primer Apellido',
   `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
-  `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+  `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario',
+  `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `primer_apellido`, `segundo_apellido`, `email`, `id_usuario`) VALUES
-(1, 'Betina  ', 2, 'Guerra', 'Arroyo', 'jivohebog-6520@yopmail.com', 1),
-(2, 'Guzmán ', 1, 'Padron', 'Esquivel', 'wijytiru-6960@yopmail.com', 2),
-(3, 'Haide', 3, 'Tejada', 'Escalante', 'unaffanny-5394@yopmail.com', 3),
-(4, 'Martial  ', 4, 'Ledesma', 'Carvajal', 'ceqixaran-2559@yopmail.com', 4),
-(5, 'Matty  ', 6, 'Peralta', 'Suárez', 'gutezahu-8248@yopmail.com', 5),
-(6, 'Adaluz ', 5, 'Jaime ', 'Valverde', 'illattabett-6442@yopmail.com', 6),
-(7, 'Milton', 7, 'Suárez', ' Montés', 'effynnoppuj-6270@yopmail.com', 7),
-(8, 'Mabel ', 3, 'Alba ', 'Sisneros', 'ennodazod-7760@yopmail.com', 8),
-(9, 'Aisha ', 8, 'Maya ', 'Olivas', 'ifaxagyj-1268@yopmail.com', 9),
-(10, 'Lutero  ', 1, 'Badillo', 'Pacheco', 'uxiddazuffe-1521@yopmail.com', 10),
-(11, 'Millan  ', 2, 'López', 'Ulloa', 'qetynunopp-9072@yopmail.com', 11);
+INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `primer_apellido`, `segundo_apellido`, `email`, `id_usuario`, `id_asignatura`) VALUES
+(1, 'Betina  ', 2, 'Guerra', 'Arroyo', 'jivohebog-6520@yopmail.com', 1, 3),
+(2, 'Guzmán ', 1, 'Padron', 'Esquivel', 'wijytiru-6960@yopmail.com', 2, 4),
+(3, 'Haide', 3, 'Tejada', 'Escalante', 'unaffanny-5394@yopmail.com', 3, NULL),
+(4, 'Martial  ', 4, 'Ledesma', 'Carvajal', 'ceqixaran-2559@yopmail.com', 4, NULL),
+(5, 'Matty  ', 6, 'Peralta', 'Suárez', 'gutezahu-8248@yopmail.com', 5, NULL),
+(6, 'Adaluz ', 5, 'Jaime ', 'Valverde', 'illattabett-6442@yopmail.com', 6, NULL),
+(7, 'Milton', 7, 'Suárez', ' Montés', 'effynnoppuj-6270@yopmail.com', 7, NULL),
+(8, 'Mabel ', 3, 'Alba ', 'Sisneros', 'ennodazod-7760@yopmail.com', 8, NULL),
+(9, 'Aisha ', 8, 'Maya ', 'Olivas', 'ifaxagyj-1268@yopmail.com', 9, NULL),
+(10, 'Lutero  ', 1, 'Badillo', 'Pacheco', 'uxiddazuffe-1521@yopmail.com', 10, NULL),
+(11, 'Millan  ', 2, 'López', 'Ulloa', 'qetynunopp-9072@yopmail.com', 11, NULL);
 
 -- --------------------------------------------------------
 
@@ -84,17 +85,17 @@ CREATE TABLE IF NOT EXISTS `asignatura` (
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `id_profesor` int(12) DEFAULT NULL COMMENT 'ID Profesor',
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
-  `id_nota` int(12) DEFAULT NULL COMMENT 'Nota'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
+  `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno'
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `asignatura`
 --
 
-INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`, `id_nota`) VALUES
-(1, 'Lengua Castellana y Literatura', 1, 4, NULL),
-(2, 'Lengua y Literatura de las CC.AA.\r\n', 14, 4, NULL),
-(3, 'Lengua Extranjera', 4, 4, NULL),
+INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`, `id_alumno`) VALUES
+(1, 'Lengua Castellana y Literatura', 1, 4, 1),
+(2, 'Lengua y Literatura de las CC.AA.\r\n', 14, 4, 2),
+(3, 'Lengua Extranjera', 4, 4, 3),
 (4, 'Música', 2, 4, NULL),
 (5, 'Tecnología', 12, 4, NULL),
 (6, 'Educación para la ciudadanía y los derechos humanos', 8, 4, NULL),
@@ -166,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `horario` (
   `hora_inicio` varchar(255) DEFAULT NULL COMMENT 'Hora Inicio',
   `hora_fin` varchar(255) DEFAULT NULL COMMENT 'Hora Fin',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `horario`
@@ -189,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `mensajeprivado` (
   `id_usuario_2` int(6) DEFAULT NULL COMMENT 'ID Usuario recibe',
   `asunto` varchar(255) DEFAULT NULL COMMENT 'Asunto',
   `mensaje` longtext COMMENT 'Mensaje'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `mensajeprivado`
@@ -228,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `nivel` (
   `nivel` varchar(255) DEFAULT NULL COMMENT 'Nivel',
   `curso` varchar(255) DEFAULT NULL COMMENT 'curso',
   `aula` varchar(255) DEFAULT NULL COMMENT 'Aula'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `nivel`
@@ -255,19 +256,16 @@ CREATE TABLE IF NOT EXISTS `nota` (
 `id` int(12) NOT NULL COMMENT 'ID',
   `nota` int(12) DEFAULT NULL COMMENT 'Nota',
   `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno',
-  `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura',
-  `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
-  `id_profesor` int(12) DEFAULT NULL COMMENT 'ID Profesor',
-  `id_trimestre` int(6) DEFAULT NULL COMMENT 'ID_Trimestre'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `nota`
 --
 
-INSERT INTO `nota` (`id`, `nota`, `id_alumno`, `id_asignatura`, `id_nivel`, `id_profesor`, `id_trimestre`) VALUES
-(1, 6, 3, 2, 2, 4, 1),
-(2, 4, 6, 3, 5, 8, 3);
+INSERT INTO `nota` (`id`, `nota`, `id_alumno`, `id_asignatura`) VALUES
+(1, 6, 3, 2),
+(2, 4, 6, 3);
 
 -- --------------------------------------------------------
 
@@ -316,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `operacion` (
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción',
   `id_objeto` int(6) DEFAULT NULL COMMENT 'ID Objeto',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=460 ;
+) ENGINE=InnoDB AUTO_INCREMENT=460 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `operacion`
@@ -552,7 +550,7 @@ CREATE TABLE IF NOT EXISTS `permiso` (
   `id_tipousuario` int(6) DEFAULT NULL COMMENT 'ID Tipo de usuario',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación',
   `permitido` tinyint(1) DEFAULT NULL COMMENT 'Permitido'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `permiso`
@@ -579,30 +577,28 @@ CREATE TABLE IF NOT EXISTS `profesor` (
   `especialista` varchar(255) DEFAULT NULL COMMENT 'Especialista',
   `primer_apellido` varchar(255) DEFAULT NULL COMMENT 'Primer Apellido',
   `segundo_apellido` varchar(255) DEFAULT NULL COMMENT 'Segundo Apellido',
-  `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
-  `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura',
   `id_usuario` int(6) NOT NULL COMMENT 'ID Usuario'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `profesor`
 --
 
-INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `primer_apellido`, `segundo_apellido`, `id_nivel`, `id_asignatura`, `id_usuario`) VALUES
-(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas', 'Coronado', 3, 3, 13),
-(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos', 'Olivo', 4, 10, 14),
-(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa', 'Zapata', 5, 4, 15),
-(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna', 'Oguendo', 7, 6, 16),
-(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño', 'Reyna', 8, 2, 17),
-(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo', 'Navarro', 9, 1, 18),
-(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza', 'herrera', 2, 9, 19),
-(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho', 'Curiel', 1, 8, 20),
-(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza', 'Fierro', 4, 7, 21),
-(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame', 'Bahena', 2, 5, 22),
-(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel', 'Agosto', 6, 6, 23),
-(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho', 'Nieto', 7, 8, 0),
-(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa', 'Santana', 6, 2, 0),
-(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento', 'Cansina', 9, 1, 0);
+INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `primer_apellido`, `segundo_apellido`, `id_usuario`) VALUES
+(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas', 'Coronado', 13),
+(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos', 'Olivo', 14),
+(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa', 'Zapata', 15),
+(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna', 'Oguendo', 16),
+(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño', 'Reyna', 17),
+(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo', 'Navarro', 18),
+(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza', 'herrera', 19),
+(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho', 'Curiel', 20),
+(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza', 'Fierro', 21),
+(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame', 'Bahena', 22),
+(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel', 'Agosto', 23),
+(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho', 'Nieto', 0),
+(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa', 'Santana', 0),
+(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento', 'Cansina', 0);
 
 -- --------------------------------------------------------
 
@@ -615,7 +611,7 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `contenido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Contenido',
   `id_usuario` int(11) DEFAULT NULL COMMENT 'Usuario',
   `fechacreacion` datetime DEFAULT NULL COMMENT 'Fecha de creación'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `publicacion`
@@ -652,7 +648,7 @@ INSERT INTO `publicacion` (`id`, `contenido`, `id_usuario`, `fechacreacion`) VAL
 CREATE TABLE IF NOT EXISTS `tipooperacion` (
 `id` int(6) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `tipooperacion`
@@ -675,7 +671,7 @@ INSERT INTO `tipooperacion` (`id`, `descripcion`) VALUES
 CREATE TABLE IF NOT EXISTS `tipousuario` (
 `id` int(11) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `tipousuario`
@@ -696,7 +692,7 @@ INSERT INTO `tipousuario` (`id`, `descripcion`) VALUES
 CREATE TABLE IF NOT EXISTS `trimestre` (
 `id` int(12) NOT NULL COMMENT 'ID',
   `trimestre` varchar(255) DEFAULT NULL COMMENT 'Trimestre'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `trimestre`
@@ -721,7 +717,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `ciudad` varchar(255) DEFAULT NULL COMMENT 'Ciudad',
   `firma` varchar(255) DEFAULT NULL COMMENT 'Firma',
   `skin` varchar(255) DEFAULT NULL COMMENT 'skin'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
