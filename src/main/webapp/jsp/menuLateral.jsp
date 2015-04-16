@@ -25,6 +25,7 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width,height=device-height initial-scale=1 maximum-scale=1.0, user-scalable=0" />
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
+        <link href="css/css/style.css" rel='stylesheet' type='text/css' />
 	
 	
 <%
