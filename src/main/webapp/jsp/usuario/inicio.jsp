@@ -7,8 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <%@page import="net.daw.helper.AppInformationHelper"%>
-    <%@page import="net.daw.helper.EstadoHelper"%>
+  
 
 <title>Fashion_Spring Bootstarp Website Template | Home :: w3layouts</title>
 <link href="css/css/bootstrap.css" rel='stylesheet' type='text/css' />
