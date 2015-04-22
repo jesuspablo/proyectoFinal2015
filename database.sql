@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 16-04-2015 a las 11:03:40
+-- Tiempo de generación: 22-04-2015 a las 08:03:45
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -165,15 +165,33 @@ CREATE TABLE IF NOT EXISTS `horario` (
   `horainicio` varchar(255) DEFAULT NULL COMMENT 'Hora Inicio',
   `horafin` varchar(255) DEFAULT NULL COMMENT 'Hora Fin',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Volcado de datos para la tabla `horario`
 --
 
 INSERT INTO `horario` (`id`, `dia`, `horainicio`, `horafin`, `id_asignatura`) VALUES
-(1, 'Lunes', '09:30', '0000-00-00 00:00:00', 2),
-(2, 'Martes', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4);
+(1, 'Lunes', '09:30', '10:15', 2),
+(2, 'Lunes', '10:15', '11:15', 4),
+(3, 'Lunes', '11:30', '12:15', 3),
+(4, 'Lunes', '12:15', '13:00', 1),
+(5, 'Lunes', '13:00', '14:30', 5),
+(6, 'Martes', '9:30', '10:15', 8),
+(7, 'Martes', '10:15', '11:15', 3),
+(8, 'Martes', '11:30', '12;15', 9),
+(9, 'Martes', '12:15', '13:00', 10),
+(10, 'Martes', '13:00', '14:30', 4),
+(11, 'Miercoles', '09:30', '10:15', 2),
+(12, 'Miercoles', '10:15', '11:15', 7),
+(13, 'Miercoles', '12:15', '13:00', 8),
+(14, 'Miercoles', '12:15', '13:00', 4),
+(15, 'Miercoles', '13:00', '14:30', 5),
+(16, 'Jueves', '09:30', '10:15', 6),
+(17, 'Jueves', '10:15', '11:15', 9),
+(18, 'Jueves', '11:30', '12:15', 10),
+(19, 'Jueves', '12:15', '13:00', 10),
+(20, 'Miercoles', '13:00', '14:30', 4);
 
 -- --------------------------------------------------------
 
@@ -255,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `nota` (
   `nota` int(12) DEFAULT NULL COMMENT 'Nota',
   `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `nota`
@@ -263,7 +281,9 @@ CREATE TABLE IF NOT EXISTS `nota` (
 
 INSERT INTO `nota` (`id`, `nota`, `id_alumno`, `id_asignatura`) VALUES
 (1, 6, 3, 2),
-(2, 4, 6, 3);
+(2, 4, 6, 3),
+(3, 8, 1, 1),
+(4, 6, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -872,7 +892,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=62;
 -- AUTO_INCREMENT de la tabla `horario`
 --
 ALTER TABLE `horario`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=3;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `mensajeprivado`
 --
@@ -887,7 +907,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=10;
 -- AUTO_INCREMENT de la tabla `nota`
 --
 ALTER TABLE `nota`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=3;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `operacion`
 --
