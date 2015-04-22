@@ -106,7 +106,7 @@
                         nombre: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir un título de alumno'
+                                    message: 'Debe introducir un nombre del alumno'
                                 },
                                 stringLength: {
                                     max: 255,
@@ -114,6 +114,43 @@
                                 }
                             }
                         },
+                         fields: {
+                        primer_apellido: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir el apellido del alumno'
+                                },
+                                stringLength: {
+                                    max: 255,
+                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                }
+                            }
+                        },
+                         fields: {
+                        segundo_apellido: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir el apellido del alumno'
+                                },
+                                stringLength: {
+                                    max: 255,
+                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                }
+                            }
+                        },
+                        fields: {
+                        Email: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir el apellido del alumno'
+                                },
+                                stringLength: {
+                                    max: 255,
+                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                }
+                            }
+                        },
+                        
                         id_usuario: {
                             validators: {
                                 notEmpty: {
@@ -134,6 +171,13 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    
+    
+    
                     }
                 })
                 .on('change', '[name="id_usuario"]', function() {
