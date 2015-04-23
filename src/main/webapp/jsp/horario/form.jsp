@@ -47,7 +47,7 @@
     </div> 
 
     <div class="form-group">
-        <label class="col-sm-2 control-label" for="obj_asignatura_id">Usuario: </label> 
+        <label class="col-sm-2 control-label" for="obj_asignatura_id">Asignatura: </label> 
         <div class="col-sm-2">              
             <input readonly="true"  class="form-control"  id="obj_asignatura_id" class="input-mini" name="id_asignatura" type="text" size="5" maxlength="5" />  
         </div>
@@ -86,18 +86,43 @@
                                     },
                     fields: {
                         dia: {
-                                validators: {
+                               validators: {
                             notEmpty: {
-                message: 'Debe introducir un título de dia'
+                                message: 'Debe introducir un dia'
                                 },
-                    stringLength: {
+                            stringLength: {
                                     max: 255,
-                message: 'El título del dia debe tener como máximo 255 caracteres'
-                    }
-                            }
+                                message: 'El título del dia debe tener como máximo 255 caracteres'
+                        }
+                      }
                 },
-    id_asignatura: {
-             validators: {
+                fields: {
+                        horainicio: {
+                               validators: {
+                            notEmpty: {
+                                message: 'Debe introducir una Hora'
+                                },
+                            stringLength: {
+                                    max: 255,
+                                message: 'El título del dia debe tener como máximo 255 caracteres'
+                        }
+                      }
+                },
+                fields: {
+                        horafin: {
+                               validators: {
+                            notEmpty: {
+                                message: 'Debe introducir una Hora'
+                                },
+                            stringLength: {
+                                    max: 255,
+                                message: 'El título del dia debe tener como máximo 255 caracteres'
+                        }
+                      }
+                },
+                
+                    id_asignatura: {
+                            validators: {
                                 notEmpty: {
                                     message: 'Debe elegir un asignatura'
                                 },
@@ -106,26 +131,17 @@
                                 }
                             }
                         },
-                        id_dia: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe elegir un tipo de documento'
-                                },
-                                integer: {
-                                    message: 'El identificador de tipo de documento debe ser un entero'
-                                }
-                            }
-                        }
+                       
                     }
-                })
+                } 
+            } 
+          })
+             
                 .on('change', '[name="id_asignatura"]', function() {
                     $('#diaForm').bootstrapValidator('revalidateField', 'id_asignatura');
                 })
 
-                .on('change', '[name="id_dia"]', function() {
-                    $('#diaForm').bootstrapValidator('revalidateField', 'id_dia');
-                })
-                ;
+                
     });       
 
     

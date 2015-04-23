@@ -44,7 +44,7 @@ asignaturaView.prototype.loadFormValues = function (valores, campos) {
 //                    $('#asignatura_form #alta').val(valores['alta']);
 //                    $('#asignatura_form #cambio').val(valores['cambio']);
 //                    $('#asignatura_form #hits').val(valores['hits']);
-//                    $('#asignatura_form #id_usuario').val(valores['id_usuario']);
+//                    $('#asignatura_form #id_profesor').val(valores['id_profesor']);
 //                    $('#asignatura_form #etiquetas').val(valores['etiquetas']);
 //                    $('#asignatura_form #publicado').val(valores['publicado']);
 //                    $('#asignatura_form #portada').val(valores['portada']);
@@ -58,7 +58,7 @@ asignaturaView.prototype.getFormValues = function () {
 //                    valores['alta'] = $('#asignatura_form #alta');
 //                    valores['cambio'] = $('#asignatura_form #cambio');
 //                    valores['hits'] = $('#asignatura_form #hits');
-//                    valores['id_usuario'] = $('#asignatura_form #id_usuario');
+//                    valores['id_profesor'] = $('#asignatura_form #id_profesor');
 //                    valores['etiquetas'] = $('#asignatura_form #etiquetas');
 //                    valores['publicado'] = $('#asignatura_form #publicado');
 //                    valores['portada'] = $('#asignatura_form #portada');
@@ -71,43 +71,48 @@ asignaturaView.prototype.getFormValues = function () {
 
 asignaturaView.prototype.doEventsLoading = function () {
     var thisObject = this;
-    $('#asignaturaForm #obj_usuario_button').unbind('click');
-    $("#asignaturaForm #obj_usuario_button").click(function () {
-        var oControl = oUsuarioControl;  //para probar dejar asignatura
-        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "asignatura");
+    $('#asignaturaForm #obj_profesor_button').unbind('click');
+    $("#asignaturaForm #obj_profesor_button").click(function () {
+        var oControl = oProfesorControl;  //para probar dejar asignatura
+        //vista('profesor').cargaModalBuscarClaveAjena('#modal01', "asignatura");
 
         $("#asignaturaForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
+        util().loadForm('#modal01', thisObject.getFormHeader('Elige al Profesor'), "", thisObject.getFormFooter(), true);
 
         $('#asignaturaForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oUsuarioModel, oUsuarioView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oProfesorModel, oProfesorView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_usuario_id').val(id).change();
-            $('#obj_usuario_desc').text(decodeURIComponent(oUsuarioModel.getMeAsAForeignKey(id)));
+            $('#obj_profesor_id').val(id).change();
+            $('#obj_profesor_desc').text(decodeURIComponent(oProfesorModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oUsuarioModel, oUsuarioView);
+        },oProfesorModel, oProfesorView);
         return false;
     });
-    $('#asignaturaForm #obj_tipoasignatura_button').unbind('click');
-    $("#asignaturaForm #obj_tipoasignatura_button").click(function () {
-        var oControl = oTipoasignaturaControl;
+    
+   
+    
+    $('#asignaturaForm #obj_nivel_button').unbind('click');
+    $("#asignaturaForm #obj_nivel_button").click(function () {
+        var oControl = oNivelControl;  //para probar dejar asignatura
+        //vista('profesor').cargaModalBuscarClaveAjena('#modal01', "asignatura");
 
         $("#asignaturaForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de asignatura'), "", thisObject.getFormFooter(), true);
+        util().loadForm('#modal01', thisObject.getFormHeader('Elige el nivel'), "", thisObject.getFormFooter(), true);
 
         $('#asignaturaForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTipoasignaturaModel, oTipoasignaturaView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oNivelModel, oNivelView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_tipoasignatura_id').val(id).change();
-            $('#obj_tipoasignatura_desc').text(decodeURIComponent(oTipoasignaturaModel.getMeAsAForeignKey(id)));
+            $('#obj_nivel_id').val(id).change();
+            $('#obj_nivel_desc').text(decodeURIComponent(oNivelModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oTipoasignaturaModel, oTipoasignaturaView);
+        },oNivelModel, oNivelView);
         return false;
     });
+    
     $('#contenido_button').unbind('click');
     $('#contenido_button').click(function () {
         //cabecera = '<button id="full-width" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' + '<h3 id="myModalLabel">Edición de contenidos</h3>';
@@ -134,6 +139,9 @@ asignaturaView.prototype.doEventsLoading = function () {
         return false;
     });
 };
+
+ 
+    
 
 asignaturaView.prototype.okValidation = function (f) {
     $('#asignaturaForm').on('success.form.bv', f);

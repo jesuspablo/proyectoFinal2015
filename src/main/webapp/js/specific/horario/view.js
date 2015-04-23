@@ -44,7 +44,7 @@ horarioView.prototype.loadFormValues = function (valores, campos) {
 //                    $('#horario_form #alta').val(valores['alta']);
 //                    $('#horario_form #cambio').val(valores['cambio']);
 //                    $('#horario_form #hits').val(valores['hits']);
-//                    $('#horario_form #id_usuario').val(valores['id_usuario']);
+//                    $('#horario_form #id_asignatura').val(valores['id_asignatura']);
 //                    $('#horario_form #etiquetas').val(valores['etiquetas']);
 //                    $('#horario_form #publicado').val(valores['publicado']);
 //                    $('#horario_form #portada').val(valores['portada']);
@@ -58,7 +58,7 @@ horarioView.prototype.getFormValues = function () {
 //                    valores['alta'] = $('#horario_form #alta');
 //                    valores['cambio'] = $('#horario_form #cambio');
 //                    valores['hits'] = $('#horario_form #hits');
-//                    valores['id_usuario'] = $('#horario_form #id_usuario');
+//                    valores['id_asignatura'] = $('#horario_form #id_asignatura');
 //                    valores['etiquetas'] = $('#horario_form #etiquetas');
 //                    valores['publicado'] = $('#horario_form #publicado');
 //                    valores['portada'] = $('#horario_form #portada');
@@ -71,23 +71,23 @@ horarioView.prototype.getFormValues = function () {
 
 horarioView.prototype.doEventsLoading = function () {
     var thisObject = this;
-    $('#horarioForm #obj_usuario_button').unbind('click');
-    $("#horarioForm #obj_usuario_button").click(function () {
-        var oControl = oUsuarioControl;  //para probar dejar horario
-        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "horario");
+    $('#horarioForm #obj_asignatura_button').unbind('click');
+    $("#horarioForm #obj_asignatura_button").click(function () {
+        var oControl = oAsignaturaControl;  //para probar dejar horario
+        //vista('asignatura').cargaModalBuscarClaveAjena('#modal01', "horario");
 
         $("#horarioForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
+        util().loadForm('#modal01', thisObject.getFormHeader('Elige una asignatura'), "", thisObject.getFormFooter(), true);
 
         $('#horarioForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oUsuarioModel, oUsuarioView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oAsignaturaModel, oAsignaturaView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_usuario_id').val(id).change();
-            $('#obj_usuario_desc').text(decodeURIComponent(oUsuarioModel.getMeAsAForeignKey(id)));
+            $('#obj_asignatura_id').val(id).change();
+            $('#obj_asignatura_desc').text(decodeURIComponent(oAsignaturaModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oUsuarioModel, oUsuarioView);
+        },oAsignaturaModel, oAsignaturaView);
         return false;
     });
     $('#horarioForm #obj_tipohorario_button').unbind('click');

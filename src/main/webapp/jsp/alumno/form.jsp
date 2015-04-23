@@ -92,105 +92,104 @@
 
 <script type="text/javascript">
 
-    $(document).ready(function() {
-        //http://jqueryvalidation.org/documentation/
-        $('#alumnoForm')
-                .bootstrapValidator({
-                    container: '#messages',
-                    feedbackIcons: {
-                        valid: 'glyphicon glyphicon-ok',
-                        invalid: 'glyphicon glyphicon-remove',
-                        validating: 'glyphicon glyphicon-refresh'
-                    },
-                    fields: {
-                        nombre: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir un nombre del alumno'
+                $(document).ready(function() {
+                    //http://jqueryvalidation.org/documentation/
+                    $('#alumnoForm')
+                            .bootstrapValidator({
+                                container: '#messages',
+                                feedbackIcons: {
+                                    valid: 'glyphicon glyphicon-ok',
+                                    invalid: 'glyphicon glyphicon-remove',
+                                    validating: 'glyphicon glyphicon-refresh'
                                 },
-                                stringLength: {
-                                    max: 255,
-                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
-                                }
-                            }
-                        },
-                         fields: {
-                        primer_apellido: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir el apellido del alumno'
-                                },
-                                stringLength: {
-                                    max: 255,
-                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
-                                }
-                            }
-                        },
-                         fields: {
-                        segundo_apellido: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir el apellido del alumno'
-                                },
-                                stringLength: {
-                                    max: 255,
-                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
-                                }
-                            }
-                        },
-                        fields: {
-                        Email: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir el apellido del alumno'
-                                },
-                                stringLength: {
-                                    max: 255,
-                                    message: 'El título del alumno debe tener como máximo 255 caracteres'
-                                }
-                            }
-                        },
-                        
-                        id_usuario: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe elegir un usuario'
-                                },
-                                integer: {
-                                    message: 'El identificador de usuario debe ser un entero'
-                                }
-                            }
-                        },
-                        id_nivel: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe elegir un tipo de documento'
-                                },
-                                integer: {
-                                    message: 'El identificador de tipo de documento debe ser un entero'
+                                fields: {
+                                    nombre: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Debe introducir un nombre del alumno'
+                                            },
+                                            stringLength: {
+                                                max: 255,
+                                                message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                            }
+                                        }
+                                    },
+                                     fields: {
+                                    primer_apellido: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Debe introducir el apellido del alumno'
+                                            },
+                                            stringLength: {
+                                                max: 255,
+                                                message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                            }
+                                        }
+                                    },
+                                     fields: {
+                                    segundo_apellido: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Debe introducir el apellido del alumno'
+                                            },
+                                            stringLength: {
+                                                max: 255,
+                                                message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                            }
+                                        }
+                                    },
+                                    fields: {
+                                    Email: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Debe introducir el apellido del alumno'
+                                            },
+                                            stringLength: {
+                                                max: 255,
+                                                message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                            }
+                                        }
+                                    },
+
+                                    id_usuario: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Debe elegir un usuario'
+                                            },
+                                            integer: {
+                                                message: 'El identificador de usuario debe ser un entero'
+                                            }
+                                        }
+                                    },
+                                    id_nivel: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Debe elegir un usuario'
+                                            },
+                                            integer: {
+                                                message: 'El identificador de usuario debe ser un entero'
+                                            }
+                                        }
+                                    },
                                 }
                             }
                         }
                     }
-                }
-            }
-        }
-    
-    
-    
-                    }
                 })
+               
+               
                 .on('change', '[name="id_usuario"]', function() {
-                    $('#alumnoForm').bootstrapValidator('revalidateField', 'id_usuario');
+                    $('#nivelForm').bootstrapValidator('revalidateField', 'id_usuario');
                 })
 
                 .on('change', '[name="id_nivel"]', function() {
-                    $('#alumnoForm').bootstrapValidator('revalidateField', 'id_nivel');
+                    $('#nivelForm').bootstrapValidator('revalidateField', 'id_nivel');
                 })
                 ;
-    });       
 
-    
+          });       
+
+
     
 </script>
      

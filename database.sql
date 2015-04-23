@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 22-04-2015 a las 08:03:45
+-- Tiempo de generación: 23-04-2015 a las 10:14:09
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `nota` (
   `nota` int(12) DEFAULT NULL COMMENT 'Nota',
   `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `nota`
@@ -283,7 +283,8 @@ INSERT INTO `nota` (`id`, `nota`, `id_alumno`, `id_asignatura`) VALUES
 (1, 6, 3, 2),
 (2, 4, 6, 3),
 (3, 8, 1, 1),
-(4, 6, 2, 4);
+(4, 6, 2, 4),
+(5, 7, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -907,7 +908,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=10;
 -- AUTO_INCREMENT de la tabla `nota`
 --
 ALTER TABLE `nota`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=5;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `operacion`
 --

@@ -43,17 +43,15 @@
     </div>  
     
     <div class="form-group">
-        <label class="col-sm-2 control-label" for="obj_asignatura_id">asignatura: </label> 
+        <label class="col-sm-2 control-label" for="obj_asignatura_id">Asignatura: </label> 
         <div class="col-sm-2">              
             <input readonly="true"  class="form-control"  id="obj_asignatura_id" class="input-mini" name="id_asignatura" type="text" size="5" maxlength="5" />  
         </div>
-        
         <div class="col-sm-1">              
             <a class="btn btn-primary btn-sm" id="obj_asignatura_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
         </div>        
         <label class="col-sm-7" for="obj_asignatura_desc" id="obj_asignatura_desc"></label>                     
-    </div>    
-    
+    </div>
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
@@ -83,10 +81,10 @@
                         validating: 'glyphicon glyphicon-refresh'
                     },
                     fields: {
-                        asignatura: {
+                        nota: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir un título de asignatura'
+                                    message: 'Debe introducir una nota de la asignatura'
                                 },
                                 stringLength: {
                                     max: 255,
@@ -94,10 +92,10 @@
                                 }
                             }
                         },
-                        id_usuario: {
+                        id_alumno: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe elegir un usuario'
+                                    message: 'Debe debe introducir un nombre del alumno'
                                 },
                                 integer: {
                                     message: 'El identificador de usuario debe ser un entero'
@@ -107,7 +105,7 @@
                         id_asignatura: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe elegir un tipo de documento'
+                                    message: 'Debe introducir una asignatura'
                                 },
                                 integer: {
                                     message: 'El identificador de tipo de documento debe ser un entero'
@@ -116,12 +114,12 @@
                         }
                     }
                 })
-                .on('change', '[name="id_usuario"]', function() {
-                    $('#asignaturaForm').bootstrapValidator('revalidateField', 'id_usuario');
+                .on('change', '[name="id_asignatura"]', function() {
+                    $('#diaForm').bootstrapValidator('revalidateField', 'id_asignatura');
                 })
 
-                .on('change', '[name="id_asignatura"]', function() {
-                    $('#asignaturaForm').bootstrapValidator('revalidateField', 'id_asignatura');
+                .on('change', '[name="id_alumno"]', function() {
+                    $('#asignaturaForm').bootstrapValidator('revalidateField', 'id_alumno');
                 })
                 ;
     });       

@@ -77,7 +77,7 @@ alumnoView.prototype.doEventsLoading = function () {
         //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "alumno");
 
         $("#alumnoForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
+        util().loadForm('#modal01', thisObject.getFormHeader('Elección el tipo de Usuario'), "", thisObject.getFormFooter(), true);
 
         $('#alumnoForm').append(thisObject.getEmptyModal());
 
@@ -90,24 +90,29 @@ alumnoView.prototype.doEventsLoading = function () {
         },oUsuarioModel, oUsuarioView);
         return false;
     });
-    $('#alumnoForm #obj_tipoalumno_button').unbind('click');
-    $("#alumnoForm #obj_tipoalumno_button").click(function () {
-        var oControl = oTipoalumnoControl;
+    
+   
+    
+    $('#alumnoForm #obj_nivel_button').unbind('click');
+    $("#alumnoForm #obj_nivel_button").click(function () {
+        var oControl = oNivelControl;  //para probar dejar alumno
+        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "alumno");
 
         $("#alumnoForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de alumno'), "", thisObject.getFormFooter(), true);
+        util().loadForm('#modal01', thisObject.getFormHeader('Elige el nivel del Alumno'), "", thisObject.getFormFooter(), true);
 
         $('#alumnoForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTipoalumnoModel, oTipoalumnoView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oNivelModel, oNivelView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_tipoalumno_id').val(id).change();
-            $('#obj_tipoalumno_desc').text(decodeURIComponent(oTipoalumnoModel.getMeAsAForeignKey(id)));
+            $('#obj_nivel_id').val(id).change();
+            $('#obj_nivel_desc').text(decodeURIComponent(oNivelModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oTipoalumnoModel, oTipoalumnoView);
+        },oNivelModel, oNivelView);
         return false;
     });
+    
     $('#contenido_button').unbind('click');
     $('#contenido_button').click(function () {
         //cabecera = '<button id="full-width" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' + '<h3 id="myModalLabel">Edición de contenidos</h3>';
@@ -134,6 +139,9 @@ alumnoView.prototype.doEventsLoading = function () {
         return false;
     });
 };
+
+ 
+    
 
 alumnoView.prototype.okValidation = function (f) {
     $('#alumnoForm').on('success.form.bv', f);
