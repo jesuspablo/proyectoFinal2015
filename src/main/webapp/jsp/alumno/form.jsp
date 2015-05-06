@@ -31,9 +31,9 @@
     </div>
     
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="apellidos">Primer apellido:</label>
+        <label class="col-sm-2 control-label"  for="apellido">Primer apellido:</label>
         <div class="col-sm-6">
-            <input type="text" id="apellidos" class="form-control"  name="apellidos" size="15" placeholder="Título del alumno" />
+            <input type="text" id="apellido" class="form-control"  name="apellido" size="15" placeholder="Título del alumno" />
         </div>
     </div>
     
@@ -110,7 +110,7 @@
                                         }
                                     },
                                      fields: {
-                                    apellidos: {
+                                    apellido: {
                                         validators: {
                                             notEmpty: {
                                                 message: 'Debe introducir el apellido del alumno'

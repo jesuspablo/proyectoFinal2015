@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 06-05-2015 a las 07:21:33
+-- Tiempo de generación: 06-05-2015 a las 07:56:11
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -50,8 +50,7 @@ CREATE TABLE IF NOT EXISTS `alumno` (
 `id` int(12) NOT NULL COMMENT 'ID',
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
-  `apellidos` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
-  `imagen` blob COMMENT 'Segundo Apellido',
+  `apellido` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
   `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
@@ -60,18 +59,18 @@ CREATE TABLE IF NOT EXISTS `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellidos`, `imagen`, `email`, `id_usuario`) VALUES
-(1, 'Betina  ', 2, 'Guerra Arroyo', 0x4172726f796f, 'jivohebog-6520@yopmail.com', 1),
-(2, 'Guzmán ', 1, 'Padron Esquivel', 0x457371756976656c, 'wijytiru-6960@yopmail.com', 2),
-(3, 'Haide', 3, 'Tejada Escalante', 0x457363616c616e7465, 'unaffanny-5394@yopmail.com', 3),
-(4, 'Martial  ', 4, 'Ledesma Carvajal', 0x43617276616a616c, 'ceqixaran-2559@yopmail.com', 4),
-(5, 'Matty  ', 6, 'Peralta Suárez', 0x5375c3a172657a, 'gutezahu-8248@yopmail.com', 5),
-(6, 'Adaluz ', 5, 'Jaime Valverde', 0x56616c7665726465, 'illattabett-6442@yopmail.com', 6),
-(7, 'Milton', 7, 'Suárez Montes', 0x204d6f6e74c3a973, 'effynnoppuj-6270@yopmail.com', 7),
-(8, 'Mabel ', 3, 'Alba  Sisneros', 0x5369736e65726f73, 'ennodazod-7760@yopmail.com', 8),
-(9, 'Aisha ', 8, 'Maya Olivas', 0x4f6c69766173, 'ifaxagyj-1268@yopmail.com', 9),
-(10, 'Lutero  ', 1, 'Badillo Pacheco', 0x5061636865636f, 'uxiddazuffe-1521@yopmail.com', 10),
-(11, 'Millan  ', 2, 'López Ulloa', 0x556c6c6f61, 'qetynunopp-9072@yopmail.com', 11);
+INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellido`, `email`, `id_usuario`) VALUES
+(1, 'Betina  ', 2, 'Guerra Arroyo', 'jivohebog-6520@yopmail.com', 1),
+(2, 'Guzmán ', 1, 'Padron Esquivel', 'wijytiru-6960@yopmail.com', 2),
+(3, 'Haide', 3, 'Tejada Escalante', 'unaffanny-5394@yopmail.com', 3),
+(4, 'Martial  ', 4, 'Ledesma Carvajal', 'ceqixaran-2559@yopmail.com', 4),
+(5, 'Matty  ', 6, 'Peralta Suárez', 'gutezahu-8248@yopmail.com', 5),
+(6, 'Adaluz ', 5, 'Jaime Valverde', 'illattabett-6442@yopmail.com', 6),
+(7, 'Milton', 7, 'Suárez Montes', 'effynnoppuj-6270@yopmail.com', 7),
+(8, 'Mabel ', 3, 'Alba  Sisneros', 'ennodazod-7760@yopmail.com', 8),
+(9, 'Aisha ', 8, 'Maya Olivas', 'ifaxagyj-1268@yopmail.com', 9),
+(10, 'Lutero  ', 1, 'Badillo Pacheco', 'uxiddazuffe-1521@yopmail.com', 10),
+(11, 'Millan  ', 2, 'López Ulloa', 'qetynunopp-9072@yopmail.com', 11);
 
 -- --------------------------------------------------------
 
@@ -633,8 +632,7 @@ CREATE TABLE IF NOT EXISTS `profesor` (
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
   `especialista` varchar(255) DEFAULT NULL COMMENT 'Especialista',
-  `apellidos` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
-  `imegen` blob COMMENT 'Imagenes',
+  `apellido` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `id_usuario` int(6) NOT NULL COMMENT 'ID Usuario'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
@@ -642,21 +640,21 @@ CREATE TABLE IF NOT EXISTS `profesor` (
 -- Volcado de datos para la tabla `profesor`
 --
 
-INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `apellidos`, `imegen`, `id_usuario`) VALUES
-(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas Coronado', 0x436f726f6e61646f, 13),
-(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos Olivo', 0x4f6c69766f, 14),
-(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa Zapata', 0x5a6170617461, 15),
-(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna Orguendo', 0x4f6775656e646f, 16),
-(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño Reyna', 0x5265796e61, 17),
-(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo Navarro', 0x4e61766172726f, 18),
-(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza Herrera', 0x68657272657261, 19),
-(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho Curiel', 0x43757269656c, 20),
-(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza Fierro', 0x46696572726f, 21),
-(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame Bahena', 0x426168656e61, 22),
-(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel Agosto', 0x41676f73746f, 23),
-(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho Nieto', 0x4e6965746f, 0),
-(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa Santana', 0x53616e74616e61, 0),
-(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento Cansina', 0x43616e73696e61, 0);
+INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `apellido`, `id_usuario`) VALUES
+(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas Coronado', 13),
+(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos Olivo', 14),
+(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa Zapata', 15),
+(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna Orguendo', 16),
+(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño Reyna', 17),
+(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo Navarro', 18),
+(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza Herrera', 19),
+(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho Curiel', 20),
+(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza Fierro', 21),
+(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame Bahena', 22),
+(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel Agosto', 23),
+(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho Nieto', 0),
+(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa Santana', 0),
+(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento Cansina', 0);
 
 -- --------------------------------------------------------
 

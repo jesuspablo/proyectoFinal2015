@@ -31,7 +31,7 @@ public class ProfesorBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
     private String email = "";
    
    @Expose
-    private String apellidos = "";
+    private String apellido = "";
   
    @Expose
     private String especialista = "";
@@ -67,14 +67,15 @@ public class ProfesorBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
         this.email = email;
     }
 
-    public String getPrimer_apellido() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setPrimer_apellido(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
+   
     
 
     public String getEspecialista() {

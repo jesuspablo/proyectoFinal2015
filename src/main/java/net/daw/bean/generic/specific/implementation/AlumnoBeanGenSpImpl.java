@@ -29,7 +29,7 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     @Expose
     private String nombre = "";
    @Expose
-    private String apellidos = "";
+    private String apellido = "";
    
    
      @Expose     
@@ -60,13 +60,15 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         this.nombre = nombre;
     }
 
-    public String getPrimer_apellido() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setPrimer_apellido(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
+
+   
 
     
 
