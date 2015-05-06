@@ -23,6 +23,7 @@
             <input type="text" id="id" class="form-control"  name="id" placeholder="id" />
         </div>
     </div>
+    
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="nombre">Nobre:</label>
         <div class="col-sm-6">
