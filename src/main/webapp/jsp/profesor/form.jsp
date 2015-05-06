@@ -31,18 +31,13 @@
     </div>
     
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="primer_apellido">Primer apellido:</label>
+        <label class="col-sm-2 control-label"  for="apellidos">Primer apellido:</label>
         <div class="col-sm-6">
-            <input type="text" id="primer_apellido" class="form-control"  name="primer_apellido" size="15" placeholder="Título del profesor" />
+            <input type="text" id="apellidos" class="form-control"  name="apellidos" size="15" placeholder="Título del profesor" />
         </div>
     </div>
     
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="segundo_apellido">Segundo apellido:</label>
-        <div class="col-sm-6">
-            <input type="text" id="segundo_apellido" class="form-control"  name="segundo_apellido" size="15" placeholder="Título del profesor" />
-        </div>
-    </div>
+    
     
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="Email">Email:</label>

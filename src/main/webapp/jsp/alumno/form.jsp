@@ -31,18 +31,13 @@
     </div>
     
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="primer_apellido">Primer apellido:</label>
+        <label class="col-sm-2 control-label"  for="apellidos">Primer apellido:</label>
         <div class="col-sm-6">
-            <input type="text" id="primer_apellido" class="form-control"  name="primer_apellido" size="15" placeholder="Título del alumno" />
+            <input type="text" id="apellidos" class="form-control"  name="apellidos" size="15" placeholder="Título del alumno" />
         </div>
     </div>
     
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="segundo_apellido">Segundo apellido:</label>
-        <div class="col-sm-6">
-            <input type="text" id="segundo_apellido" class="form-control"  name="segundo_apellido" size="15" placeholder="Título del alumno" />
-        </div>
-    </div>
+   
     
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="Email">Email:</label>
@@ -115,7 +110,7 @@
                                         }
                                     },
                                      fields: {
-                                    primer_apellido: {
+                                    apellidos: {
                                         validators: {
                                             notEmpty: {
                                                 message: 'Debe introducir el apellido del alumno'
@@ -125,19 +120,7 @@
                                                 message: 'El título del alumno debe tener como máximo 255 caracteres'
                                             }
                                         }
-                                    },
-                                     fields: {
-                                    segundo_apellido: {
-                                        validators: {
-                                            notEmpty: {
-                                                message: 'Debe introducir el apellido del alumno'
-                                            },
-                                            stringLength: {
-                                                max: 255,
-                                                message: 'El título del alumno debe tener como máximo 255 caracteres'
-                                            }
-                                        }
-                                    },
+                                    },                                     
                                     fields: {
                                     Email: {
                                         validators: {
