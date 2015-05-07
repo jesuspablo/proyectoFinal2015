@@ -56,8 +56,10 @@
                                    
                                                 </ul>
                                          </li>
-                                         <li class="text-primary"><a href="jsp?ob=usuario&op=logout">Salir</a></li>
-				</ul>		    
+                                         <li class="text-primary"><a href="jsp?ob=usuario&op=logout">
+                                                
+                                                    <span class="glyphicon glyphicon-log-out"></span> </a></li>
+                                    </ul>		    
 
  
 

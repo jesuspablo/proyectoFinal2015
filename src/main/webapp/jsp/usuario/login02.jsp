@@ -19,6 +19,7 @@
 <%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
 <% UsuarioBeanGenSpImpl oUsuario = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean"); %>
 <% if (oUsuario==null){ %>
+    
     <h1>Vd. no ha entrado en el sistema</h1>
     <h4>Ha habido un problema con su autenticación. Revise su login o su password.</h4>
 <% } else { %>

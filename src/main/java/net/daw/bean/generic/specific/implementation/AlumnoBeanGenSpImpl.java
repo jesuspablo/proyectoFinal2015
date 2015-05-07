@@ -40,7 +40,8 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     @Expose(deserialize = false)
     private NivelBeanGenSpImpl obj_nivel = null;
     
-    
+     @Expose     
+    private String foto = "";
    
    @Expose(serialize = false)
     private Integer id_usuario = 0; //importante inicializar a 0 las claves ajenas
@@ -66,6 +67,14 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
    

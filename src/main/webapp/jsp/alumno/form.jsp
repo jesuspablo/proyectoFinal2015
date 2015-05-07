@@ -25,7 +25,7 @@
     </div>
     
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="nombre">Nobre:</label>
+        <label class="col-sm-2 control-label"  for="nombre">Nombre:</label>
         <div class="col-sm-6">
             <input type="text" id="nombre" class="form-control"  name="nombre" size="15" placeholder="Título del alumno" />
         </div>
@@ -70,8 +70,19 @@
         </div>        
         <label class="col-sm-7" for="obj_usuario_desc" id="obj_usuario_desc"></label>                     
     </div>
-
+    
+    
     <div class="form-group">
+        <label class="col-sm-2 control-label"  for="Foto">Imagne :</label>
+        <div class="col-sm-6">
+            <input type="file" id="Foto"   name="Foto" accept="image/*" size="15" placeholder="imagen del Usuario" />
+        </div>
+    </div>
+    
+    	
+       
+    
+        <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <div id="messages"></div>
         </div>
@@ -124,6 +135,17 @@
                                     },                                     
                                     fields: {
                                     Email: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Debe introducir el apellido del alumno'
+                                            },
+                                            stringLength: {
+                                                max: 255,
+                                                message: 'El título del alumno debe tener como máximo 255 caracteres'
+                                            }
+                                        }
+                                    }, fields: {
+                                   Foto: {
                                         validators: {
                                             notEmpty: {
                                                 message: 'Debe introducir el apellido del alumno'

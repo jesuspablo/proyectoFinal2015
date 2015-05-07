@@ -124,5 +124,5 @@ padding-left: 10px;
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
     color: #fff;
-    background-color: #333333;
+    background-color: blue;
 }

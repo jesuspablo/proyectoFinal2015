@@ -37,14 +37,28 @@ body a{
 	background-size: 100% 100%;
 }
 .logo{
-	float:left;
+    
+        
+	float: left;
+        
 }
 .cssmenu{
-	float:right;
+	
 	text-transform:uppercase;
-	margin-top: 5px;
+	margin-top: 12px;
+        margin-left: 15%;
+        
 	font-family: 'Open Sans Condensed', sans-serif;
 }
+
+
+.navbar-default, navbar-fixed-top {
+    background-color: #708090;
+    border-color: black;
+}
+
+
+
 #nav .current a {
 	color: #FFF;
 }

@@ -35,7 +35,7 @@
         <li><a href="#section-2">Colegio</a></li>
         <li><a href="#section-3">Secretaria</a></li>					 					 
         <li><a href="#section-5">Contacto</a></li>
-        <li><a href="jsp?op=login01&amp;ob=usuario">Iniciar sesión</a></li>
+        <li><a href="jsp?op=login01&amp;ob=usuario"><span class="glyphicon glyphicon-log-in"></span></a></li>
     </ul>		    
 </div>
 
