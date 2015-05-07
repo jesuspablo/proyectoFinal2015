@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 06-05-2015 a las 07:56:11
+-- Tiempo de generación: 07-05-2015 a las 10:55:33
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -52,25 +52,27 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
   `apellido` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
-  `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+  `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario',
+  `foto` varchar(255) DEFAULT NULL COMMENT 'MI Foto'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellido`, `email`, `id_usuario`) VALUES
-(1, 'Betina  ', 2, 'Guerra Arroyo', 'jivohebog-6520@yopmail.com', 1),
-(2, 'Guzmán ', 1, 'Padron Esquivel', 'wijytiru-6960@yopmail.com', 2),
-(3, 'Haide', 3, 'Tejada Escalante', 'unaffanny-5394@yopmail.com', 3),
-(4, 'Martial  ', 4, 'Ledesma Carvajal', 'ceqixaran-2559@yopmail.com', 4),
-(5, 'Matty  ', 6, 'Peralta Suárez', 'gutezahu-8248@yopmail.com', 5),
-(6, 'Adaluz ', 5, 'Jaime Valverde', 'illattabett-6442@yopmail.com', 6),
-(7, 'Milton', 7, 'Suárez Montes', 'effynnoppuj-6270@yopmail.com', 7),
-(8, 'Mabel ', 3, 'Alba  Sisneros', 'ennodazod-7760@yopmail.com', 8),
-(9, 'Aisha ', 8, 'Maya Olivas', 'ifaxagyj-1268@yopmail.com', 9),
-(10, 'Lutero  ', 1, 'Badillo Pacheco', 'uxiddazuffe-1521@yopmail.com', 10),
-(11, 'Millan  ', 2, 'López Ulloa', 'qetynunopp-9072@yopmail.com', 11);
+INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellido`, `email`, `id_usuario`, `foto`) VALUES
+(1, 'Betina  ', 2, 'Guerra Arroyo', 'jivohebog-6520@yopmail.com', 1, 'css/images/p13.jpg'),
+(2, 'Guzmán ', 1, 'Padron Esquivel', 'wijytiru-6960@yopmail.com', 2, NULL),
+(3, 'Haide', 3, 'Tejada Escalante', 'unaffanny-5394@yopmail.com', 3, NULL),
+(4, 'Martial  ', 4, 'Ledesma Carvajal', 'ceqixaran-2559@yopmail.com', 4, NULL),
+(5, 'Matty  ', 6, 'Peralta Suárez', 'gutezahu-8248@yopmail.com', 5, NULL),
+(6, 'Adaluz ', 5, 'Jaime Valverde', 'illattabett-6442@yopmail.com', 6, NULL),
+(7, 'Milton', 7, 'Suárez Montes', 'effynnoppuj-6270@yopmail.com', 7, NULL),
+(8, 'Mabel ', 3, 'Alba  Sisneros', 'ennodazod-7760@yopmail.com', 8, NULL),
+(9, 'Aisha ', 8, 'Maya Olivas', 'ifaxagyj-1268@yopmail.com', 9, NULL),
+(10, 'Lutero  ', 1, 'Badillo Pacheco', 'uxiddazuffe-1521@yopmail.com', 10, NULL),
+(11, 'Millan  ', 2, 'López Ulloa', 'qetynunopp-9072@yopmail.com', 11, NULL),
+(12, 'Jose%20Manuel', 7, 'Obama%20Obono', '', 27, '');
 
 -- --------------------------------------------------------
 
@@ -773,7 +775,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `ciudad` varchar(255) DEFAULT NULL COMMENT 'Ciudad',
   `firma` varchar(255) DEFAULT NULL COMMENT 'Firma',
   `skin` varchar(255) DEFAULT NULL COMMENT 'skin'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -805,7 +807,8 @@ INSERT INTO `usuario` (`id`, `login`, `password`, `id_tipousuario`, `ciudad`, `f
 (23, 'amal', 'amal', 2, 'Burgos', 'Codeados.com Diseño y Desarrollo web, Imagen Corporativa, SEO, Marketing Digital', 'main'),
 (24, 'martin', 'martin', 2, 'Valencia', 'La gente cree que soy una mala persona, pero no es cierto, yo tengo el corazón de un niño...en un frasco con formol encima de mi escritorio.', 'main'),
 (25, 'alonso', 'alonso', 2, 'Valencia', 'Todo tiempo pasado fue mejor', 'main'),
-(26, 'silvia', 'silvia', 2, 'Valencia', 'Es mejor un pueblo culto', 'main');
+(26, 'silvia', 'silvia', 2, 'Valencia', 'Es mejor un pueblo culto', 'main'),
+(27, 'Obama', 'Obama', 3, 'Valencia', 'ayudame%20a%20conocerte', 'main');
 
 --
 -- Índices para tablas volcadas
@@ -926,7 +929,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=2;
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=12;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `asignatura`
 --
@@ -996,7 +999,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=4;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=27;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=28;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
