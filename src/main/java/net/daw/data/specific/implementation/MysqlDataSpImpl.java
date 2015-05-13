@@ -509,6 +509,13 @@ public class MysqlDataSpImpl implements DataInterface {
 //
 //        }
 //    }
+    
+    
+    
+    
+    //public ArrayList<Integer> getPageAsignaturaFiltrada(int id_usuario, intRegsPerPage,int intPagina, ArrayList<FilterBeanHelper> alFilter, HashMap<String, String> hmOrder){}
+    // SQL???????
+    
     @Override
     public ArrayList<Integer> getPage(String strTabla, int intRegsPerPage, int intPagina, ArrayList<FilterBeanHelper> alFilter, HashMap<String, String> hmOrder) throws Exception {
         Boolean strOrigenTabla = true;
@@ -627,6 +634,9 @@ public class MysqlDataSpImpl implements DataInterface {
         }
     }
 
+    
+    
+    
     @Override
     public int getPages(String strTabla, int intRegsPerPage, ArrayList<FilterBeanHelper> alFilter) throws Exception {
         Boolean strOrigenTabla = true;

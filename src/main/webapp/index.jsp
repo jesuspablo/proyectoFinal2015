@@ -87,10 +87,14 @@
                         <jsp:include page="jsp/menuSuperior2.jsp" /> 
                         <% }%>
                     </ul>
+                    
                 </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
+                    
+                    
+                    
 
 
 
@@ -266,6 +270,7 @@
                 fAsignaturaRoutes();
                 fNivelRoutes();
                 fNotaRoutes();
+                fTipousuarioRoutes();
                 fUsuarioRoutes();
 
 
