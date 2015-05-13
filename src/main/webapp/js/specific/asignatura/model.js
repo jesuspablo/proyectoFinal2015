@@ -24,3 +24,11 @@ asignaturaModel.prototype.getClassNameAsignatura = function () {
     return this.getClassName() + "Modelo";
 };
 var oAsignaturaModel = new asignaturaModel('asignatura');
+
+asignaturaModel.prototype.getMisCursos = function () {
+    $.when(ajax().ajaxCallSync(this.urlJson + '&op=getpage&page=1&rpp=10&filter=id_nivel&filteroperator=equals&filtervalue=2', 'GET', '')).done(function (data) {
+        
+        feedback = data;
+    });
+    return feedback;
+};

@@ -34,8 +34,8 @@
 				<ul id="nav">
                                     
 					 <li class="text-primary"><a href="jsp">Inicio</a></li>
-					 <li class="text-primary"><a href="jsp#/usuario">Usuarios</a></li>
-                                          <li class="dropdown">
+                                         <li class="text-primary"><a href="jsp#/usuario">Usuarios</a></li>
+                                         <li class="dropdown">
                                             <a href="jsp#/alumno" class="dropdown-toggle" data-toggle="dropdown">Profesor <b class="caret"></b></a>
                                                 <ul class="dropdown-menu">  
                                                         <li class="text-primary"><a href="jsp#/profesor">Prefesores</a></li>

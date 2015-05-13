@@ -25,4 +25,44 @@
 <% } else { %>
     <h1>Vd. ha entrado en el sistema</h1>
     <h4>Bienvenido, <%=oUsuario.getLogin() %>. Ahora puede operar con los menús de la aplicación.</h4>
+    <div id="prueba"></div>
+    
+     <script type="text/javascript"  src="./js/vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            url: "http://localhost:8081/proyectoFinal2015/json?ob=asignatura&op=getpage&page=1&rpp=10&filter=id_nivel&filteroperator=equals&filtervalue=2",
+            //data: "nocache=" + Math.random(),
+            type: "GET",
+            dataType: "json",
+            success: function(source) {
+                var columns;
+                $.ajax({
+                    url: "http://localhost:8081/proyectoFinal2015/json?ob=asignatura&op=getcolumns",
+                    //data: "nocache=" + Math.random(),
+                    type: "GET",
+                    dataType: "json",
+                    success: function(source2) {
+                        var json = source["list"];
+                        var html;
+                        for (i=0; i<json.length; i++) {
+                            for (j=0; j<source2.length; j++) {
+                                var column = source2[j];
+                                var obj = column.substr(0, 4);
+                                if (obj == "obj_") {
+                                    html += "<p>" + source2[j] + ": " + json[i]["id"] +  "</p>";
+                                } else {
+                                    html += "<p>" + source2[j] + ": " + json[i][source2[j]] +  "</p>";
+                                }
+                                $("#prueba").html(html)
+                            }
+                        }
+                    }
+                });
+
+            }
+        });
+    </script>
+        
+        
+        
 <% } %>
