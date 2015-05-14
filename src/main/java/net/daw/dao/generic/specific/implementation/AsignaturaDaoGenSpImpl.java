@@ -32,13 +32,13 @@ public class AsignaturaDaoGenSpImpl extends TableDaoGenImpl<AsignaturaBeanGenSpI
         super(strFuente, "Asignatura", pooledConnection);
     }
 
-    @Override
-    public ArrayList<AsignaturaBeanGenSpImpl> getPage(int intRegsPerPag, int intPage, ArrayList<FilterBeanHelper> hmFilter, HashMap<String, String> hmOrder) throws Exception {
+    //@Override
+    public ArrayList<AsignaturaBeanGenSpImpl> getPageAsignaturaFiltrada(Integer id_usuario, int intRegsPerPag, int intPage, ArrayList<FilterBeanHelper> hmFilter, HashMap<String, String> hmOrder) throws Exception {
         ArrayList<Integer> arrId;
         ArrayList<AsignaturaBeanGenSpImpl> arrAsignatura = new ArrayList<>();
         try {
             //obtener el id de usuario de sesion
-            arrId = oMysql.getPageAsignaturaFiltrada(1, intRegsPerPag, intPage, hmFilter, hmOrder);
+            arrId = oMysql.getPageAsignaturaFiltrada(id_usuario, intRegsPerPag, intPage, hmFilter, hmOrder);
             Iterator<Integer> iterador = arrId.listIterator();
             while (iterador.hasNext()) {
                 AsignaturaBeanGenSpImpl oAsignaturaBean = new AsignaturaBeanGenSpImpl(iterador.next());
@@ -50,12 +50,13 @@ public class AsignaturaDaoGenSpImpl extends TableDaoGenImpl<AsignaturaBeanGenSpI
         return arrAsignatura;
     }
 
-    @Override
-    public int getPages(int intRegsPerPag, ArrayList<FilterBeanHelper> hmFilter) throws Exception {
+    //@Override
+    //EN SESION HACER LO MISMO...
+    public int getPagesAsignaturaFiltrada(Integer id_usuario, int intRegsPerPag, ArrayList<FilterBeanHelper> hmFilter) throws Exception {
         int pages = 0;
         try {
             //obtener el id de usuario de sesion
-            pages = oMysql.getPagesAsignaturaFiltrada(1, intRegsPerPag, hmFilter);
+            pages = oMysql.getPagesAsignaturaFiltrada(id_usuario, intRegsPerPag, hmFilter);
         } catch (Exception ex) {
             ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getPages ERROR: " + ex.getMessage()));
         }
