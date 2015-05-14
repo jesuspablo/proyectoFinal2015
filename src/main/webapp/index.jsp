@@ -46,7 +46,9 @@
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
         <link href="css/css/style.css" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="css/styles3.css">
         <link rel="stylesheet" href="css/styles.css">
+        
 
 
         <% if (user != null) {%>

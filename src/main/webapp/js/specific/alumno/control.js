@@ -24,3 +24,12 @@ alumnoControl.prototype.getClassNameAlumno = function () {
     return this.getClassName() + "Control";
 };
 var oAlumnoControl = new alumnoControl('alumno');
+control.prototype.upload = function (place, id, oModel, oView) {
+    var thisObject = this;
+    $(place).empty();
+    $(place).append(oView.getPanel("Subir imagen " + this.clase, oView.getEmptyView("imagen", "unwrappered")));
+    var oDocumentoModel = oModel;
+    oDocumentoModel.loadAggregateViewOne(id);
+    oView.loadFormValues(oDocumentoModel.getCachedOne(), oDocumentoModel.getCachedFieldNames());
+   
+};

@@ -19,7 +19,12 @@ package net.daw.dao.generic.specific.implementation;
 
 import net.daw.dao.generic.implementation.TableDaoGenImpl;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import net.daw.bean.generic.specific.implementation.AsignaturaBeanGenSpImpl;
+import net.daw.helper.ExceptionBooster;
+import net.daw.helper.FilterBeanHelper;
 
 public class AsignaturaDaoGenSpImpl extends TableDaoGenImpl<AsignaturaBeanGenSpImpl> {
 
@@ -27,4 +32,33 @@ public class AsignaturaDaoGenSpImpl extends TableDaoGenImpl<AsignaturaBeanGenSpI
         super(strFuente, "Asignatura", pooledConnection);
     }
 
+    @Override
+    public ArrayList<AsignaturaBeanGenSpImpl> getPage(int intRegsPerPag, int intPage, ArrayList<FilterBeanHelper> hmFilter, HashMap<String, String> hmOrder) throws Exception {
+        ArrayList<Integer> arrId;
+        ArrayList<AsignaturaBeanGenSpImpl> arrAsignatura = new ArrayList<>();
+        try {
+            //obtener el id de usuario de sesion
+            arrId = oMysql.getPageAsignaturaFiltrada(1, intRegsPerPag, intPage, hmFilter, hmOrder);
+            Iterator<Integer> iterador = arrId.listIterator();
+            while (iterador.hasNext()) {
+                AsignaturaBeanGenSpImpl oAsignaturaBean = new AsignaturaBeanGenSpImpl(iterador.next());
+                arrAsignatura.add(this.get(oAsignaturaBean, 1));
+            }
+        } catch (Exception ex) {
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getPage ERROR: " + ex.getMessage()));
+        }
+        return arrAsignatura;
+    }
+
+    @Override
+    public int getPages(int intRegsPerPag, ArrayList<FilterBeanHelper> hmFilter) throws Exception {
+        int pages = 0;
+        try {
+            //obtener el id de usuario de sesion
+            pages = oMysql.getPagesAsignaturaFiltrada(1, intRegsPerPag, hmFilter);
+        } catch (Exception ex) {
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getPages ERROR: " + ex.getMessage()));
+        }
+        return pages;
+    }
 }

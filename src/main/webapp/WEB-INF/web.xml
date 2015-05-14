@@ -17,11 +17,11 @@
         <url-pattern>/jsp</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>uploading</servlet-name>
-        <servlet-class>net.daw.servlet.JuploadingServlet</servlet-class>
+        <servlet-name>subir</servlet-name>
+        <servlet-class>net.daw.imagen.subir</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>uploading</servlet-name>
+        <servlet-name>subir</servlet-name>
         <url-pattern>/upload</url-pattern>
     </servlet-mapping>
     <session-config>

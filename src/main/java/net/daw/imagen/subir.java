@@ -1,23 +1,32 @@
-package imagenes;
+package net.daw.imagen;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.daw.connection.implementation.BoneConnectionPoolImpl;
+import net.daw.connection.publicinterface.ConnectionInterface;
+import net.daw.dao.generic.specific.implementation.AlumnoDaoGenSpImpl;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-public class imagenservlet extends HttpServlet {
+public class subir extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
         String name = "";
-        String strMessage="";
+        String strMessage = "";
+        HashMap<String, String> hash = new HashMap<>();
+
         if (ServletFileUpload.isMultipartContent(request)) {
             try {
                 List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
@@ -25,21 +34,43 @@ public class imagenservlet extends HttpServlet {
                     if (!item.isFormField()) {
                         name = new File(item.getName()).getName();
                         item.write(new File(".//..//webapps//images//" + name));
+
+                    } else {
+                        hash.put(item.getFieldName(), item.getString());
+
                     }
+
                 }
                 strMessage = "<h1>File Uploaded Successfully</h1>";
+
+                Iterator it = hash.entrySet().iterator();
+                Map.Entry e = (Map.Entry) it.next();
+                strMessage += e.getKey() + " " + e.getValue() + "<br/>";
+                int id = Integer.parseInt(e.getValue().toString());
+
+                //update del campo imagen de la base de datos
+                ConnectionInterface DataConnectionSource = new BoneConnectionPoolImpl();
+                Connection oConnection = DataConnectionSource.newConnection();
+
+                String ruta = "<img src=\"/images/" + name + "\"  width=\"150\" />";
+
+                AlumnoDaoGenSpImpl oAlumnoDAO = new AlumnoDaoGenSpImpl("alumno", oConnection);
+                oAlumnoDAO.updateOne(id, "alumno", "imagen", ruta);
+
                 strMessage += "<img src=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/" + "/images/" + name + "\"  width=\"150\" /><br/>";
-                strMessage += "<a href=\""+"http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
+                strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
                 request.setAttribute("message", strMessage);
+
             } catch (Exception ex) {
                 request.setAttribute("message", "File Upload Failed: " + ex);
-                strMessage += "<a href=\""+"http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
+                strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
             }
         } else {
             request.setAttribute("message", "Only serve file upload requests");
-            strMessage += "<a href=\""+"http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
+            strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";
         }
         request.getRequestDispatcher("/result.jsp").forward(request, response);
+
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

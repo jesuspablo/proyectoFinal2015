@@ -52,7 +52,11 @@ th{
 
 .panel-heading {
     padding: 1px 10px;
+    
 }
+
+
+
 .list-group-item {
     padding: 2px 15px;
 }
@@ -64,8 +68,10 @@ th{
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
+   margin-top: 30px;
+   margin-bottom: 10px;
+   text-align: center;
+   background-color: #60a917;
 }
 
 .pagination{
@@ -93,6 +99,9 @@ h1, .h1, h2, .h2, h3, .h3 {
 padding-right: 10px;
 padding-left: 10px;
 }*/
+
+ 
+
 
 .panel-default>.panel-heading {
     background-color:#60a917;

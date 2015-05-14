@@ -1,0 +1,64 @@
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    
+}
+
+.izquierda {
+	width: 20%;
+	height: 839px;
+        padding-top: 2px;
+	float: left;	
+	background-color: grey;
+}
+.centro {
+	width: 60%;
+	height: 839px;
+        padding-top: 2px;
+	float: left;
+	background-color: white;
+	
+
+}
+
+ 
+
+.derecha {
+	width: 20%;
+	height: 839px;       
+        padding-top: 2px;        
+	float: left;	
+	background-color: grey;
+}
+
+		.derecha .boton {
+				width: 100%;
+
+		}
+
+		.derecha img {
+			width: 49%;
+			height: 200px;
+		}
+                
+                
+                
+                
+                
+                
+                //para el index//
+               
+                
+                
+                #indexContenido>.panel-defaul>.panel-heading {
+                    background-color: blue;
+                }
+                
+                

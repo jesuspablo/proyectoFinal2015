@@ -72,12 +72,7 @@
     </div>
     
     
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="Foto">Imagne :</label>
-        <div class="col-sm-6">
-            <input type="file" id="Foto"   name="Foto" accept="image/*" size="15" placeholder="imagen del Usuario" />
-        </div>
-    </div>
+   
     
     	
        

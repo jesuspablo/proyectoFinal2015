@@ -15,57 +15,66 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
-<!DOCTYPE html>
-<html lang="es">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Proyecto Final</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="css/css/style.css" rel='stylesheet' type='text/css' />
-    </head>
 <%@page import="net.daw.helper.EstadoHelper"%>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <img class="pull-left" src="fonts/user.png" alt="user image" style="padding: 20px 10px 5px 0" />
-            <h1>Virtual Class</h1>
-            <form class="form-signin" id="loginForm" action="jsp" role="form" method="post">                                    
-                <input type="hidden" name="ob" value="usuario" />
-                <input type="hidden" name="op" value="login02" />                
-                <label class="control-label" for="inputLogin" style="margin-top: 15px">Username:</label>
-                <%
-                    if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
-                %>
-                <input value="jesus" class="form-control"  id="inputLogin" type="text" placeholder="nombre de usuario" required="" autofocus="" name="login" />                                                    
-                <%
-                } else {
-                %>
-                <input class="form-control"  id="inputLogin" type="text" placeholder="nombre de usuario" required="" autofocus="" name="login" />                                                    
-                <%
-                    }
-                %>
-                <label class="control-label" for="password" style="margin-top: 15px">Password:</label>
-                <%
-                    if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
-                %>
-                <input value="jesus" class="form-control" type="password" id="inputPassword" placeholder="contraseña"  required="" name="password" />                                                               
-                <%
-                } else {
-                %>
-                <input class="form-control" type="password" id="inputPassword" placeholder="contraseña"  required="" name="password" />                                                               
-                <%
-                    }
-                %>                
-                <button class="btn btn-lg btn-primary btn-block" type="submit"  style="margin-top: 15px">Entrar</button>   
-            </form>
-        </div>
-    </div>
-</div>
 
+
+<!DOCTYPE html>
+<html>	
+<head>
+<title>User Login Flat Responsive widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta name="keywords" content="User Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
+<link rel="stylesheet" href="css/styles2.css">
+<!--web-fonts-->
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!--/web-fonts-->
+</head>
+<body>
+<!--User-Login-->
+<h1>User Login</h1>
+<div class="avtar">
+	<img src="css/images/avtar.png" />
+</div>
+	<div class="login-form">
+		<p>Iniciar Sesion</p>
+			<form class="form-signin" id="loginForm" action="jsp" role="form" method="post"> 
+                            <input type="hidden" name="ob" value="usuario" />
+                             <input type="hidden" name="op" value="login02" /> 
+				<div class="form-text">
+                                     <%
+                                    if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
+                                        %>
+					<input  class="text" value="jesus" class="form-control"  id="inputLogin" type="text" placeholder="nombre de usuario" required="" autofocus="" name="login"  />
+                                         <%
+                                        } else {
+                                         %>
+                                       <input class="form-control"  id="inputLogin" type="text" placeholder="nombre de usuario" required="" autofocus="" name="login" />
+                                         <%
+                                             }
+                                         %>
+                                         
+                                          <%
+                                            if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
+                                            %>
+                                            <input type="password" value="jesus" type="password" id="inputPassword" placeholder="contraseña"  required="" name="password" />
+                                         <%
+                                        } else {
+                                         %>
+                                         <input class="form-control" type="password" id="inputPassword" placeholder="contraseña"  required="" name="password" />                                                               
+                                            <%
+                                                }
+                                            %>   
+				</div>
+					<input type="submit"value="GO" >
+			</form>
+	</div>
+<!--/User-Login-->
+<!--start-copyright-->
+<div class="copy-right">
+	<p>Acceder al <a href="http://w3layouts.com">Sistema</a></p> 
+</div>
+<!--//end-copyright-->	
 </body>
 </html>

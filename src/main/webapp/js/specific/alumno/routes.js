@@ -81,4 +81,11 @@ function fAlumnoRoutes() {
         $('#indexContenidoJsp').empty();
         return false;
     });
+    
+    Path.map("#/alumno/upload/:id").to(function () {
+        $('#indexContenidoJsp').spinner();
+        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        oAlumnoControl.upload($('#indexContenido'), paramsObject['id'], oAlumnoModel, oAlumnoView);
+        $('#indexContenidoJsp').empty();
+    });
 }

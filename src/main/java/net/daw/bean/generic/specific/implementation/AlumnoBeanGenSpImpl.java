@@ -41,17 +41,12 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     private NivelBeanGenSpImpl obj_nivel = null;
     
      @Expose     
-    private String foto = "";
+    private String imagen = "";
    
    @Expose(serialize = false)
     private Integer id_usuario = 0; //importante inicializar a 0 las claves ajenas
     @Expose(deserialize = false)
     private UsuarioBeanGenSpImpl obj_usuario = null;
-   
-
-    public AlumnoBeanGenSpImpl(Integer id) {
-        super(id);
-    }
 
     public String getNombre() {
         return nombre;
@@ -68,20 +63,6 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-   
-
-    
-
-   
 
     public String getEmail() {
         return email;
@@ -106,8 +87,14 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     public void setObj_nivel(NivelBeanGenSpImpl obj_nivel) {
         this.obj_nivel = obj_nivel;
     }
-    
-    
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 
     public Integer getId_usuario() {
         return id_usuario;
@@ -124,8 +111,8 @@ public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     public void setObj_usuario(UsuarioBeanGenSpImpl obj_usuario) {
         this.obj_usuario = obj_usuario;
     }
+   
 
-    
-
+   
     
 }
