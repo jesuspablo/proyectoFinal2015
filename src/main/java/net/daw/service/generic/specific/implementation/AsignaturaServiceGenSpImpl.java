@@ -17,13 +17,75 @@
  */
 package net.daw.service.generic.specific.implementation;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import net.daw.service.generic.implementation.TableServiceGenImpl;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import net.daw.bean.generic.specific.implementation.AsignaturaBeanGenSpImpl;
+import net.daw.dao.generic.specific.implementation.AsignaturaDaoGenSpImpl;
+import net.daw.helper.ExceptionBooster;
+import net.daw.helper.FilterBeanHelper;
 
 public class AsignaturaServiceGenSpImpl extends TableServiceGenImpl {
 
     public AsignaturaServiceGenSpImpl(String strObject, String pojo, Connection con) {
         super(strObject, pojo, con);
+    }
+
+    public String getCountAsignaturaFiltrada(Integer id_usuario, ArrayList<FilterBeanHelper> alFilter) throws Exception {
+        String data = null;
+        try {
+            oConnection.setAutoCommit(false);
+
+            AsignaturaDaoGenSpImpl oAsignaturaDAO = new AsignaturaDaoGenSpImpl(strObjectName, oConnection);
+            int registers = oAsignaturaDAO.getCountAsignaturaFiltrada(id_usuario, alFilter);
+            data = "{\"data\":\"" + Integer.toString(registers) + "\"}";
+            oConnection.commit();
+
+        } catch (Exception ex) {
+            oConnection.rollback();
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getCount ERROR: " + ex.getMessage()));
+        }
+        return data;
+    }
+
+    public String getPageAsignaturaFiltrada(Integer id_usuario, int intRegsPerPag, int intPage, ArrayList<FilterBeanHelper> hmFilter, HashMap<String, String> hmOrder) throws Exception {
+        String data = null;
+        try {
+            oConnection.setAutoCommit(false);
+            AsignaturaDaoGenSpImpl oAsignaturaDAO = new AsignaturaDaoGenSpImpl(strObjectName, oConnection);
+            List<AsignaturaBeanGenSpImpl> oAsignaturas = oAsignaturaDAO.getPageAsignaturaFiltrada(id_usuario, alFilter, hmOrder);
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            gsonBuilder.setDateFormat("dd/MM/yyyy");
+            Gson gson = gsonBuilder.create();
+            data = gson.toJson(oAsignaturas);
+            data = "{\"list\":" + data + "}";
+            oConnection.commit();
+        } catch (Exception ex) {
+            oConnection.rollback();
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getPage ERROR: " + ex.getMessage()));
+        }
+        return data;
+
+    }
+
+    public String getPagesAsignaturaFiltrada(Integer id_usuario, int intRegsPerPag, ArrayList<FilterBeanHelper> hmFilter) throws Exception {
+
+        String data = null;
+        try {
+            oConnection.setAutoCommit(false);
+            AsignaturaDaoGenSpImpl oAsignaturaDAO = new AsignaturaDaoGenSpImpl(strObjectName, oConnection);
+            int pages = oAsignaturaDAO.getPagesAsignaturaFiltrada(id_usuario, alFilter);
+            data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
+            oConnection.commit();
+        } catch (Exception ex) {
+            oConnection.rollback();
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getPages ERROR: " + ex.getMessage()));
+        }
+        return data;
     }
 
 }

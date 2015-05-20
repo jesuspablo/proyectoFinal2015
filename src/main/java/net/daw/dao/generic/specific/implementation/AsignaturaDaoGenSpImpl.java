@@ -32,6 +32,19 @@ public class AsignaturaDaoGenSpImpl extends TableDaoGenImpl<AsignaturaBeanGenSpI
         super(strFuente, "Asignatura", pooledConnection);
     }
 
+    public int getCountAsignaturaFiltrada(Integer id_usuario, ArrayList<FilterBeanHelper> hmFilter) throws Exception {
+
+        int pages = 0;
+        try {
+            pages = oMysql.getCountAsignaturaFiltrada(id_usuario, hmFilter);
+        } catch (Exception ex) {
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getCount ERROR: " + ex.getMessage()));
+        }
+        return pages;
+
+    }
+
+    //falta getCountAsignaturaFiltrada
     //@Override
     public ArrayList<AsignaturaBeanGenSpImpl> getPageAsignaturaFiltrada(Integer id_usuario, int intRegsPerPag, int intPage, ArrayList<FilterBeanHelper> hmFilter, HashMap<String, String> hmOrder) throws Exception {
         ArrayList<Integer> arrId;

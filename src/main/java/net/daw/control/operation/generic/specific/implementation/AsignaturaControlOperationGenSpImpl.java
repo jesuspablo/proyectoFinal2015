@@ -18,13 +18,61 @@
 package net.daw.control.operation.generic.specific.implementation;
 
 import java.lang.reflect.InvocationTargetException;
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
+import net.daw.connection.implementation.BoneConnectionPoolImpl;
+import net.daw.connection.publicinterface.ConnectionInterface;
 import net.daw.control.operation.generic.implementation.ControlOperationGenImpl;
+import net.daw.helper.FilterBeanHelper;
+import net.daw.helper.ParameterCooker;
+import net.daw.service.generic.specific.implementation.AsignaturaServiceGenSpImpl;
 
 public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl {
+    private ConnectionInterface DataConnectionSource = null;
+    private Connection oConnection = null;
+    private AsignaturaServiceGenSpImpl oAsignaturaService = null;
 
     public AsignaturaControlOperationGenSpImpl(HttpServletRequest request) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, Exception {
         super(request);
+        DataConnectionSource = new BoneConnectionPoolImpl();
+        oConnection = DataConnectionSource.newConnection();
+        oAsignaturaService = new AsignaturaServiceGenSpImpl(ParameterCooker.prepareObject(request), ParameterCooker.prepareObject(request), oConnection);
     }
+    
+    public String paginaAsignaturas(HttpServletRequest request) throws Exception {
+        String result = "";
+        if (perm) {
+            Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
+            Integer intPage = ParameterCooker.preparePage(request);
+            ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
+            HashMap<String, String> hmOrder = ParameterCooker.prepareOrder(request);
+            result = oService.getPage(intRegsPerPag, intPage, alFilter, hmOrder);
+            closeDB();
+        } else {
+            result = "error";
+        }
 
+        return result;
+    }
+    
+    public String paginasAsignaras(HttpServletRequest request) throws Exception {
+        String result = "";
+        if (perm) {
+            Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
+            ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
+            result = oService.getPages(intRegsPerPag, alFilter);
+            closeDB();
+        } else {
+            result = "error";
+        }
+        return result;
+    }
+    
+    
+
+    
+    
+    
 }

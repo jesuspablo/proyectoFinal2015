@@ -17,8 +17,38 @@
  */
 package net.daw.control.route.generic.specific.implementation;
 
+import javax.servlet.http.HttpServletRequest;
+import net.daw.control.operation.generic.specific.implementation.AsignaturaControlOperationGenSpImpl;
+import net.daw.control.operation.publicinterface.ControlOperationInterface;
 import net.daw.control.route.generic.implementation.ControlRouteGenImpl;
+import net.daw.helper.ExceptionBooster;
+import net.daw.helper.ParameterCooker;
 
 public class AsignaturaControlRouteGenSpImpl extends ControlRouteGenImpl {
+    
+    public String execute(HttpServletRequest request, ControlOperationInterface oControl) throws Exception {
+        AsignaturaControlOperationGenSpImpl oAsignaturaControl = (AsignaturaControlOperationGenSpImpl) oControl;
+        String operation = ParameterCooker.prepareOperation(request);
+        String jsonResult = "";
+        try {
+            switch (operation) {
+                case "getPageAsignaturaFiltrada":
+                    jsonResult = oAsignaturaControl.paginaAsignaturas(request);
+                    break;
+                case "getCountAsignaturaFiltrada":
+                    jsonResult = oAsignaturaControl.contarAsignaturas(request);
+                    break;
+                case "getPagesAsignaturaFiltrada":
+                    jsonResult = oAsignaturaControl.paginasAsignaras(request);
+                    break;
+                default:
+                    jsonResult = super.execute(request, oControl);
+                    break;
+            }
+        } catch (Exception ex) {
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":execute ERROR: " + ex.getMessage()));
+        }
+        return jsonResult;
+    }
 
 }

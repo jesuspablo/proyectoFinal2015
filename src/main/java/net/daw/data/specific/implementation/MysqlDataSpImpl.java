@@ -944,4 +944,62 @@ public class MysqlDataSpImpl implements DataInterface {
         }
     }
 
+    public int getCountAsignaturaFiltrada(Integer id_usuario, ArrayList<FilterBeanHelper> alFilter) throws Exception {
+
+        int intResult = 0;
+        Statement oStatement = null;
+        try {
+            oStatement = (Statement) connection.createStatement();
+
+            String strSQL = "select count(*) from alumno al, nota n, asignatura asig"
+                    + " where n.id_alumno = al.id"
+                    + " and n.id_asignatura = asig.id"
+                    + " and al.id = " + id_usuario.toString();
+
+            if (alFilter != null) {
+                Iterator iterator = alFilter.iterator();
+                while (iterator.hasNext()) {
+                    FilterBeanHelper oFilterBean = (FilterBeanHelper) iterator.next();
+                    switch (oFilterBean.getFilterOperator()) {
+                        case "like":
+                            strSQL += " AND " + oFilterBean.getFilter() + " LIKE '%" + oFilterBean.getFilterValue() + "%'";
+                            break;
+                        case "notlike":
+                            strSQL += " AND " + oFilterBean.getFilter() + " NOT LIKE '%" + oFilterBean.getFilterValue() + "%'";
+                            break;
+                        case "equals":
+                            strSQL += " AND " + oFilterBean.getFilter() + " = '" + oFilterBean.getFilterValue() + "'";
+                            break;
+                        case "notequalto":
+                            strSQL += " AND " + oFilterBean.getFilter() + " <> '" + oFilterBean.getFilterValue() + "'";
+                            break;
+                        case "less":
+                            strSQL += " AND " + oFilterBean.getFilter() + " < " + oFilterBean.getFilterValue() + "";
+                            break;
+                        case "lessorequal":
+                            strSQL += " AND " + oFilterBean.getFilter() + " <= " + oFilterBean.getFilterValue() + "";
+                            break;
+                        case "greater":
+                            strSQL += " AND " + oFilterBean.getFilter() + " > " + oFilterBean.getFilterValue() + "";
+                            break;
+                        case "greaterorequal":
+                            strSQL += " AND " + oFilterBean.getFilter() + " >= " + oFilterBean.getFilterValue() + "";
+                            break;
+                    }
+                }
+            }
+            ResultSet oResultSet = oStatement.executeQuery(strSQL);
+            while (oResultSet.next()) {
+                intResult = oResultSet.getInt("COUNT(*)");
+            }
+        } catch (SQLException ex) {
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getCount ERROR:  Can't process query: " + ex.getMessage()));
+        } finally {
+            if (oStatement != null) {
+                oStatement.close();
+            }
+        }
+        return intResult;
+
+    }
 }
