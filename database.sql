@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 07-05-2015 a las 10:55:33
+-- Tiempo de generación: 20-05-2015 a las 06:55:17
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.32
 
@@ -53,16 +53,16 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `apellido` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
   `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario',
-  `foto` varchar(255) DEFAULT NULL COMMENT 'MI Foto'
+  `imagen` varchar(255) DEFAULT NULL COMMENT 'Imagen'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellido`, `email`, `id_usuario`, `foto`) VALUES
-(1, 'Betina  ', 2, 'Guerra Arroyo', 'jivohebog-6520@yopmail.com', 1, 'css/images/p13.jpg'),
-(2, 'Guzmán ', 1, 'Padron Esquivel', 'wijytiru-6960@yopmail.com', 2, NULL),
+INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellido`, `email`, `id_usuario`, `imagen`) VALUES
+(1, 'Betina  ', 2, 'Guerra Arroyo', 'jivohebog-6520@yopmail.com', 1, '<img src="/images/fondo2.jpeg"  width="150" />'),
+(2, 'Guzmán ', 1, 'Padron Esquivel', 'wijytiru-6960@yopmail.com', 2, '<img src="/images/fondo2.jpeg"  width="150" />'),
 (3, 'Haide', 3, 'Tejada Escalante', 'unaffanny-5394@yopmail.com', 3, NULL),
 (4, 'Martial  ', 4, 'Ledesma Carvajal', 'ceqixaran-2559@yopmail.com', 4, NULL),
 (5, 'Matty  ', 6, 'Peralta Suárez', 'gutezahu-8248@yopmail.com', 5, NULL),
