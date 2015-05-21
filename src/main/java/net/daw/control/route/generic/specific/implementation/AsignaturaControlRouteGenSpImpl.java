@@ -41,6 +41,9 @@ public class AsignaturaControlRouteGenSpImpl extends ControlRouteGenImpl {
                 case "getPagesAsignaturaFiltrada":
                     jsonResult = oAsignaturaControl.paginasAsignaras(request);
                     break;
+                case "getaggregateviewsomefiltradoasignaturas":
+                    jsonResult = oAsignaturaControl.getaggregateviewsomefiltradoasignaturas(request);
+                    break;
                 default:
                     jsonResult = super.execute(request, oControl);
                     break;

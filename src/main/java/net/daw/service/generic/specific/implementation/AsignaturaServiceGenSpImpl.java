@@ -88,4 +88,29 @@ public class AsignaturaServiceGenSpImpl extends TableServiceGenImpl {
         return data;
     }
 
+    
+        public String getAggregateViewSomeAsignaturaFiltrado(int id_usuario,int intRegsPerPag, int intPage, ArrayList<FilterBeanHelper> alFilter, HashMap<String, String> hmOrder) throws Exception {
+        String data = null;
+        try {
+            //falta controlar la transacción a esta altura
+            String columns = this.getColumns();
+            String prettyColumns = this.getPrettyColumns();
+            //String types = this.getTypes();
+            String page = this.getPageAsignaturaFiltrada(id_usuario,intRegsPerPag, intPage, alFilter, hmOrder);
+            String pages = this.getPagesAsignaturaFiltrada(id_usuario,intRegsPerPag, alFilter);
+            String registers = this.getCountAsignaturaFiltrada(id_usuario,alFilter);
+            data = "{\"data\":{"
+                    + "\"columns\":" + columns
+                    + ",\"prettyColumns\":" + prettyColumns
+                    // + ",\"types\":" + types
+                    + ",\"page\":" + page
+                    + ",\"pages\":" + pages
+                    + ",\"registers\":" + registers
+                    + "}}";
+        } catch (Exception ex) {
+            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":getAggregateViewSome ERROR: " + ex.getMessage()));
+        }
+        return data;
+    }
+    
 }

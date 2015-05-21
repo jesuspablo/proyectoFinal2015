@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
+import net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl;
 import net.daw.connection.implementation.BoneConnectionPoolImpl;
 import net.daw.connection.publicinterface.ConnectionInterface;
 import net.daw.control.operation.generic.implementation.ControlOperationGenImpl;
@@ -30,6 +31,7 @@ import net.daw.helper.ParameterCooker;
 import net.daw.service.generic.specific.implementation.AsignaturaServiceGenSpImpl;
 
 public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl {
+
     private ConnectionInterface DataConnectionSource = null;
     private Connection oConnection = null;
     private AsignaturaServiceGenSpImpl oAsignaturaService = null;
@@ -40,7 +42,7 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
         oConnection = DataConnectionSource.newConnection();
         oAsignaturaService = new AsignaturaServiceGenSpImpl(ParameterCooker.prepareObject(request), ParameterCooker.prepareObject(request), oConnection);
     }
-    
+
     public String paginaAsignaturas(HttpServletRequest request) throws Exception {
         String result = "";
         if (perm) {
@@ -56,37 +58,59 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
 
         return result;
     }
-    
+
     public String paginasAsignaras(HttpServletRequest request) throws Exception {
         String result = "";
         if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
             ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
-            result = oService.getPages(intRegsPerPag, alFilter);
+            UsuarioBeanGenSpImpl oUsuario = new UsuarioBeanGenSpImpl();
+            oUsuario = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");
+            result = oAsignaturaService.getPagesAsignaturaFiltrada(oUsuario.getId(), intRegsPerPag, alFilter);
+            //result = oService.getPages(intRegsPerPag, alFilter);
             closeDB();
         } else {
             result = "error";
         }
         return result;
     }
-    
-    
+
     public String contarAsignaturas(HttpServletRequest request) throws Exception {
         String result = "";
         if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
             ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
-            result = oService.getPages(intRegsPerPag, alFilter);
+            result = oAsignaturaService.getCountAsignaturaFiltrada(intRegsPerPag, alFilter);
+            //result = oService.getPages(intRegsPerPag, alFilter);
             closeDB();
         } else {
             result = "error";
         }
         return result;
     }
-    
-    
 
     
     
+            
     
+    public String getaggregateviewsomefiltradoasignaturas(HttpServletRequest request) throws Exception {
+        String result = "";
+        //if (perm) {
+             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
+            Integer intPage = ParameterCooker.preparePage(request);
+            ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
+            HashMap<String, String> hmOrder = ParameterCooker.prepareOrder(request);
+            
+           UsuarioBeanGenSpImpl oUsuario = new UsuarioBeanGenSpImpl();
+            oUsuario = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");
+            result = oAsignaturaService.getAggregateViewSomeAsignaturaFiltrado(oUsuario.getId() , intRegsPerPag, intPage, alFilter, hmOrder);
+            closeDB();
+        //} else {
+        //    result = "error";
+        //}
+        return result;
+    }
+            
+            
+            
 }
