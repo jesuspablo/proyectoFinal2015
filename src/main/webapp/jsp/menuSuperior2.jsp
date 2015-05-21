@@ -32,9 +32,9 @@
 <div class="cssmenu">
     <ul id="nav">
         <li class="current"><a href="#section-1">Inicio</a></li>
-        <li><a href="#section-2">Colegio</a></li>
-        <li><a href="#section-3">Secretaria</a></li>					 					 
-        <li><a href="#section-5">Contacto</a></li>
+        <li><a href="#">Colegio</a></li>
+        <li><a href="#">Secretaria</a></li>					 					 
+        <li><a href="#">Contacto</a></li>
         <li><a href="jsp?op=login01&amp;ob=usuario"><span class="glyphicon glyphicon-log-in"></span></a></li>
     </ul>		    
 </div>

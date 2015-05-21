@@ -28,7 +28,7 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 body{
-  background: url(../css/images/bg.jpg)no-repeat;
+  background: #001f3f;
   font-family: 'Montserrat', sans-serif;
   background-size: 100% 135%;
 }

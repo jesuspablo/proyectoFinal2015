@@ -57,7 +57,7 @@ public class AsignaturaServiceGenSpImpl extends TableServiceGenImpl {
         try {
             oConnection.setAutoCommit(false);
             AsignaturaDaoGenSpImpl oAsignaturaDAO = new AsignaturaDaoGenSpImpl(strObjectName, oConnection);
-            List<AsignaturaBeanGenSpImpl> oAsignaturas = oAsignaturaDAO.getPageAsignaturaFiltrada(id_usuario, alFilter, hmOrder);
+            List<AsignaturaBeanGenSpImpl> oAsignaturas = oAsignaturaDAO.getPageAsignaturaFiltrada(id_usuario, intRegsPerPag, intPage, hmFilter, hmOrder);
             GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.setDateFormat("dd/MM/yyyy");
             Gson gson = gsonBuilder.create();
@@ -78,7 +78,7 @@ public class AsignaturaServiceGenSpImpl extends TableServiceGenImpl {
         try {
             oConnection.setAutoCommit(false);
             AsignaturaDaoGenSpImpl oAsignaturaDAO = new AsignaturaDaoGenSpImpl(strObjectName, oConnection);
-            int pages = oAsignaturaDAO.getPagesAsignaturaFiltrada(id_usuario, alFilter);
+            int pages = oAsignaturaDAO.getPagesAsignaturaFiltrada(id_usuario, intRegsPerPag, hmFilter);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             oConnection.commit();
         } catch (Exception ex) {

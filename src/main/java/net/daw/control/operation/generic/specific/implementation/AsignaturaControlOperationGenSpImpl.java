@@ -71,6 +71,20 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
     }
     
     
+    public String contarAsignaturas(HttpServletRequest request) throws Exception {
+        String result = "";
+        if (perm) {
+            Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
+            ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
+            result = oService.getPages(intRegsPerPag, alFilter);
+            closeDB();
+        } else {
+            result = "error";
+        }
+        return result;
+    }
+    
+    
 
     
     

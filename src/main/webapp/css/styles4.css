@@ -1,0 +1,278 @@
+
+
+
+ body {
+    width: 100%;   
+    padding-top: 60px;
+    background: #001f3f: 
+    font-size: 16px;    
+    color: #000;
+    font-family: "Oxygen",sans-serif;
+    
+}
+.container {
+    width: 100%;
+   
+}
+
+.indexContenidoJsp {
+    width: 100%;
+}
+.navbar-default {
+    background: #001f3f;
+    padding-top: 8px;
+    
+    
+}
+.navbar-header a {
+    color: white;
+}
+
+
+
+#nav li {
+    font-size: 18px;  
+    padding-top: 9px;
+    margin-left: 11px;
+    display: inline-block;
+    color: #000;
+    font-family: "Oxygen",sans-serif;
+}
+
+#nav li a {
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+#nav li a:hover {
+    color: silver;
+    
+}
+
+.glyphicon {
+    margin-left: 556px;
+}
+
+.navbar>.container .navbar-brand{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.navbar-default .navbar-brand {
+    margin-left: 30px;
+    font-size: 18px;
+    padding-top: 9px;   
+    color: white;
+    font-family: "Oxygen",sans-serif;   
+}
+
+.navbar-default .navbar-brand:hover {
+    color: silver;
+    
+}
+
+
+
+
+
+
+
+
+.izquierda {
+    width: 20%;
+    height: 881px;
+    float: left;    
+    background-color: #001f3f;
+}
+    
+     .menu {
+         width: 100%;
+        color: white;
+        background-color: #001f3f;
+        margin-left: 33px;
+        margin-top: 173px;     
+     }  
+
+     li>a {
+        color: white;
+     }
+
+     .menu>ul>li {
+          
+        height: 10px;         
+        margin-top: 15px;
+        padding-top: 23px;
+        border: 1px solid #001f3f;
+        list-style: none;
+     }
+     
+     .menu h2 {
+     margin-left: 10px;
+     }
+
+     .menu a:hover {
+        
+        color: silver;
+     }
+
+     .menu li {
+         font-size: 18px; 
+          font-family: "Oxygen",sans-serif;
+          
+     }
+     
+
+
+     .menu li a {
+        text-decoration: none;
+     }
+
+    
+
+     .seccion1, .seccion2 {
+        margin-left: -52px;
+        padding-top: 10px;
+        display: none;
+     }
+
+    .seccion2 li {
+
+         margin-left: 52px;
+        margin-top: 13px;
+         list-style: none;
+
+    }
+
+    .seccion1 li {
+        margin-left: 52px;
+        margin-top: 13px;
+        list-style: none;
+
+
+    }
+
+/*Slider*/
+
+
+
+.slides {
+    width: 100%;
+
+   
+}
+
+.slides img {
+    width: 100%;
+}
+
+.slidesjs-pagination {
+    background: #424242;
+    list-style: none;
+    overflow: hidden;
+
+}
+.slidesjs-pagination li {
+    float: left;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.slidesjs-pagination li a:hover {
+     background: #000;
+
+}
+
+.slides .active {
+    background: #000;
+}
+
+.slidesjs-navigation {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    float: right;
+}
+
+
+
+
+
+.centro {
+    width: 60%;    
+    height: 881px;
+
+    margin: 0px auto;
+    float: left;
+    background-color: #DDD;
+    
+}
+
+    .telefono {
+        width: 100%;
+       display: none;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .telefono p {
+        padding-top: 10px;
+       
+    }
+
+    .mapa {
+        width: 100%;
+        display: none;
+        padding-top: 20px;
+        text-align: center;
+    }
+     
+
+        .mapa img {
+            width: 80%;
+            padding-top: 20px;
+        }
+
+    .ubicacion {
+        width: 100%;
+        display: none;
+        padding-top: 50px;
+        text-align: center;
+    }
+            .ubicacion img {
+                width: 80%;
+                padding-top: 20px;
+             }
+
+.derecha {
+    width: 20%;
+    height: 881px;
+    float: left;
+    background-color:  #001f3f;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;    
+    clear: both;
+    border: 1px solid gray;
+    background-color: gray;
+}
+
+.dropdown-menu {
+    background: #001f3f;
+    
+}
+
+.dropdown-menu li a {
+    color: white;
+}
+
+.dropdown-menu li a:hover {
+    color: silver;
+}
