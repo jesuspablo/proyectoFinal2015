@@ -46,8 +46,8 @@
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
         
-        <link rel="stylesheet" href="css/styles4.css">
        
+       <link rel="stylesheet" href="css/styles.css">
         
 
 

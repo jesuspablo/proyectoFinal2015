@@ -43,7 +43,7 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
         oAsignaturaService = new AsignaturaServiceGenSpImpl(ParameterCooker.prepareObject(request), ParameterCooker.prepareObject(request), oConnection);
     }
 
-    public String paginaAsignaturas(HttpServletRequest request) throws Exception {
+    public String getpaginaAsignatura(HttpServletRequest request) throws Exception {
         String result = "";
         if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
@@ -59,7 +59,7 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
         return result;
     }
 
-    public String paginasAsignaras(HttpServletRequest request) throws Exception {
+    public String getpaginasAsignaturas(HttpServletRequest request) throws Exception {
         String result = "";
         if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
@@ -75,7 +75,7 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
         return result;
     }
 
-    public String contarAsignaturas(HttpServletRequest request) throws Exception {
+    public String getcountAsignaturas(HttpServletRequest request) throws Exception {
         String result = "";
         if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
@@ -95,7 +95,7 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
     
     public String getaggregateviewsomefiltradoasignaturas(HttpServletRequest request) throws Exception {
         String result = "";
-        //if (perm) {
+        if (perm) {
              Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
             Integer intPage = ParameterCooker.preparePage(request);
             ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
@@ -105,9 +105,9 @@ public class AsignaturaControlOperationGenSpImpl extends ControlOperationGenImpl
             oUsuario = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");
             result = oAsignaturaService.getAggregateViewSomeAsignaturaFiltrado(oUsuario.getId() , intRegsPerPag, intPage, alFilter, hmOrder);
             closeDB();
-        //} else {
-        //    result = "error";
-        //}
+        } else {
+            result = "error";
+        }
         return result;
     }
             

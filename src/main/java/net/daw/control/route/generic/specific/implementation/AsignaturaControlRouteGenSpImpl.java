@@ -33,13 +33,13 @@ public class AsignaturaControlRouteGenSpImpl extends ControlRouteGenImpl {
         try {
             switch (operation) {
                 case "getPageAsignaturaFiltrada":
-                    jsonResult = oAsignaturaControl.paginaAsignaturas(request);
+                    jsonResult = oAsignaturaControl.getpaginaAsignatura(request);
                     break;
                 case "getCountAsignaturaFiltrada":
-                    jsonResult = oAsignaturaControl.contarAsignaturas(request);
+                    jsonResult = oAsignaturaControl.getcountAsignaturas(request);
                     break;
                 case "getPagesAsignaturaFiltrada":
-                    jsonResult = oAsignaturaControl.paginasAsignaras(request);
+                    jsonResult = oAsignaturaControl.getpaginasAsignaturas(request);
                     break;
                 case "getaggregateviewsomefiltradoasignaturas":
                     jsonResult = oAsignaturaControl.getaggregateviewsomefiltradoasignaturas(request);
