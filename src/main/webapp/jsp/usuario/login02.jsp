@@ -18,51 +18,35 @@
 
 <%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
 <% UsuarioBeanGenSpImpl oUsuario = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean"); %>
-<% if (oUsuario==null){ %>
-    
-    <h1>Vd. no ha entrado en el sistema</h1>
-    <h4>Ha habido un problema con su autenticación. Revise su login o su password.</h4>
-<% } else { %>
-    <h1>Vd. ha entrado en el sistema</h1>
-    <h4>Bienvenido, <%=oUsuario.getLogin() %>. Ahora puede operar con los menús de la aplicación.</h4>
-    <div id="prueba"></div>
-    
-     <script type="text/javascript"  src="./js/vendor/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript">
-        $.ajax({
-            url: "http://localhost:8081/proyectoFinal2015/json?ob=asignatura&op=getpage&page=1&rpp=10&filter=id_nivel&filteroperator=equals&filtervalue=2",
-            //data: "nocache=" + Math.random(),
-            type: "GET",
-            dataType: "json",
-            success: function(source) {
-                var columns;
-                $.ajax({
-                    url: "http://localhost:8081/proyectoFinal2015/json?ob=asignatura&op=getcolumns",
-                    //data: "nocache=" + Math.random(),
-                    type: "GET",
-                    dataType: "json",
-                    success: function(source2) {
-                        var json = source["list"];
-                        var html;
-                        for (i=0; i<json.length; i++) {
-                            for (j=0; j<source2.length; j++) {
-                                var column = source2[j];
-                                var obj = column.substr(0, 4);
-                                if (obj == "obj_") {
-                                    html += "<p>" + source2[j] + ": " + json[i]["id"] +  "</p>";
-                                } else {
-                                    html += "<p>" + source2[j] + ": " + json[i][source2[j]] +  "</p>";
-                                }
-                                $("#prueba").html(html)
-                            }
-                        }
-                    }
-                });
 
-            }
+     <head>      
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript"  src="./js/vendor/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/skin/login02.css"> 
+    </head>   
+   <body id="login02">
+        <% if (oUsuario == null) { %>
+        <h1 class="margen-superior">Vd. no ha entrado en el sistema</h1>
+        <h4>Ha habido un problema con su autenticación. Revise su login o su password.</h4>
+        <% } else {%>
+        <h1 class="margen-superior">Bienvenido</h1>
+        <h4><%=oUsuario.getLogin()%></h4>
+        <% }%>
+    </body>
+
+    <script>
+        $(document).ready(function () {
+
+            $("h1").fadeIn(4000, function () {
+                $("h1").fadeOut(4000);
+            });
+            $("h4").fadeIn(4000, function () {
+                $("h4").fadeOut(4000);
+            });
         });
+
     </script>
-        
-        
-        
-<% } %>
+</html>

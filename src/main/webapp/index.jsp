@@ -44,10 +44,8 @@
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
-        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-        
-       
-       <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />      
+     
         
 
 
@@ -93,21 +91,8 @@
                 </div>
                 <div class="clearfix"> </div>
             </div>
-        </div>           
+        </div>                   
                     
-                    
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
