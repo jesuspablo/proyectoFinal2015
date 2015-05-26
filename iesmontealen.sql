@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 26-05-2015 a las 10:47:43
+-- Tiempo de generación: 26-05-2015 a las 12:09:46
 -- Versión del servidor: 5.5.42
 -- Versión de PHP: 5.4.41
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `iesMontealen`
+-- Base de datos: `iesmontealen`
 --
 
 -- --------------------------------------------------------
@@ -648,20 +648,20 @@ CREATE TABLE IF NOT EXISTS `profesor` (
 --
 
 INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `apellido`, `id_usuario`, `imagen`) VALUES
-(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas Coronado', 13, '0'),
-(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos Olivo', 14, '0'),
-(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa Zapata', 15, '0'),
-(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna Orguendo', 16, '0'),
-(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño Reyna', 17, '0'),
-(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo Navarro', 18, '0'),
-(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza Herrera', 19, '0'),
-(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho Curiel', 20, '0'),
-(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza Fierro', 21, '0'),
-(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame Bahena', 22, '0'),
-(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel Agosto', 23, '0'),
-(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho Nieto', 0, '0'),
-(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa Santana', 0, '0'),
-(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento Cansina', 0, '0');
+(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas Coronado', 13, '<img src="/images/fondo2.jpeg"  width="150" />'),
+(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos Olivo', 14, '<img src="/images/fondo2.jpeg"  width="150" />'),
+(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa Zapata', 15, NULL),
+(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna Orguendo', 16, NULL),
+(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño Reyna', 17, NULL),
+(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo Navarro', 18, NULL),
+(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza Herrera', 19, NULL),
+(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho Curiel', 20, NULL),
+(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza Fierro', 21, NULL),
+(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame Bahena', 22, NULL),
+(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel Agosto', 23, NULL),
+(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho Nieto', 0, NULL),
+(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa Santana', 0, NULL),
+(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento Cansina', 0, NULL);
 
 -- --------------------------------------------------------
 
