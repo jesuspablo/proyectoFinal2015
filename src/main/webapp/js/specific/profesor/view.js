@@ -28,7 +28,6 @@ var oProfesorView = new profesorView('profesor');
 
 
 profesorView.prototype.loadButtons = function (id) {
-
     var botonera = "";
     botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
     botonera += '<a class="btn btn-default view" id="' + id + '"  href="jsp#/' + this.clase + '/view/' + id + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
@@ -38,8 +37,8 @@ profesorView.prototype.loadButtons = function (id) {
 
     botonera += '</div></div>';
     return botonera;
-
 }
+
 profesorView.prototype.loadFormValues = function (valores, campos) {
     this.doFillForm(valores, campos);
 };
