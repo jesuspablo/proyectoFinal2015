@@ -106,10 +106,6 @@
 
 
         </div>
-        <div class="footer">
-
-
-        </div>
-        <!--//end-copyright-->	
+        
     </body>
 </html>
