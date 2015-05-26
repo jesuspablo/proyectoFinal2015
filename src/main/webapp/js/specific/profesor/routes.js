@@ -81,4 +81,10 @@ function fProfesorRoutes() {
         $('#indexContenidoJsp').empty();
         return false;
     });
+    Path.map("#/profesor/upload/:id").to(function () {
+        $('#indexContenidoJsp').spinner();
+        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        oProfesorControl.upload($('#indexContenido'), paramsObject['id'], oProfesorModel, oProfesorView);
+        $('#indexContenidoJsp').empty();
+    });
 }

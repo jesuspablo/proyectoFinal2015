@@ -43,30 +43,11 @@ alumnoView.prototype.loadButtons = function (id) {
 
 }
 alumnoView.prototype.loadFormValues = function (valores, campos) {
-//                    $('#alumno_form #titulo').val(valores['titulo']);
-//                    $('#alumno_form #contenido').val(valores['contenido']);
-//                    $('#alumno_form #alta').val(valores['alta']);
-//                    $('#alumno_form #cambio').val(valores['cambio']);
-//                    $('#alumno_form #hits').val(valores['hits']);
-//                    $('#alumno_form #id_usuario').val(valores['id_usuario']);
-//                    $('#alumno_form #etiquetas').val(valores['etiquetas']);
-//                    $('#alumno_form #publicado').val(valores['publicado']);
-//                    $('#alumno_form #portada').val(valores['portada']);
-    this.doFillForm(valores, campos);
+this.doFillForm(valores, campos);
 };
 
 alumnoView.prototype.getFormValues = function () {
-    var valores = [];
-//                    valores['titulo'] = $('#alumno_form #titulo');
-//                    valores['contenido'] = $('#alumno_form #contenido');
-//                    valores['alta'] = $('#alumno_form #alta');
-//                    valores['cambio'] = $('#alumno_form #cambio');
-//                    valores['hits'] = $('#alumno_form #hits');
-//                    valores['id_usuario'] = $('#alumno_form #id_usuario');
-//                    valores['etiquetas'] = $('#alumno_form #etiquetas');
-//                    valores['publicado'] = $('#alumno_form #publicado');
-//                    valores['portada'] = $('#alumno_form #portada');
-
+    var valores = [];                
     var disabled = $('#alumnoForm').find(':input:disabled').removeAttr('disabled');
     valores = $('#alumnoForm').serializeObject();
     disabled.attr('disabled', 'disabled');

@@ -11,11 +11,14 @@ and open the template in the editor.
 
 
 body {
-    background-color: #white;
+     background-color: #001f3f;
 }
 
 .margen-superior {
     margin-top: 80px !important;
+}
+.margen-ultrasuperior {
+    margin-top: 15% !important;
 }
 
 /* Navbar */
@@ -25,55 +28,224 @@ body {
     left: 47%;
 }
 
-/* Intro de la pagina de inicio */
-#intro {
-    position: relative;
-    background: url(../../images/fotoIntro.jpg) no-repeat center center;
-    webkit-background-size: cover;
-    moz-background-size: cover;
-    o-background-size: cover;
-    background-size: cover;
-    color: #fff;
-    padding: 370px 0 200px 0;
-    box-shadow: 0px 10px 10px #888888;
+
+/* Cabecera de los paneles */
+.navbar-default {
+    background: #001f3f;
+    padding-top: 8px;   
+    
 }
 
-#intro > h1 {
-    display: block;
-    position: relative;
-    top: -2em;
-    text-align: center;
-    letter-spacing: 1px;
-    font-family: 'Roboto', sans-serif;
-    color: #fff !important;
-    font-size: 500%;
-    font-weight: 100;
+.navbar-header a {
+    color: white;
 }
 
-#intro > h1 > span {
-    font-size: 30%;
-    color: lightgrey;
+#nav li {
+    font-size: 18px;  
+    padding-top: 9px;
+    margin-left: 11px;
+    display: inline-block;
+    color: white;
+    font-family: "Oxygen",sans-serif;
 }
 
-/*.jumbotron {
-    background-color: #f0a30a ;
-}*/
+.glyphicon-log-out {
+    margin-left: 556px;
+}
 
-/* Zona de informacion */
+.navbar>.container .navbar-brand{
+    margin-left: 10px;
+    margin-top: 5px;
+}
 
-/* Cabecera de las tablas */
+.navbar-default .navbar-brand {
+    margin-left: 30px;
+    font-size: 18px;
+    padding-top: 9px;   
+    color: white;
+    font-family: "Oxygen",sans-serif;   
+}
+
+.navbar-default .navbar-brand:hover {
+    color: silver;
+    
+}
+
+.dropdown-menu {
+    background: #001f3f;
+    
+}
+
+.dropdown-menu li a {
+    color: white;
+}
+
+.dropdown-menu li a:hover {
+    color: silver;
+}
+
+/**/
+
+#indexContenido{
+    padding-top: 62px;
+    
+}
 .panel-default>.panel-heading {
-    background-color:#60a917;
-    color:whitesmoke;
+    background-color: #001f3f;
+    color: white;
+}
+.panel{
+    background-color: whitesmoke;
+    padding: 0px !important;
+    border: 2px solid #74619a !important;
+    
+}
+.panel-heading > h1 {
+    text-align: center;
+    color: white !important;
+}
+a {
+    text-decoration: none !important;
+    color: white;
+}
+.icon-arrow-up-2 , .icon-arrow-down-2{
+    color: #08250a;
+}
+.icon-arrow-up-2:hover , .icon-arrow-down-2:hover {
+    color: grey;
 }
 
-th{
-    min-width: 30px;
-    color: whitesmoke;
-    background-color: #12C955;
+footer {    
+    background-color: #DDD !important;
+    height: 5em;
+    clear: both;
 }
-
 .datepicker th{
     background-color: white;
     color: black;
 }
+
+
+/* Sobreescribo botones conflictivos de bootstrapt con iconFont*/
+.tile-group-title {
+    font-size: 26px;
+}
+.btn-primary {
+    background-color: #248FCD !important;
+    color: white !important;
+}
+.glyphicon-ok:before {
+    content: "\e08a" !important;
+}
+.glyphicon-remove:before {
+    content: "\e089" !important;
+}
+a:hover {
+    border: 0px solid black !important;
+}
+#result, #btnBorrarSi {
+    color: white;
+}
+.Pgreen {
+    background-color: #76ac50 !important;
+}
+
+
+/*
+ *  Tablas
+ */
+.tabla-1 {
+    padding: 30px 10px 60px;
+    background: #e0dce8;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+    font-family: 'Open Sans';
+}
+.tabla-1 th {
+    text-align: left !important;
+}
+.tabla-1 table {
+    background-color: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+    border-collapse: separate !important;
+    border-spacing: 0 7px !important;
+}
+.tabla-1 table > thead > tr > th,
+.tabla-1 table > tbody > tr > th,
+.tabla-1 table > tfoot > tr > th,
+.tabla-1 table > thead > tr > td,
+.tabla-1 table > tbody > tr > td,
+.tabla-1 table > tfoot > tr > td {
+    padding: 13px !important;
+    line-height: 20px !important;
+}
+.tabla-1 table th {
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    color: #868686 !important;
+    vertical-align: bottom !important;
+    padding: 0 13px !important;
+}
+.tabla-1 table td {
+    vertical-align: middle !important;
+    background: #ffffff !important;
+    border: 1px solid #eaeaea !important;
+    border-right: 0 !important;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1) !important;
+    -webkit-transition: all .2s easel
+        transition all .2s ease !important;
+    font-size: 13px;
+}
+.tabla-1 table td:last-child {
+    border-right: 1px solid #eaeaea !important;
+    border-radius: 0 2px 2px 0 !important;
+}
+.tabla-1 table td:first-child {
+    border-radius: 2px 0 0 2px !important;
+}
+.tabla-1 table tr {
+    border: 2px solid red;
+    box-shadow: 0 3px 2px red !important;
+}
+.tabla-1 table > thead > tr > th {
+    vertical-align: bottom !important;
+}
+.tabla-1 table > caption + thead > tr:first-child > th,
+.tabla-1 table > colgroup + thead > tr:first-child > th,
+.tabla-1 table > thead:first-child > tr:first-child > th,
+.tabla-1 table > caption + thead > tr:first-child > td,
+.tabla-1 table > colgroup + thead > tr:first-child > td,
+.tabla-1 table > thead:first-child > tr:first-child > td {
+    border: 0 !important;
+}
+.tabla-1 table > tbody > tr:hover > td,
+.tabla-1 table > tbody > tr:hover > th {
+    background-color: #f7f8fb !important;
+}
+
+td a {
+    color: #337ab7;
+}
+
+
+
+@media (max-width: 480px) {
+    .margen-superior {
+        margin-top: 0px !important;
+    }
+    /* Tablas */
+    .tabla-1 {
+        padding: 0px;
+    }
+    /* Pop ups de las tablas - boton acciones*/
+    .tabla-1 table > thead > tr > th,
+    .tabla-1 table > tbody > tr > th,
+    .tabla-1 table > tfoot > tr > th,
+    .tabla-1 table > thead > tr > td,
+    .tabla-1 table > tbody > tr > td,
+    .tabla-1 table > tfoot > tr > td {
+        padding: 10px !important;
+    }
+}
+

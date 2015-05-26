@@ -24,7 +24,7 @@
     ArrayList<String> alColumnsNames;
     Iterator<String> oIterador;
     String strNombreMantenimiento = "tipousuario";
-    Connection connection = (Connection) request.getAttribute("connection");    
+    Connection connection = (Connection) request.getAttribute("connection");
 %>
 <div class="row">
     <div class="col-md-12">
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 visibles">
                             <div class="panel panel-default">
                                 <!-- Default panel contents -->
                                 <div class="panel-heading">Campos visibles</div>
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 regpag">
                             <div class="panel panel-default">
                                 <!-- Default panel contents -->
                                 <div class="panel-heading">Registros por página</div>
@@ -142,10 +142,12 @@
 </div>
 <div class="row">
     <div class="col-md-12" id="menuLateralList">
-        <table class="table table-responsive table-hover table-striped table-condensed">
-            <thead id="tableHeaders"></thead>
-            <tbody id="tableBody"></tbody>
-        </table>
+        <div class="tabla-1">
+            <table>
+                <thead id="tableHeaders"></thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
         <div id="datos"></div>
         <div id="datos2"></div>
     </div> 

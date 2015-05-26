@@ -76,9 +76,12 @@
                             <input class="form-control" type="password" id="inputPassword" placeholder="contraseña"  required="" name="password" />                                                               
                             <%
                                 }
-                            %>   
+                            %> 
+                         <button class="boton1" type="submit"  style="margin-top: 15px">Acceder</button>   
+                        <button class="boton2" type="reset" style="margin-top: 5px">Reset</button>
+                   
                         </div>
-                        <input type="submit"value="GO" >
+                        
                     </form>
                         <!--/User-Login-->
                 <!--start-copyright-->

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" cacheMaxSize="0" cacheTTL="1" cachingAllowed="false" path="/proyectoFinal2015">
-  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="50" maxIdle="30" maxWait="10000" name="jdbc/proyectoFinal2015" password="bitnami" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/proyectoFinal2015" username="root" validationQuery="SELECT 1 FROM DUAL"/>
+<Context antiJARLocking="true" cacheMaxSize="0" cacheTTL="1" cachingAllowed="false" path="/iesMontealen">
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="50" maxIdle="30" maxWait="10000" name="jdbc/iesMontealen" password="bitnami" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/iesMontealen" username="root" validationQuery="SELECT 1 FROM DUAL"/>
 </Context>

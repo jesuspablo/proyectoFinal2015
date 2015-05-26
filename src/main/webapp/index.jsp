@@ -36,7 +36,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>PROYECTOFINAL2015</title>
+        <title>IES MonteAlen</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -131,10 +131,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12" id="contenidoParseado"></div>   
-            </div>
-            <div class="row">
-                <div class="col-md-12"><hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: <%=EstadoHelper.getMailAutor()%> (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer></div>   
-            </div>
+            </div>            
         </div>  
 
 

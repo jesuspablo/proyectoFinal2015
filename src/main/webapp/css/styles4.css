@@ -35,7 +35,7 @@
     padding-top: 9px;
     margin-left: 11px;
     display: inline-block;
-    color: #000;
+    color: white;
     font-family: "Oxygen",sans-serif;
 }
 
@@ -49,7 +49,7 @@
     
 }
 
-.glyphicon {
+.glyphicon-log-in {
     margin-left: 556px;
 }
 
@@ -70,7 +70,59 @@
     
 }
 
+/*botones*/
 
+.boton1 {
+	background: #ff6600;
+	padding: .8em .6em .8em .6em;
+	outline: none;
+	border: none;
+	font-size: 1em;
+	cursor: pointer;
+	width: 41%;
+	color: #fff;
+        text-transform: uppercase;
+        border-top-right-radius: .4em;
+	-webkit-border-top-right-radius: .4em;
+	-o-border-top-right-radius: .4em;
+	-moz-border-top-right-radius: .4em;
+	border-bottom-right-radius: .4em;
+	-webkit-border-bottom-right-radius: .4em;
+	-o-border-bottom-right-radius: .4em;
+	-moz-border-bottom-right-radius: .4em;
+	top: 50%;
+	right: 61%;
+}
+.boton1[type="submit"]:hover {
+	background: #1B2E68;
+	color: #fff;
+}
+
+.boton2 {
+	background: #ff6600;
+	padding: .8em .6em .8em .6em;
+	outline: none;
+	border: none;
+	font-size: 1em;
+	cursor: pointer;
+	width: 41%;
+	color: #fff;
+        text-transform: uppercase;
+        border-top-right-radius: .4em;
+	-webkit-border-top-right-radius: .4em;
+	-o-border-top-right-radius: .4em;
+	-moz-border-top-right-radius: .4em;
+	border-bottom-right-radius: .4em;
+	-webkit-border-bottom-right-radius: .4em;
+	-o-border-bottom-right-radius: .4em;
+	-moz-border-bottom-right-radius: .4em;
+	top: 55%;
+	right: 1%;
+}
+.boton2[type="reset"]:hover {
+	background: #1B2E68;
+	color: #fff;
+}
 
 
 

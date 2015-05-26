@@ -29,38 +29,38 @@
 
 
 
-		  <div class="cssmenu">
-                      
-				<ul id="nav">
-                                    
-					 <li class="text-primary"><a href="jsp">Inicio</a></li>
-                                         <li class="text-primary"><a href="jsp#/usuario">Usuarios</a></li>
-                                         <li class="dropdown">
-                                            <a href="jsp#/alumno" class="dropdown-toggle" data-toggle="dropdown">Profesor <b class="caret"></b></a>
-                                                <ul class="dropdown-menu">  
-                                                        <li class="text-primary"><a href="jsp#/profesor">Prefesores</a></li>
-                                                        <li class="text-primary"><a href="jsp#/asignatura">Asignatura</a></li>
-                                                        <li class="text-primary"><a href="jsp#/nivel">Nivel</a></li>
-                                                        <li class="text-primary"><a href="jsp#/horario">Horario</a></li>                                                       				  
-                                                </ul>
-                                         </li>
-                                         
-                                         <li class="dropdown">
-                                            <a href="jsp#/alumno" class="dropdown-toggle" data-toggle="dropdown">Alumno <b class="caret"></b></a>
-                                                <ul class="dropdown-menu">
-                                                     <li class="text-primary"><a href="jsp#/alumno">Alumnos</a></li>
-                                                        <li class="text-primary"><a href="jsp#/asignatura">Asignatura</a></li>
-                                                        <li class="text-primary"><a href="jsp#/nivel">Nivel</a></li>
-                                                        <li class="text-primary"><a href="jsp#/horario">Horario</a></li>
-                                                        <li class="text-primary"><a href="jsp#/nota">Nota</a></li>				  
-                                   
-                                                </ul>
-                                         </li>
-                                         <li class="text-primary"><a href="jsp?ob=usuario&op=logout">
-                                                
-                                                    <span class="glyphicon glyphicon-log-out"></span> </a></li>
-                                    </ul>		    
+<div class="cssmenu">
 
- 
+    <ul id="nav">
+
+        <li><a href="jsp">Inicio</a></li>
+        <li><a href="jsp#/usuario">Usuarios</a></li>
+        <li class="dropdown">
+            <a href="jsp#/alumno" class="dropdown-toggle" data-toggle="dropdown">Profesor <b class="caret"></b></a>
+            <ul class="dropdown-menu">  
+                <li><a href="jsp#/profesor">Prefesores</a></li>
+                <li><a href="jsp#/asignatura">Asignatura</a></li>
+                <li><a href="jsp#/nivel">Nivel</a></li>
+                <li><a href="jsp#/horario">Horario</a></li>                                                       				  
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="jsp#/alumno" class="dropdown-toggle" data-toggle="dropdown">Alumno <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="jsp#/alumno">Alumnos</a></li>
+                <li><a href="jsp#/asignatura">Asignatura</a></li>
+                <li><a href="jsp#/nivel">Nivel</a></li>
+                <li><a href="jsp#/horario">Horario</a></li>
+                <li><a href="jsp#/nota">Nota</a></li>				  
+
+            </ul>
+        </li>
+        <li><a href="jsp?ob=usuario&op=logout">
+
+                <span class="glyphicon glyphicon-log-out"></span> </a></li>
+    </ul>		    
+
+
 
 

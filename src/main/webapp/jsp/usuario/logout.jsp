@@ -25,10 +25,42 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="css/css/style.css" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="css/styles4.css">
     </head>
-</body>
-<h1>Vd. ha salido del sistema</h1>
-<h4>Hasta pronto.</h4>
-</body>
-</html>
+    <body>
+        <!--User-Login-->
+
+        <div class="continer">
+
+            <div class="izquierda">
+
+            </div>
+
+
+            <div class="centro">
+
+
+                <h1>Vd. ha salido del sistema</h1>
+                <h4>Hasta pronto.</h4>
+
+
+
+
+            </div> 
+
+            <div class="derecha">
+
+
+
+
+            </div>	
+
+
+
+        </div>
+        <div class="footer">
+
+
+        </div>
+        <!--//end-copyright-->	
+    </body>

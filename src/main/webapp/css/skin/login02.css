@@ -1,0 +1,80 @@
+/*
+Copyright (C) 2015 Armando
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+/* 
+    Created on : 21-feb-2015, 12:29:22
+    Author     : Armando
+*/
+
+/* Estilos del login02 */
+
+html {
+    background: url(../images/aurora_boreal1.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#login02 > h1 {
+    margin: auto;
+    position: absolute;
+    top: 40%; 
+    width: 100%;
+    height: auto;
+
+    color: white;       
+    text-align: center;
+
+    font-size: 6em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    display: none;
+}
+#login02 > h4 {
+    margin: auto;
+    position: absolute;
+    top: 50%; 
+    left: 20%; 
+
+    width: 100%;
+    height: auto;
+
+    color: #eeeeee;
+    text-transform: uppercase;
+    text-align: center;
+
+    font-size: 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    display: none;
+}
+
+@media (min-width: 1100px) {
+    #login02 > h1 {
+        left: -4em;
+    }
+    #login02 > h4 {
+        left: -3em;
+    }
+}

@@ -36,7 +36,8 @@ public class ProfesorBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
    @Expose
     private String especialista = "";
    
-   
+    @Expose     
+    private String imagen = "";
    
    @Expose(serialize = false)
     private Integer id_usuario = 0; //importante inicializar a 0 las claves ajenas
@@ -73,6 +74,14 @@ public class ProfesorBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
    
