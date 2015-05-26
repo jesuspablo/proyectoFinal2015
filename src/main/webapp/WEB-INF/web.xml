@@ -21,6 +21,14 @@
         <servlet-class>net.daw.imagen.subir</servlet-class>
     </servlet>
     <servlet-mapping>
+        <servlet-name>subirprov</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>subirprov</servlet-name>
+        <servlet-class>net.daw.imagen.subir</servlet-class>
+    </servlet>
+    <servlet-mapping>
         <servlet-name>subir</servlet-name>
         <url-pattern>/upload</url-pattern>
     </servlet-mapping>

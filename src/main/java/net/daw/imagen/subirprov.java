@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.daw.connection.implementation.BoneConnectionPoolImpl;
 import net.daw.connection.publicinterface.ConnectionInterface;
-import net.daw.dao.generic.specific.implementation.AlumnoDaoGenSpImpl;
+import net.daw.dao.generic.specific.implementation.ProfesorDaoGenSpImpl;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -54,8 +54,8 @@ public class subirprov extends HttpServlet {
 
                 String ruta = "<img src=\"/images/" + name + "\"  width=\"150\" />";
 
-                AlumnoDaoGenSpImpl oAlumnoDAO = new AlumnoDaoGenSpImpl("alumno", oConnection);
-                oAlumnoDAO.updateOne(id, "alumno", "imagen", ruta);
+                ProfesorDaoGenSpImpl oProfesorDAO = new ProfesorDaoGenSpImpl("profesor", oConnection);
+                oProfesorDAO.updateOne(id, "profesor", "imagen", ruta);
 
                 strMessage += "<img src=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/" + "/images/" + name + "\"  width=\"150\" /><br/>";
                 strMessage += "<a href=\"" + "http://" + request.getServerName() + ":" + request.getServerPort() + "/juploading" + "\">Return</a><br/>";

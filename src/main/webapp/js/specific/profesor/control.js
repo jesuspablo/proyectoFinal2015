@@ -28,7 +28,7 @@ var oProfesorControl = new profesorControl('profesor');
 control.prototype.upload = function (place, id, oModel, oView) {
     var thisObject = this;
     $(place).empty();
-    $(place).append(oView.getPanel("Subir imagen " + this.clase, oView.getEmptyView("imagen", "unwrappered")));
+    $(place).append(oView.getPanel("Subirprov imagen " + this.clase, oView.getEmptyView("imagen", "unwrappered")));
     var oDocumentoModel = oModel;
     oDocumentoModel.loadAggregateViewOne(id);
     oView.loadFormValues(oDocumentoModel.getCachedOne(), oDocumentoModel.getCachedFieldNames());

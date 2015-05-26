@@ -32,39 +32,20 @@ profesorView.prototype.loadButtons = function (id) {
     var botonera = "";
     botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
     botonera += '<a class="btn btn-default view" id="' + id + '"  href="jsp#/' + this.clase + '/view/' + id + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
-    botonera += '<a class="btn btn-default edit" id="' + id + '"  href="jsp#/' + this.clase + '/edit/' + id + '"><i class="glyphicon glyphicon-pencil"></i></a>';
+    botonera += '<a class="btn btn-default edit" id="' + id + '"  href="jsp#/' + this.clase + '/edit/' + id + '"><i class="glyphicon glyphicon-pencil"></i></a>';    
+    botonera += '<a class="btn btn-default remove" id="' + id + '"  href="jsp#/' + this.clase + '/remove/' + id + '"><i class="glyphicon glyphicon-remove"></i></a>';
     botonera += '<a class="btn btn-default upload" id="' + id + '"  href="jsp#/' + this.clase + '/upload/' + id + '"><i class="glyphicon glyphicon-picture"></i></a>';
 
-    botonera += '<a class="btn btn-default remove" id="' + id + '"  href="jsp#/' + this.clase + '/remove/' + id + '"><i class="glyphicon glyphicon-remove"></i></a>';
     botonera += '</div></div>';
     return botonera;
 
 }
 profesorView.prototype.loadFormValues = function (valores, campos) {
-//                    $('#profesor_form #titulo').val(valores['titulo']);
-//                    $('#profesor_form #contenido').val(valores['contenido']);
-//                    $('#profesor_form #alta').val(valores['alta']);
-//                    $('#profesor_form #cambio').val(valores['cambio']);
-//                    $('#profesor_form #hits').val(valores['hits']);
-//                    $('#profesor_form #id_usuario').val(valores['id_usuario']);
-//                    $('#profesor_form #etiquetas').val(valores['etiquetas']);
-//                    $('#profesor_form #publicado').val(valores['publicado']);
-//                    $('#profesor_form #portada').val(valores['portada']);
     this.doFillForm(valores, campos);
 };
 
 profesorView.prototype.getFormValues = function () {
     var valores = [];
-//                    valores['titulo'] = $('#profesor_form #titulo');
-//                    valores['contenido'] = $('#profesor_form #contenido');
-//                    valores['alta'] = $('#profesor_form #alta');
-//                    valores['cambio'] = $('#profesor_form #cambio');
-//                    valores['hits'] = $('#profesor_form #hits');
-//                    valores['id_usuario'] = $('#profesor_form #id_usuario');
-//                    valores['etiquetas'] = $('#profesor_form #etiquetas');
-//                    valores['publicado'] = $('#profesor_form #publicado');
-//                    valores['portada'] = $('#profesor_form #portada');
-
     var disabled = $('#profesorForm').find(':input:disabled').removeAttr('disabled');
     valores = $('#profesorForm').serializeObject();
     disabled.attr('disabled', 'disabled');
