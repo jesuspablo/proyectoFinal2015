@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.7
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 26-05-2015 a las 12:09:46
--- Versión del servidor: 5.5.42
--- Versión de PHP: 5.4.41
+-- Tiempo de generación: 27-05-2015 a las 08:23:32
+-- Versión del servidor: 5.5.39
+-- Versión de PHP: 5.4.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,11 +27,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `administrador` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `apellidos` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `administrador`
@@ -47,32 +47,32 @@ INSERT INTO `administrador` (`id`, `nombre`, `apellidos`, `email`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `alumno` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel',
   `apellido` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
   `id_usuario` int(12) DEFAULT NULL COMMENT 'ID_Usuario',
   `imagen` varchar(255) DEFAULT NULL COMMENT 'Imagen'
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
 INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellido`, `email`, `id_usuario`, `imagen`) VALUES
-(1, 'Betina  ', 2, 'Guerra Arroyo', 'jivohebog-6520@yopmail.com', 1, '<img src="/images/fondo2.jpeg"  width="150" />'),
-(2, 'Guzmán ', 1, 'Padron Esquivel', 'wijytiru-6960@yopmail.com', 2, '<img src="/images/fondo2.jpeg"  width="150" />'),
-(3, 'Haide', 3, 'Tejada Escalante', 'unaffanny-5394@yopmail.com', 3, NULL),
-(4, 'Martial  ', 4, 'Ledesma Carvajal', 'ceqixaran-2559@yopmail.com', 4, NULL),
-(5, 'Matty  ', 6, 'Peralta Suárez', 'gutezahu-8248@yopmail.com', 5, NULL),
-(6, 'Adaluz ', 5, 'Jaime Valverde', 'illattabett-6442@yopmail.com', 6, NULL),
-(7, 'Milton', 7, 'Suárez Montes', 'effynnoppuj-6270@yopmail.com', 7, NULL),
-(8, 'Mabel ', 3, 'Alba  Sisneros', 'ennodazod-7760@yopmail.com', 8, NULL),
-(9, 'Aisha ', 8, 'Maya Olivas', 'ifaxagyj-1268@yopmail.com', 9, NULL),
-(10, 'Lutero  ', 1, 'Badillo Pacheco', 'uxiddazuffe-1521@yopmail.com', 10, NULL),
-(11, 'Millan  ', 2, 'López Ulloa', 'qetynunopp-9072@yopmail.com', 11, NULL),
-(12, 'Jose%20Manuel', 7, 'Obama%20Obono', '', 27, '');
+(1, 'Betina  ', 2, 'Guerra Arroyo', 'jivohebog-6520@yopmail.com', 1, '<img src="/images/alumno.png"  width="150" />'),
+(2, 'Guzmán ', 1, 'Padron Esquivel', 'wijytiru-6960@yopmail.com', 2, '<img src="/images/alumno.png"  width="150" />'),
+(3, 'Haide', 3, 'Tejada Escalante', 'unaffanny-5394@yopmail.com', 3, '<img src="/images/alumno.png"  width="150" />'),
+(4, 'Martial  ', 4, 'Ledesma Carvajal', 'ceqixaran-2559@yopmail.com', 4, '<img src="/images/alumno.png"  width="150" />'),
+(5, 'Matty  ', 6, 'Peralta Suárez', 'gutezahu-8248@yopmail.com', 5, '<img src="/images/alumno.png"  width="150" />'),
+(6, 'Adaluz ', 5, 'Jaime Valverde', 'illattabett-6442@yopmail.com', 6, '<img src="/images/alumno.png"  width="150" />'),
+(7, 'Milton', 7, 'Suárez Montes', 'effynnoppuj-6270@yopmail.com', 7, '<img src="/images/alumno.png"  width="150" />'),
+(8, 'Mabel ', 3, 'Alba  Sisneros', 'ennodazod-7760@yopmail.com', 8, '<img src="/images/alumno.png"  width="150" />'),
+(9, 'Aisha ', 8, 'Maya Olivas', 'ifaxagyj-1268@yopmail.com', 9, '<img src="/images/alumno.png"  width="150" />'),
+(10, 'Lutero  ', 1, 'Badillo Pacheco', 'uxiddazuffe-1521@yopmail.com', 10, '<img src="/images/alumno.png"  width="150" />'),
+(11, 'Millan  ', 2, 'López Ulloa', 'qetynunopp-9072@yopmail.com', 11, '<img src="/images/alumno.png"  width="150" />'),
+(12, 'Jose%20Manuel', 7, 'Obama%20Obono', '', 27, '<img src="/images/alumno.png"  width="150" />');
 
 -- --------------------------------------------------------
 
@@ -81,11 +81,11 @@ INSERT INTO `alumno` (`id`, `nombre`, `id_nivel`, `apellido`, `email`, `id_usuar
 --
 
 CREATE TABLE IF NOT EXISTS `asignatura` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `id_profesor` int(12) DEFAULT NULL COMMENT 'ID Profesor',
   `id_nivel` int(12) DEFAULT NULL COMMENT 'ID Nivel'
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
 
 --
 -- Volcado de datos para la tabla `asignatura`
@@ -161,9 +161,9 @@ INSERT INTO `asignatura` (`id`, `nombre`, `id_profesor`, `id_nivel`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `estado` (
-  `id` int(11) NOT NULL COMMENT 'Identificador',
+`id` int(11) NOT NULL COMMENT 'Identificador',
   `tipo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Estado'
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=57 ;
 
 --
 -- Volcado de datos para la tabla `estado`
@@ -200,12 +200,12 @@ INSERT INTO `estado` (`id`, `tipo`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `horario` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `dia` varchar(255) DEFAULT NULL COMMENT 'Día',
   `horainicio` varchar(255) DEFAULT NULL COMMENT 'Hora Inicio',
   `horafin` varchar(255) DEFAULT NULL COMMENT 'Hora Fin',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Volcado de datos para la tabla `horario`
@@ -240,13 +240,13 @@ INSERT INTO `horario` (`id`, `dia`, `horainicio`, `horafin`, `id_asignatura`) VA
 --
 
 CREATE TABLE IF NOT EXISTS `mensajeprivado` (
-  `id` int(6) NOT NULL COMMENT 'ID',
+`id` int(6) NOT NULL COMMENT 'ID',
   `fechaenvio` datetime DEFAULT NULL COMMENT 'Fecha de envío',
   `id_usuario_1` int(6) DEFAULT NULL COMMENT 'ID Usuario envía',
   `id_usuario_2` int(6) DEFAULT NULL COMMENT 'ID Usuario recibe',
   `asunto` varchar(255) DEFAULT NULL COMMENT 'Asunto',
   `mensaje` longtext COMMENT 'Mensaje'
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Volcado de datos para la tabla `mensajeprivado`
@@ -281,11 +281,11 @@ INSERT INTO `mensajeprivado` (`id`, `fechaenvio`, `id_usuario_1`, `id_usuario_2`
 --
 
 CREATE TABLE IF NOT EXISTS `nivel` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `nivel` varchar(255) DEFAULT NULL COMMENT 'Nivel',
   `curso` varchar(255) DEFAULT NULL COMMENT 'curso',
   `aula` varchar(255) DEFAULT NULL COMMENT 'Aula'
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `nivel`
@@ -309,11 +309,11 @@ INSERT INTO `nivel` (`id`, `nivel`, `curso`, `aula`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `nota` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `nota` int(12) DEFAULT NULL COMMENT 'Nota',
   `id_alumno` int(12) DEFAULT NULL COMMENT 'ID Alumno',
   `id_asignatura` int(12) DEFAULT NULL COMMENT 'ID Asignatura'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `nota`
@@ -369,11 +369,11 @@ INSERT INTO `objeto` (`id`, `descripcion`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `operacion` (
-  `id` int(6) NOT NULL COMMENT 'ID Operación',
+`id` int(6) NOT NULL COMMENT 'ID Operación',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción',
   `id_objeto` int(6) DEFAULT NULL COMMENT 'ID Objeto',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación'
-) ENGINE=InnoDB AUTO_INCREMENT=464 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=464 ;
 
 --
 -- Volcado de datos para la tabla `operacion`
@@ -609,11 +609,11 @@ INSERT INTO `operacion` (`id`, `descripcion`, `id_objeto`, `id_tipooperacion`) V
 --
 
 CREATE TABLE IF NOT EXISTS `permiso` (
-  `id` int(6) NOT NULL COMMENT 'ID Permiso',
+`id` int(6) NOT NULL COMMENT 'ID Permiso',
   `id_tipousuario` int(6) DEFAULT NULL COMMENT 'ID Tipo de usuario',
   `id_tipooperacion` int(6) DEFAULT NULL COMMENT 'ID Tipo Operación',
   `permitido` tinyint(1) DEFAULT NULL COMMENT 'Permitido'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `permiso`
@@ -634,34 +634,34 @@ INSERT INTO `permiso` (`id`, `id_tipousuario`, `id_tipooperacion`, `permitido`) 
 --
 
 CREATE TABLE IF NOT EXISTS `profesor` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `nombre` varchar(255) DEFAULT NULL COMMENT 'Nombre',
   `email` varchar(255) DEFAULT NULL COMMENT 'Email',
   `especialista` varchar(255) DEFAULT NULL COMMENT 'Especialista',
   `apellido` varchar(255) DEFAULT NULL COMMENT 'Apellidos',
   `id_usuario` int(6) NOT NULL COMMENT 'ID Usuario',
   `imagen` varchar(255) DEFAULT NULL COMMENT 'Imagen'
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Volcado de datos para la tabla `profesor`
 --
 
 INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `apellido`, `id_usuario`, `imagen`) VALUES
-(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas Coronado', 13, '<img src="/images/fondo2.jpeg"  width="150" />'),
-(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos Olivo', 14, '<img src="/images/fondo2.jpeg"  width="150" />'),
-(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa Zapata', 15, NULL),
-(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna Orguendo', 16, NULL),
-(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño Reyna', 17, NULL),
-(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo Navarro', 18, NULL),
-(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza Herrera', 19, NULL),
-(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho Curiel', 20, NULL),
-(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza Fierro', 21, NULL),
-(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame Bahena', 22, NULL),
-(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel Agosto', 23, NULL),
-(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho Nieto', 0, NULL),
-(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa Santana', 0, NULL),
-(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento Cansina', 0, NULL);
+(1, 'Jose Alberto', 'JoseSWeldon@superrito.com', 'Audición y Lenguaje', 'Vanegas Coronado', 13, '<img src="/images/profesor.png"  width="150" />'),
+(2, 'Areb', 'ArebGallegosOlivo@superrito.com', 'Música.', 'Gallegos Olivo', 14, '<img src="/images/profesor.png"  width="150" />'),
+(3, 'Bartelemy ', 'BartelemyChapaZapata@superrito.com', 'Educación Física', 'Chapa Zapata', 15, '<img src="/images/profesor.png"  width="150" />'),
+(4, 'Agape ', 'Agape Ozuna Oquendo', 'Lengua extranjera: Alemán', 'Ozuna Orguendo', 16, '<img src="/images/profesor.png"  width="150" />'),
+(5, 'Aniela', 'AnielaBriseoReyna@superrito.com', 'Lengua extranjera: Francés', 'Briseño Reyna', 17, '<img src="/images/profesor.png"  width="150" />'),
+(6, 'Pascua', 'ascuaEscobedoNavarro@gustr.com', 'Lengua extranjera: Inglés', 'Escobedo Navarro', 18, '<img src="/images/profesor.png"  width="150" />'),
+(7, 'Cameron ', 'CameronBarrazaHerrera@gustr.com', 'Educación Primaria', 'Barraza Herrera', 19, '<img src="/images/profesor.png"  width="150" />'),
+(8, 'Jules ', 'JulesCamachoCuriel@superrito.com', 'Educación Infantil', 'Camacho Curiel', 20, '<img src="/images/profesor.png"  width="150" />'),
+(9, 'Nantilde', 'NantildeMezaFierro@superrito.com', 'Audición y Lenguaje', 'Meza Fierro', 21, '<img src="/images/profesor.png"  width="150" />'),
+(10, 'Nereo ', 'NereoAdameBahena@gustr.com ', 'Educación Física', 'Adame Bahena', 22, '<img src="/images/profesor.png"  width="150" />'),
+(11, 'Amal ', 'AmalCurielAgosto@superrito.com ', 'Educación Primaria', 'Curiel Agosto', 23, '<img src="/images/profesor.png"  width="150" />'),
+(12, 'Martin', 'beleddeppo-3307@yopmail.com', 'Tecnología', 'Pincho Nieto', 0, '<img src="/images/profesor.png"  width="150" />'),
+(13, 'Silvia', 'huffenyhatt-2083@yopmail.com', 'Ciencias Naturales', 'Ochoa Santana', 0, '<img src="/images/profesor.png"  width="150" />'),
+(14, 'Alonso', 'xajusibimmi-8211@yopmail.com', 'Lengua y Literatura de las CC.AA.', 'Sorento Cansina', 0, '<img src="/images/profesor.png"  width="150" />');
 
 -- --------------------------------------------------------
 
@@ -670,11 +670,11 @@ INSERT INTO `profesor` (`id`, `nombre`, `email`, `especialista`, `apellido`, `id
 --
 
 CREATE TABLE IF NOT EXISTS `publicacion` (
-  `id` int(11) NOT NULL COMMENT 'Identificador',
+`id` int(11) NOT NULL COMMENT 'Identificador',
   `contenido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Contenido',
   `id_usuario` int(11) DEFAULT NULL COMMENT 'Usuario',
   `fechacreacion` datetime DEFAULT NULL COMMENT 'Fecha de creación'
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
 -- Volcado de datos para la tabla `publicacion`
@@ -709,9 +709,9 @@ INSERT INTO `publicacion` (`id`, `contenido`, `id_usuario`, `fechacreacion`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `tipooperacion` (
-  `id` int(6) NOT NULL COMMENT 'Identificador',
+`id` int(6) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `tipooperacion`
@@ -732,9 +732,9 @@ INSERT INTO `tipooperacion` (`id`, `descripcion`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tipousuario` (
-  `id` int(11) NOT NULL COMMENT 'Identificador',
+`id` int(11) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `tipousuario`
@@ -753,9 +753,9 @@ INSERT INTO `tipousuario` (`id`, `descripcion`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `trimestre` (
-  `id` int(12) NOT NULL COMMENT 'ID',
+`id` int(12) NOT NULL COMMENT 'ID',
   `trimestre` varchar(255) DEFAULT NULL COMMENT 'Trimestre'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `trimestre`
@@ -773,14 +773,14 @@ INSERT INTO `trimestre` (`id`, `trimestre`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(6) NOT NULL COMMENT 'Identificador',
+`id` int(6) NOT NULL COMMENT 'Identificador',
   `login` varchar(255) DEFAULT NULL COMMENT 'Nombre de Usuario',
   `password` varchar(255) DEFAULT NULL COMMENT 'Contraseña',
   `id_tipousuario` int(11) DEFAULT NULL COMMENT 'Tipo de Usuario',
   `ciudad` varchar(255) DEFAULT NULL COMMENT 'Ciudad',
   `firma` varchar(255) DEFAULT NULL COMMENT 'Firma',
   `skin` varchar(255) DEFAULT NULL COMMENT 'skin'
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -823,103 +823,103 @@ INSERT INTO `usuario` (`id`, `login`, `password`, `id_tipousuario`, `ciudad`, `f
 -- Indices de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `estado`
 --
 ALTER TABLE `estado`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `horario`
 --
 ALTER TABLE `horario`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `mensajeprivado`
 --
 ALTER TABLE `mensajeprivado`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `nivel`
 --
 ALTER TABLE `nivel`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `nota`
 --
 ALTER TABLE `nota`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `objeto`
 --
 ALTER TABLE `objeto`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `operacion`
 --
 ALTER TABLE `operacion`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `permiso`
 --
 ALTER TABLE `permiso`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `tipooperacion`
 --
 ALTER TABLE `tipooperacion`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `tipousuario`
 --
 ALTER TABLE `tipousuario`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `trimestre`
 --
 ALTER TABLE `trimestre`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -929,82 +929,82 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=2;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=13;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=62;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT de la tabla `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=57;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT de la tabla `horario`
 --
 ALTER TABLE `horario`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=21;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `mensajeprivado`
 --
 ALTER TABLE `mensajeprivado`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=21;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `nivel`
 --
 ALTER TABLE `nivel`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=10;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `nota`
 --
 ALTER TABLE `nota`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=6;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `operacion`
 --
 ALTER TABLE `operacion`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Operación',AUTO_INCREMENT=464;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Operación',AUTO_INCREMENT=464;
 --
 -- AUTO_INCREMENT de la tabla `permiso`
 --
 ALTER TABLE `permiso`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Permiso',AUTO_INCREMENT=7;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Permiso',AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=15;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=21;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `tipooperacion`
 --
 ALTER TABLE `tipooperacion`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=7;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `tipousuario`
 --
 ALTER TABLE `tipousuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `trimestre`
 --
 ALTER TABLE `trimestre`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=4;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=28;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=28;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
