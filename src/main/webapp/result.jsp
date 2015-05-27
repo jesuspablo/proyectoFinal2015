@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>File Upload Example</title>
+        <title>El archivo esta subido</title>
     </head>
     <body>        
         <div id="result">

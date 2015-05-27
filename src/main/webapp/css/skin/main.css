@@ -36,6 +36,22 @@ body {
     
 }
 
+img {
+width: 150px;
+}
+
+#result h1 {
+    background: #001f3f;
+}
+
+.misiconos {
+    width: 30px;
+    height: 30px;
+   
+}
+
+
+
 .navbar-header a {
     color: white;
 }
