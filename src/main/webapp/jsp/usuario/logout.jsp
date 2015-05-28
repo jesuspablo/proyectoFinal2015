@@ -38,7 +38,11 @@
 
 
             <div class="centro">
+                <div class="slides">
+                    <img src="css/img/centro4.jpg" alt="">
 
+
+                </div>
 
                 <h1>Vd. ha salido del sistema</h1>
                 <h4>Hasta pronto.</h4>

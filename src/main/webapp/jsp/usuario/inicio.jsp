@@ -44,8 +44,8 @@
 
             <div class="centro">
                 <div class="slides">
-
-                    							
+                    <img src="css/img/centro4.jpg" alt="">
+                    
 
                 </div>
 
@@ -88,7 +88,7 @@
 
 
         </div>
-      
+
 
 
 
