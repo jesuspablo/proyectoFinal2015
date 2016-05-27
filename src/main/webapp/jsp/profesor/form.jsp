@@ -15,7 +15,11 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
-
+<%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
+<%UsuarioBeanGenSpImpl user = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");%>
+<%
+        int id = user.getId();
+%>
 <form class="form-horizontal" role="form" action="#" id="profesorForm" name="formulario">
     <div class="form-group">
         <label class="col-sm-2 control-label" for="id">Id:</label>
@@ -95,11 +99,35 @@
                         nombre: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir un título de profesor'
+                                    message: 'Debe introducir un nombre del profesor'
                                 },
                                 stringLength: {
                                     max: 255,
-                                    message: 'El título del profesor debe tener como máximo 255 caracteres'
+                                    message: 'El nombre del profesor debe tener como máximo 255 caracteres'
+                                }
+                            }
+                        },
+                         fields: {
+                        especialidad: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir la especialidad del profesor'
+                                },
+                                stringLength: {
+                                    max: 255,
+                                    message: 'El especialidad del profesor debe tener como máximo 255 caracteres'
+                                }
+                            }
+                        },
+                         fields: {
+                        apellido: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir los apellidos del profesor'
+                                },
+                                stringLength: {
+                                    max: 255,
+                                    message: 'Los apellidos del profesor debe tener como máximo 255 caracteres'
                                 }
                             }
                         },
@@ -113,26 +141,20 @@
                                 }
                             }
                         },
-                        id_asignatura: {
+                         email: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe elegir un usuario'
+                                    message: 'Debe introducir un email.'
                                 },
-                                integer: {
-                                    message: 'El identificador de usuario debe ser un entero'
+                                stringLength: {
+                                    max: 50,
+                                    message: 'La longitud del email no puede ser mayor de 50'
+                                },
+                                emailAddress: {
+                                    message: 'Debe introducir un email valido.'
                                 }
                             }
                         },
-                        id_nivel: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe elegir un tipo de documento'
-                                },
-                                integer: {
-                                    message: 'El identificador de tipo de documento debe ser un entero'
-                                }
-                            }
-                        }
                     }
                 })
                 .on('change', '[name="id_usuario"]', function() {

@@ -15,6 +15,11 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
+<%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
+<%UsuarioBeanGenSpImpl user = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");%>
+<%
+        int id = user.getId();
+%>
 
 <form class="form-horizontal" role="form" action="#" id="notaForm" name="formulario">
     <div class="form-group">
@@ -88,30 +93,30 @@
                                 },
                                 stringLength: {
                                     max: 255,
-                                    message: 'El título del asignatura debe tener como máximo 255 caracteres'
+                                    message: 'La asignatura debe tener como máximo 255 caracteres'
                                 }
                             }
                         },
                         id_alumno: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe debe introducir un nombre del alumno'
+                                    message: 'Debe elegir un alumno'
                                 },
                                 integer: {
-                                    message: 'El identificador de usuario debe ser un entero'
+                                    message: 'El identificador del alumno debe ser un entero'
                                 }
                             }
                         },
                         id_asignatura: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir una asignatura'
+                                    message: 'Debe elegir una asignatura'
                                 },
                                 integer: {
-                                    message: 'El identificador de tipo de documento debe ser un entero'
+                                    message: 'El identificador de la asignatura debe ser un entero'
                                 }
                             }
-                        }
+                        },
                     }
                 })
                 .on('change', '[name="id_asignatura"]', function() {

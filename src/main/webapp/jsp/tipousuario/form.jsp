@@ -18,10 +18,10 @@
 <%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
 <%UsuarioBeanGenSpImpl user = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");%>
 <%
-        int id = user.getId();
+    int id = user.getId();
 %>
 
-<form class="form-horizontal" role="form" action="#" id="opcionForm" name="formulario">
+<form class="form-horizontal" role="form" action="#" id="tipousuarioForm" name="formulario">
     <div class="form-group">
         <label class="col-sm-2 control-label" for="id">Id:</label>
         <div class="col-sm-2">
@@ -29,25 +29,12 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="titulo">Valor:</label>
-        <div class="col-sm-6">
-            <input type="text" id="valor" class="form-control"  name="valor" size="15" placeholder="valor del cuestionario" />
+        <label class="col-sm-2 control-label"  for="descripcion">Descripcion:</label>
+        <div class="col-sm-4">
+            <input type="text" id="descripcion" class="form-control"  name="descripcion" size="20" maxlength="20" placeholder="Pon aquí la descripcion" />
         </div>
     </div>
-    
-    
 
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="obj_pregunta_id">Pregunta: </label> 
-        <div class="col-sm-2">              
-            <input readonly="true" class="form-control"  id="obj_pregunta_id" class="input-mini" name="id_pregunta" type="text" size="5" maxlength="5" />  
-        </div>
-        <div class="col-sm-1">              
-            <a class="btn btn-primary btn-sm" id="obj_pregunta_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
-        </div>        
-        <label class="col-sm-7" for="obj_pregunta_desc" id="obj_pregunta_desc"></label>                     
-    </div>
-    
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <div id="messages"></div>
@@ -61,26 +48,13 @@
     </div>
 
 </form>
-        
-
-<!-- Modals -->
-<div id="modal01" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header" id="modal-header"></div>
-            <div class="modal-body" id="modal-body"></div>
-            <div class="modal-footer" id="modal-footer"></div>
-        </div>
-    </div>
-</div>
-
 
 
 <script type="text/javascript">
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         //http://jqueryvalidation.org/documentation/
-        $('#opcionForm')
+        $('#tipousuarioForm')
                 .bootstrapValidator({
                     container: '#messages',
                     feedbackIcons: {
@@ -89,32 +63,19 @@
                         validating: 'glyphicon glyphicon-refresh'
                     },
                     fields: {
-                        valor: {
+                        descripcion: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir un valor'
+                                    message: 'Debe introducir una descripcion.'
                                 },
                                 stringLength: {
-                                    max: 255,
-                                    message: 'El título debe tener como máximo 255 caracteres'
-                                }
-                            }
-                        },
-                        id_pregunta: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe elegir una pregunta'
-                                },
-                                integer: {
-                                    message: 'El identificador de pregunta debe ser un entero'
+                                    max: 20,
+                                    message: 'La descripcion no puede tener mas de 20 caracteres'
                                 }
                             }
                         }
                     }
                 })
-    });       
+    });
 
-    
-    
 </script>
-     

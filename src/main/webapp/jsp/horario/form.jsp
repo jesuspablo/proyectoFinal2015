@@ -15,7 +15,11 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
-
+<%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
+<%UsuarioBeanGenSpImpl user = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");%>
+<%
+        int id = user.getId();
+%>
 
 
 <form class="form-horizontal" role="form" action="#" id="horarioForm" name="formulario">
@@ -32,19 +36,29 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="horainicio">Hora Inicio:</label>
-        <div class="col-sm-6">
-            <input type="text" id="horainicio" class="form-control"  name="horainicio" size="15" placeholder="Hora inicio" />
+     <div class="form-group">
+        <label class="col-sm-2 control-label" for="horainicio">Hora Inicio:</label> 
+        <div class="col-sm-3">      
+            <div class='input-group date' id='horainicio'>
+                <input type='text' class="form-control" id='fecna' name="horainicio" placeholder="Hora Inicio" />
+                <span class="input-group-addon">
+                    <span class="icon-calendar"></span>
+                </span>
+            </div>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="horafin">Hora Fin:</label>
-        <div class="col-sm-6">
-            <input type="text" id="horafin" class="form-control"  name="horafin" size="15" placeholder="Hora final" />
+        <label class="col-sm-2 control-label" for="horafin">Hora fin:</label> 
+        <div class="col-sm-3">      
+            <div class='input-group date' id='horafin'>
+                <input type='text' class="form-control" id='fecna' name="horafin" placeholder="Hora Fin" />
+                <span class="input-group-addon">
+                    <span class="icon-calendar"></span>
+                </span>
+            </div>
         </div>
-    </div> 
+    </div>
 
     <div class="form-group">
         <label class="col-sm-2 control-label" for="obj_asignatura_id">Asignatura: </label> 
@@ -92,34 +106,33 @@
                                 },
                             stringLength: {
                                     max: 255,
-                                message: 'El título del dia debe tener como máximo 255 caracteres'
+                                message: 'El dia debe tener como máximo 255 caracteres'
                         }
                       }
                 },
-                fields: {
-                        horainicio: {
-                               validators: {
-                            notEmpty: {
-                                message: 'Debe introducir una Hora'
+                 horainicio: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir una fecha de nacimiento'
                                 },
-                            stringLength: {
-                                    max: 255,
-                                message: 'El título del dia debe tener como máximo 255 caracteres'
-                        }
-                      }
-                },
-                fields: {
-                        horafin: {
-                               validators: {
-                            notEmpty: {
-                                message: 'Debe introducir una Hora'
+                                date: {
+                                    format: 'DD/MM/YYYY',
+                                    message: 'La fecha de nacimiento no tiene formato DD/MM/YYYY'
+                                }
+                            }
+                        },
+                
+                 horafin: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir una fecha de nacimiento'
                                 },
-                            stringLength: {
-                                    max: 255,
-                                message: 'El título del dia debe tener como máximo 255 caracteres'
-                        }
-                      }
-                },
+                                date: {
+                                    format: 'DD/MM/YYYY',
+                                    message: 'La fecha de nacimiento no tiene formato DD/MM/YYYY'
+                                }
+                            }
+                        },
                 
                     id_asignatura: {
                             validators: {

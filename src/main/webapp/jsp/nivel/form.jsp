@@ -15,6 +15,11 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
+<%@page import="net.daw.bean.generic.specific.implementation.UsuarioBeanGenSpImpl"%>
+<%UsuarioBeanGenSpImpl user = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");%>
+<%
+        int id = user.getId();
+%>
 
 <form class="form-horizontal" role="form" action="#" id="nivelForm" name="formulario">
     <div class="form-group">
@@ -29,14 +34,14 @@
             <input type="text" id="nivel" class="form-control"  name="nivel" size="15" placeholder="Título del nivel" />
         </div>
     </div>
-    
+
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="curso">Curso:</label>
         <div class="col-sm-6">
             <input type="text" id="curso" class="form-control"  name="curso" size="15" placeholder="Título del nivel" />
         </div>
     </div>
-    
+
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="aula">Aula:</label>
         <div class="col-sm-6">
@@ -57,11 +62,11 @@
     </div>
 
 </form>
-        
+
 
 <script type="text/javascript">
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         //http://jqueryvalidation.org/documentation/
         $('#nivelForm')
                 .bootstrapValidator({
@@ -75,47 +80,50 @@
                         nivel: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir un título de nivel'
+                                    message: 'Debe introducir el nivel del alumno'
                                 },
                                 stringLength: {
                                     max: 255,
-                                    message: 'El título del nivel debe tener como máximo 255 caracteres'
+                                    message: 'El nivel debe tener como máximo 255 caracteres'
                                 }
                             }
                         },
-                        id_usuario: {
+                        fields: {
+                        curso: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe elegir un usuario'
+                                    message: 'Debe introducir el curso del alumno'
                                 },
-                                integer: {
-                                    message: 'El identificador de usuario debe ser un entero'
+                                stringLength: {
+                                    max: 255,
+                                    message: 'El curso debe tener como máximo 255 caracteres'
                                 }
                             }
                         },
-                        id_nivel: {
+                        fields: {
+                        aula: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe elegir un tipo de documento'
+                                    message: 'Debe introducir el aula del alumno'
                                 },
-                                integer: {
-                                    message: 'El identificador de tipo de documento debe ser un entero'
+                                stringLength: {
+                                    max: 255,
+                                    message: 'El aula debe tener como máximo 255 caracteres'
                                 }
                             }
-                        }
+                        },
                     }
                 })
-                .on('change', '[name="id_usuario"]', function() {
+                .on('change', '[name="id_usuario"]', function () {
                     $('#nivelForm').bootstrapValidator('revalidateField', 'id_usuario');
                 })
 
-                .on('change', '[name="id_nivel"]', function() {
+                .on('change', '[name="id_nivel"]', function () {
                     $('#nivelForm').bootstrapValidator('revalidateField', 'id_nivel');
                 })
                 ;
-    });       
+    });
 
-    
-    
+
+
 </script>
-     

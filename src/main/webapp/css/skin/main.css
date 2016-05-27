@@ -104,6 +104,10 @@ body {
     text-align: center;
     color: white !important;
 }
+
+.nav-tabs>li>a {
+     color: #001f3f;
+}
 a {
     text-decoration: none !important;
     color: white;
